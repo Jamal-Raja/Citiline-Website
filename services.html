@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citiline Accountants | Services</title>
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link rel="stylesheet" href="css/services-main.style.css">
+    <link rel="stylesheet" href="css/navbar.style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+  <div class="logo">
+    <a href="index.html">
+      <img
+        src="Assets/citiline_accountants_logo_transparent.png"
+        alt="Citiline Accountants – Chartered Tax Advisers Logo"
+      >
+    </a>
+  </div>
+
+  <div class="menu-icon" onclick="toggleMenu()"></div>
+
+  <ul class="nav-links" id="navLinks">
+    <!-- SERVICES DROPDOWN -->
+    <li class="dropdown">
+      <a href="services.html" class="has-arrow">Services</a>
+
+      <!-- Mega-menu panel -->
+      <div class="dropdown-menu mega">
+        
+        <!-- left column: top-level service titles -->
+        <ul class="mega-col primary-menu">
+          <li data-key="tax"><a href="services-taxation.html">Taxation for Businesses</a></li>
+          <li data-key="acct"><a href="services-accounting.html">Accounting &amp; Bookkeeping</a></li>
+          <li data-key="audit"><a href="services-audit.html">Audit &amp; Assurance</a></li>
+          <li data-key="adv"><a href="services-advisory.html">Business Advisory</a></li>
+          <li data-key="start"><a href="services-formation.html">Company Formation &amp; Start-ups</a></li>
+          <li data-key="personal"><a href="services-personal.html">Personal Services</a></li>
+          <li data-key="wealth"><a href="services-wealth.html">Wealth Mgmt &amp; Financial Planning</a></li>
+          <li data-key="spec"><a href="services-specialist.html">Specialist Individual Services</a></li>
+          <li data-key="industry"><a href="services-industry.html">Industry-Specific Services</a></li>
+        </ul>
+
+        <!-- right column: sub-sections, each wrapped in its own .sub-block -->
+        <div class="mega-col sub-menu">
+          
+          <!-- Taxation for Businesses -->
+          <ul class="sub-block" data-key="tax">
+            <li class="sub-header">Taxation for Businesses</li>
+            <li><a href="services-tax-corp.html">Corporate Tax Advisory</a></li>
+            <li><a href="services-tax-vat.html">VAT Compliance &amp; Planning</a></li>
+            <li><a href="services-tax-rd.html">R&amp;D Tax Credits</a></li>
+            <li><a href="services-tax-caps.html">Capital Allowances</a></li>
+            <li><a href="services-tax-intl.html">International Tax</a></li>
+            <li><a href="services-tax-inv.html">Tax Investigations &amp; Disputes</a></li>
+          </ul>
+
+          <!-- Accounting & Bookkeeping -->
+          <ul class="sub-block" data-key="acct">
+            <li class="sub-header">Accounting &amp; Bookkeeping</li>
+            <li><a href="services-acct-cloud.html">Cloud Accounting Solutions</a></li>
+            <li><a href="services-acct-mgmt.html">Management Accounts</a></li>
+            <li><a href="services-acct-statutory.html">Statutory Accounts Preparation</a></li>
+            <li><a href="services-acct-book.html">Bookkeeping Services</a></li>
+            <li><a href="services-acct-payroll.html">Payroll Management</a></li>
+            <li><a href="services-acct-secretarial.html">Company Secretarial Services</a></li>
+          </ul>
+
+          <!-- Audit & Assurance -->
+          <ul class="sub-block" data-key="audit">
+            <li class="sub-header">Audit &amp; Assurance</li>
+            <li><a href="services-audit-statutory.html">Statutory Audits</a></li>
+            <li><a href="services-audit-internal.html">Internal Audits</a></li>
+            <li><a href="services-audit-diligence.html">Due Diligence</a></li>
+            <li><a href="services-audit-special.html">Special Purpose Audits</a></li>
+          </ul>
+
+          <!-- Business Advisory -->
+          <ul class="sub-block" data-key="adv">
+            <li class="sub-header">Business Advisory</li>
+            <li><a href="services-adv-planning.html">Business Planning &amp; Strategy</a></li>
+            <li><a href="services-adv-cashflow.html">Cash Flow Forecasting &amp; Budgeting</a></li>
+            <li><a href="services-adv-valuations.html">Business Valuations</a></li>
+            <li><a href="services-adv-mna.html">Mergers &amp; Acquisitions Support</a></li>
+            <li><a href="services-adv-succession.html">Succession Planning</a></li>
+            <li><a href="services-adv-systems.html">Financial Systems Review</a></li>
+          </ul>
+
+          <!-- Company Formation & Start-ups -->
+          <ul class="sub-block" data-key="start">
+            <li class="sub-header">Company Formation &amp; Start-ups</li>
+            <li><a href="services-start-register.html">Company Registration</a></li>
+            <li><a href="services-start-structure.html">Business Structure Advice</a></li>
+            <li><a href="services-start-plan.html">Business Plan Development Support</a></li>
+          </ul>
+
+          <!-- Personal Services -->
+          <ul class="sub-block" data-key="personal">
+            <li class="sub-header">Personal Services</li>
+            <li><a href="services-personal-sat.html">Self-Assessment Tax Returns</a></li>
+            <li><a href="services-personal-income.html">Income Tax Planning</a></li>
+            <li><a href="services-personal-cgt.html">CGT Advisory</a></li>
+            <li><a href="services-personal-iht.html">IHT Planning</a></li>
+            <li><a href="services-personal-ndom.html">Non-Domicile Tax Advice</a></li>
+            <li><a href="services-personal-property.html">Property Tax Advice</a></li>
+            <li><a href="services-personal-pensions.html">Pension Planning</a></li>
+          </ul>
+
+          <!-- Wealth Mgmt & Financial Planning -->
+          <ul class="sub-block" data-key="wealth">
+            <li class="sub-header">Wealth Mgmt &amp; Financial Planning</li>
+            <li><a href="services-wealth-invest.html">Investment Tax Advice</a></li>
+            <li><a href="services-wealth-estate.html">Estate Planning &amp; Trusts</a></li>
+            <li><a href="services-wealth-expat.html">Expatriate Tax Services</a></li>
+          </ul>
+
+          <!-- Specialist Individual Services -->
+          <ul class="sub-block" data-key="spec">
+            <li class="sub-header">Specialist Individual Services</li>
+            <li><a href="services-spec-hnw.html">High Net Worth Services</a></li>
+            <li><a href="services-spec-rental.html">Rental Income Tax Advice</a></li>
+            <li><a href="services-spec-cis.html">Construction Industry Scheme (CIS)</a></li>
+          </ul>
+
+          <!-- Industry-Specific Services -->
+          <ul class="sub-block" data-key="industry">
+            <li class="sub-header">Industry-Specific Services</li>
+            <li><a href="services-ind-charities.html">Charities &amp; Not-for-Profit</a></li>
+            <li><a href="services-ind-property.html">Property &amp; Real Estate</a></li>
+            <li><a href="services-ind-healthcare.html">Healthcare Professionals</a></li>
+            <li><a href="services-ind-tech.html">Technology &amp; Start-ups</a></li>
+          </ul>
+
+        </div>
+      </li>
+
+      <!-- other nav items -->
+      <li><a href="consultancy.html">Consultancy</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="contact-button">Contact us</a></li>
+    </ul>
+  </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <video class="hero-bg-video" autoplay muted loop playsinline>
+                <source src="Assets/services-hero-background.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
+            <div class="hero-overlay">
+                <div class="container">
+                <div class="hero-text">
+                    <h1>FINANCIAL CLARITY</h1>
+                    <p>Expert accounting solutions tailored for your business success</p>
+                    <a href="#" class="btn btn-primary">Learn more</a>
+                </div>
+                </div>
+            </div>
+            <div class="scroll-down">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services">
+            <div class="container">
+                <h2>Get to know our services.</h2>
+                <div class="services-grid">
+                    <div class="service-card dark">
+                        <div class="service-icon">
+                            <img src="Assets/file-text.svg" alt="Document Icon" />
+                        </div>
+                        <h3>Tax Planning & Preparation</h3>
+                        <p>Strategic tax solutions to minimize liabilities and maximize returns</p>
+                        <a href="#" class="btn btn-secondary">Learn more</a>
+                    </div>
+                    <div class="service-card blue">
+                        <div class="service-icon">
+                            <img src="Assets/chart-pie.svg" alt="Pie-Chart Icon" />
+                        </div>
+                        <h3>Financial Reporting</h3>
+                        <p>Comprehensive financial statements and analysis for informed decisions</p>
+                        <a href="#" class="btn btn-secondary">Learn more</a>
+                    </div>
+                    <div class="service-card green">
+                        <div class="service-icon">
+                            <img src="Assets/chart-column-increasing.svg" alt="Bar-Chart Icon" />
+                        </div>
+                        <h3>Business Advisory</h3>
+                        <p>Expert guidance to optimize operations and drive growth</p>
+                        <a href="#" class="btn btn-secondary">Learn more</a>
+                    </div>
+                    <div class="service-card amber">
+                        <div class="service-icon">
+                            <img src="Assets/calculator.svg" alt="Calculator Icon" />
+                        </div>
+                        <h3>Payroll Services</h3>
+                        <p>Efficient payroll management and compliance solutions</p>
+                        <a href="#" class="btn btn-secondary">Learn more</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Designed for businesses -->
+        <section class="designed-for">
+            <div class="container">
+                <h2>Designed for businesses of all sizes.</h2>
+                <div class="icon-row">
+                    <div class="icon-circle blue">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon-svg blue" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users-round-icon lucide-users-round">
+                            <path d="M18 21a8 8 0 0 0-16 0"/>
+                            <circle cx="10" cy="8" r="5"/>
+                            <path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3"/>
+                        </svg>
+                    </div>
+                    <div class="icon-circle green">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon-svg green" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-text-icon lucide-file-text">
+                            <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/>
+                        </svg>
+                    </div>
+                    <div class="icon-circle amber">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon-svg amber" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calculator-icon lucide-calculator">
+                            <rect width="16" height="20" x="4" y="2" rx="2"/>
+                            <line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/>
+                            <path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/>
+                        </svg>
+                    </div>
+                    <div class="icon-circle purple">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon-svg purple" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chart-pie-icon lucide-chart-pie">
+                            <path d="M21 12c.552 0 1.005-.449.95-.998a10 10 0 0 0-8.953-8.951c-.55-.055-.998.398-.998.95v8a1 1 0 0 0 1 1z"/><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/>
+                        </svg>
+                    </div>
+                    <div class="icon-circle red">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon-svg red" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chart-column-increasing-icon lucide-chart-column-increasing">
+                            <path d="M13 17V9"/><path d="M18 17V5"/><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M8 17v-3"/>
+                        </svg>
+                    </div>
+                </div>
+                <a href="#" class="btn btn-primary">Find your solution</a>
+            </div>
+        </section>
+
+        <!-- Packages Section -->
+        <section class="packages">
+            <div class="container1">
+                <div class="section-header">
+                    <h2>Explore our packages.</h2>
+                    <a href="#" class="section-link">
+                        View all packages
+                        <span>→</span>
+                    </a>
+                </div>
+                <div class="packages-grid">
+                    <div class="package-card">
+                        <h3>Starter</h3>
+                        <p>For small businesses and startups</p>
+                        <a href="#" class="btn btn-primary">Select</a>
+                    </div>
+                    <div class="package-card">
+                        <h3>Professional</h3>
+                        <p>For growing businesses</p>
+                        <a href="#" class="btn btn-primary">Select</a>
+                    </div>
+                    <div class="package-card">
+                        <h3>Enterprise</h3>
+                        <p>For established companies</p>
+                        <a href="#" class="btn btn-primary">Select</a>
+                    </div>
+                    <div class="package-card">
+                        <h3>Custom</h3>
+                        <p>Tailored to your specific needs</p>
+                        <a href="#" class="btn btn-primary">Select</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Closer Look Section -->
+        <section class="closer-look">
+            <div class="container">
+                <div class="closer-look-content">
+                    <div class="closer-look-box">
+                        <div class="closer-look-text">
+                            <h2>A closer look at our approach</h2>
+                            <p>We combine industry expertise with personalized service to deliver exceptional financial solutions.</p>
+                            <a href="#" class="btn btn-primary" onclick="return openCalendly()">Schedule a consultation</a>
+                        </div>
+                    </div>
+                    <div class="closer-look-video">
+                        <video autoplay muted loop playsinline>
+                            <source src="Assets/closer-look-video.mp4" type="video/mp4" />
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Citiline Section -->
+        <section class="why-citiline">
+            <div class="container">
+                <h2>Why Citiline is the best choice for your business</h2>
+                <div class="benefits-grid">
+                    <div class="benefit">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users-icon lucide-users"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg>
+                        <h3>Expert Team</h3>
+                        <p>Certified professionals with years of experience</p>
+                    </div>
+                    <div class="benefit">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock-icon lucide-clock"><path d="M12 6v6l4 2"/><circle cx="12" cy="12" r="10"/></svg>
+                        <h3>Time Saving</h3>
+                        <p>Focus on your business while we handle the numbers</p>
+                    </div>
+                    <div class="benefit">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-icon lucide-shield"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+                        <h3>Compliance</h3>
+                        <p>Stay compliant with all regulations and deadlines</p>
+                    </div>
+                    <div class="benefit">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar-icon lucide-calendar"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
+                        <h3>Year-round Support</h3>
+                        <p>Not just at tax time - we're here all year</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Essentials Section -->
+        <section class="essentials">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Accounting essentials.</h2>
+                    <a href="#" class="section-link">
+                        View all resources
+                        <span>→</span>
+                    </a>
+                </div>
+                <div class="essentials-grid">
+                    <div class="essential-card">
+                        <h3>Tax Guides & Resources</h3>
+                        <p>Comprehensive guides to help you navigate complex tax regulations</p>
+                        <a href="#" class="section-link">
+                            Explore guides
+                            <span>→</span>
+                        </a>
+                    </div>
+                    <div class="essential-card">
+                        <h3>Financial Templates</h3>
+                        <p>Ready-to-use templates for budgeting, forecasting, and financial planning</p>
+                        <a href="#" class="section-link">
+                            Download templates
+                            <span>→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Integration Partners -->
+        <section class="integrations">
+            <div class="container">
+                <h2>Integration partners.</h2>
+                <div class="integrations-grid">
+                    <div class="integration">
+                        <img src="Assets/erasebg-transformed.png" alt="QuickBooks logo">
+                        <div class="integration-content">
+                            <h3>QuickBooks Integration</h3>
+                            <p>Seamless integration with QuickBooks for efficient bookkeeping</p>
+                        </div>
+                    </div>
+                    <div class="integration">
+                        <img src="Assets/xero-logo.png" alt="Xero logo">
+                        <div class="integration-content">
+                            <h3>Xero Partnership</h3>
+                            <p>Certified Xero advisors to help optimize your accounting workflow</p>
+                        </div>
+                    </div>
+                    <div class="integration">
+                        <img src="Assets/sage-logo.png" alt="Sage logo">
+                        <div class="integration-content">
+                            <h3>Sage Solutions</h3>
+                            <p>Expert implementation and support for Sage accounting software</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <div class="logo-icon"></div>
+                        <span>Citiline Accountants</span>
+                    </a>
+                    <p>Professional accounting services for businesses of all sizes</p>
+                    <div style="display: flex; gap: 1rem;">
+                        <div style="width: 20px; height: 20px; background: #333;"></div>
+                        <div style="width: 20px; height: 20px; background: #333;"></div>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Tax Planning</a></li>
+                        <li><a href="#">Bookkeeping</a></li>
+                        <li><a href="#">Financial Reporting</a></li>
+                        <li><a href="#">Business Advisory</a></li>
+                        <li><a href="#">Payroll Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Tax Guides</a></li>
+                        <li><a href="#">Financial Templates</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Calculators</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Team</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Citiline Accountants. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Javascript -->
+    <script src="/javascript/script.js"></script>
+    
+    <!-- Calendly Widget -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+    
+</body>
+</html>

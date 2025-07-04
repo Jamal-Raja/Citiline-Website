@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+
+/* ================================
+   Base Navbar & Header
+   ================================ */
+header {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100px;
+  z-index: 1000;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0));
+  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  display: flex;
+  align-items: center;
+  border-bottom: 0.5px solid rgba(255,255,255,0.15);
+}
+
+.navbar {
+  width: 100%; max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 70px;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 100px;
+  box-sizing: border-box;
+}
+
+/* ================================
+   Logo, Menu Toggle & Main Links
+   ================================ */
+.logo img { height:90px; object-fit:contain; transition:transform .2s; }
+
+.logo img:hover { transform:scale(1.05) }
+
+.menu-icon { display:none; }
+
+.nav-links {
+  display:flex; gap:4rem; margin-left:auto;
+}
+
+.nav-links li { list-style:none }
+
+.nav-links a {
+  color:#fff; text-decoration:none; font-weight:500;
+  transition:color .2s;
+}
+.nav-links a:hover { color:#00b4d8 }
+
+/* contact button */
+.contact-button {
+  background:#00b4d8; color:#ffffff;
+  padding:.6rem 1.4rem; border-radius:25px;
+  box-shadow:0 3px 6px rgba(0,0,0,0.1);
+  transition:background .2s, transform .2s;
+}
+.contact-button:hover { background:#0096c7; transform:translateY(-2px) }
+.contact-button:active { transform:translateY(1px); box-shadow:0 4px 12px rgba(0,150,199,0.2) }
+
+
+/* ================================
+   Simplified Mega-Menu
+   ================================ */
+.dropdown-menu.mega {
+  display: none;               /* hidden by default */
+  position: absolute;
+  top: 100px; left: 50%;
+  transform: translateX(-50%);
+  width: 90vw; max-width: 1300px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  font-family: 'Montserrat', sans-serif;
+  color: #333;
+  overflow: hidden;
+}
+
+/* show when parent has .open */
+.dropdown.open > .dropdown-menu.mega {
+  display: flex;
+}
+
+/* two-column flex wrapper */
+.mega-wrapper {
+  display: flex; width:100%; 
+  gap: 2rem;
+  z-index: 1;
+}
+
+/* left column */
+.primary-menu {
+  flex: 1;
+  border-right:1px solid rgba(0,0,0,0.1);
+  
+}
+
+/* right column */
+.sub-menu {
+  flex: 1.5;
+}
+
+/* strip default list styles */
+.primary-menu li,
+.sub-menu .sub-block li {
+  margin:0; padding:0; list-style:none;
+}
+
+/* base links */
+.primary-menu a,
+.sub-menu a {
+  display:block;
+  padding:.75rem 1rem;
+  color: #333;
+  text-decoration:none;
+  transition: background .2s, color .2s;
+  border-radius: 4px;
+}
+
+/* hover state */
+.primary-menu a:hover,
+.sub-menu a:hover {
+  font-weight: 600;
+  background: rgba(0,180,216,0.1);
+  color: #00b4d8;
+}
+
+/* mark the active primary item (keeps highlight when submenu open) */
+.primary-menu li.active > a {
+  background: rgba(0,180,216,0.2);
+  color: #00b4d8;
+  font-weight: 600;
+}
+
+/* add a little arrow before the active primary link */
+.primary-menu li.active > a::before {
+  content: '▸';
+  margin-right: .5rem;
+  color: #00b4d8;
+}
+
+/* hide all sub-blocks, show only .active */
+.sub-menu .sub-block { display: none; }
+.sub-menu .sub-block.active { display: block; }
+
+/* slightly indent sub-links */
+.sub-menu .sub-block li a {
+  padding-left: 1.5rem;
+  color: #555;
+}
+
+.mega-wrapper {
+  display: flex;
+  width: 100%;
+  gap: 2rem;
+}
+
+/* cyan circle top-left */
+.mega-wrapper::before {
+  content: "";
+  position: absolute;
+  top: -150px;
+  left: -150px;
+  width: 400px;
+  height: 400px;
+  background: rgba(0, 180, 216, 0.2);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+/* gold circle bottom-right */
+.mega-wrapper::after {
+  content: "";
+  position: absolute;
+  bottom: -200px;
+  right: -200px;
+  width: 500px;
+  height: 500px;
+  background: rgba(255, 119, 0, 0.066);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+/* left column now holds a video */
+.mega-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mega-video {
+  max-width: 100%;
+  max-height: 300px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  object-fit: cover;
+}
+
+/* shrink on mobile */
+@media (max-width: 768px) {
+  .mega-video {
+    max-height: 200px;
+  }
+}
+
+/*  ──────────────────────────────────────────────────────────
+    VIDEO PREVIEW WRAPPER
+    ────────────────────────────────────────────────────────── */
+.mega-preview {
+  position: relative;
+  width: 300px;               /* adjust to your desired size */
+  height: 300px;              /* keep square or tweak */
+  margin-right: 2rem;         /* space from your menu */
+  border: 4px solid rgba(0, 180, 216, 0.8);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  flex-shrink: 0;             /* so it never shrinks in the flex layout */
+}
+
+.mega-preview video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 4px;
+}
+
+/* soft “glow” underneath the video */
+.mega-preview::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 16px;
+  background: radial-gradient(
+    circle at center,
+    rgba(0,180,216,0.6),
+    transparent 70%
+  );
+  filter: blur(8px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* responsive tweak */
+@media (max-width: 768px) {
+  .mega-preview {
+    width: 100%;
+    height: auto;
+    margin: 0 0 1rem 0;
+  }
+  .mega-preview video {
+    height: auto;
+  }
+}
+
+/* ================================
+   Responsive (Mobile)
+   ================================ */
+@media (max-width:768px) {
+  .menu-icon { display:block }
+  .logo img { height:50px }
+
+  /* collapse mega-menu into panel */
+  .dropdown-menu.mega {
+    position: static; transform:none;
+    flex-direction:column; padding:1rem;
+    background: rgba(255,255,255,0.97);
+  }
+  .mega-wrapper { flex-direction:column; gap:0 }
+  .primary-menu, .sub-menu {
+    width:100%; margin-bottom:1rem;
+  }
+  .primary-menu a,
+  .sub-menu a {
+    padding:.6rem 1rem;
+    color: #333;
+  }
+}
