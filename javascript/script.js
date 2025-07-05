@@ -9,16 +9,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // — map each key to its video file —
   const videoMap = {
-    all:      '/Assets/videos/all-services.mp4',
-    tax:      '/Assets/videos/taxation.mp4',
-    acct:     '/Assets/videos/accounting.mp4',
-    audit:    '/Assets/videos/audit.mp4',
-    adv:      '/Assets/videos/advisory.mp4',
-    start:    '/Assets/videos/formation.mp4',
-    personal: '/Assets/videos/personal.mp4',
-    wealth:   '/Assets/videos/wealth.mp4',
-    spec:     '/Assets/videos/specialist.mp4',
-    industry: '/Assets/videos/industry.mp4'
+    all:      '../Assets/videos/all-services.mp4',
+    tax:      '../Assets/videos/taxation.mp4',
+    acct:     '../Assets/videos/accounting.mp4',
+    audit:    '../Assets/videos/audit.mp4',
+    adv:      '../Assets/videos/advisory.mp4',
+    start:    '../Assets/videos/formation.mp4',
+    personal: '../Assets/videos/personal.mp4',
+    wealth:   '../Assets/videos/wealth.mp4',
+    spec:     '../Assets/videos/specialist.mp4',
+    industry: '../Assets/videos/industry.mp4'
   };
 
   // helpers
