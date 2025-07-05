@@ -76,23 +76,25 @@ header {
    Simplified Mega-Menu
    ================================ */
 .dropdown-menu.mega {
-  display: none;               /* hidden by default */
+  max-height: 0; /* start hidden */
+  transition: max-height 0.25s ease;
   position: absolute;
   top: 100px; left: 50%;
   transform: translateX(-50%);
   width: 90vw; max-width: 1300px;
   background: #fff;
   border-radius: 8px;
-  padding: 1.5rem;
   box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  font-family: 'Montserrat', sans-serif;
-  color: #333;
-  overflow: hidden;
+  font-family: 'Montserrat', sans-serif; 
+  color: #333; 
+  overflow: hidden; 
 }
 
 /* show when parent has .open */
 .dropdown.open > .dropdown-menu.mega {
   display: flex;
+  max-height: 600px;  
+  padding: 1.5rem;    /* restore vertical padding when open */
 }
 
 /* two-column flex wrapper */
