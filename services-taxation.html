@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Citiline | TEMPLATE PAGE</title>
+    <title>Citiline | Taxation For Businesses</title>
+
+    <!-- Calendly Widget -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/navbar.style.css">
 </head>
@@ -11,16 +16,388 @@
     <!--Header (+ Navbar)-->
     <header id="site-navbar"></header>
 
-    <!-- Main Content -->
-    <main id="main-content-services" role="main">
-        <section class="template" id="template">
-            <!--[INSERT CONTENT HERE]-->
-            <h1>THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST </h1>
-        </section>
-    </main>
+    <!-- Skip to main content for accessibility -->
+  <a href="#taxation-main-content" class="tax-sr-only tax-sr-only-focusable">Skip to main content</a>
 
-    <!-- Javascript -->
+  <!-- Main Content -->
+  <main id="taxation-main-content" role="main">
+    <!-- Hero Section -->
+    <section class="tax-service-hero">
+      <div class="tax-hero-container">
+        <div class="tax-hero-content">
+          
+          <h1>Taxation for Businesses</h1>
+          <p class="tax-hero-subtitle">Maximising your tax efficiency while ensuring full compliance</p>
+          
+          <div class="service-hero-buttons">
+              <a href="#tax-contact-form" class="tax-btn tax-secondary">Contact Us</a>
+            <a href="#" onclick="return openCalendly()" class="tax-btn tax-primary">Book Appointment</a>
+          </div>
+        </div>
+        
+        <div class="tax-hero-video">
+          <div class="tax-video-circle">
+            <video 
+                src="Assets/videos/taxation.mp4" 
+                autoplay 
+                muted 
+                loop 
+                playsinline 
+                poster="path/to/fallback.jpg" 
+                aria-label="Explainer animation about taxation services">
+                Your browser doesn’t support HTML5 video.
+            </video>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Breadcrumb For Navigation-->
+    <div class="tax-breadcrumb">
+        <a href="index.html">Home</a> > <a href="services.html">Services</a> > <span>Taxation for Businesses</span>
+    </div>
+
+    <!-- Services Grid -->
+    <section class="tax-services-grid-section">
+      <div class="tax-container">
+        <div class="tax-services-grid">
+          <div class="tax-service-item">
+            <div class="tax-service-icon">
+              <i class="fas fa-building"></i>
+            </div>
+            <h3>Corporate Tax Advisory</h3>
+            <p>Strategic planning and compliance</p>
+          </div>
+          
+          <div class="tax-service-item">
+            <div class="tax-service-icon">
+              <i class="fas fa-receipt"></i>
+            </div>
+            <h3>VAT Compliance</h3>
+            <p>Returns and planning</p>
+          </div>
+          
+          <div class="tax-service-item">
+            <div class="tax-service-icon">
+              <i class="fas fa-flask"></i>
+            </div>
+            <h3>R&D Tax Credits</h3>
+            <p>Maximise your innovation relief</p>
+          </div>
+          
+          <div class="tax-service-item">
+            <div class="tax-service-icon">
+              <i class="fas fa-tools"></i>
+            </div>
+            <h3>Capital Allowances</h3>
+            <p>Equipment and asset relief</p>
+          </div>
+          
+          <div class="tax-service-item">
+            <div class="tax-service-icon">
+              <i class="fas fa-globe"></i>
+            </div>
+            <h3>International Tax</h3>
+            <p>Cross-border compliance</p>
+          </div>
+          
+          <div class="tax-service-item">
+            <div class="tax-service-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3>Tax Investigations</h3>
+            <p>HMRC dispute resolution</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content Area -->
+    <section class="tax-main-content-section">
+      <div class="tax-container">
+        <div class="tax-content-layout">
+          <!-- Left Column - Main Content -->
+          <div class="tax-main-content">
+            <div class="tax-content-block">
+              <h2>Understanding your needs</h2>
+              <p>
+                Navigating the business taxation landscape requires expertise that comes from years of experience and deep understanding of HMRC requirements. Whether you're looking to optimise your tax position, ensure compliance, or resolve disputes, our team brings the practical legal knowledge and ex-HMRC insight to maximise opportunities while minimising risks.
+              </p>
+              
+              <p>
+                Our business taxation team understands the commercial pressures facing modern businesses. We work closely with our clients and their advisers to deliver practical, cost-effective solutions that align with your business objectives.
+              </p>
+            </div>
+
+            <div class="tax-content-block">
+              <h3>Major transactions typically carried out by our Taxation team include:</h3>
+              <ul class="tax-service-list">
+                <li>
+                  <strong>Corporate Tax Planning:</strong> Strategic advice to minimise corporation tax liabilities while ensuring full compliance with current legislation.
+                </li>
+                <li>
+                  <strong>VAT Advisory:</strong> Comprehensive VAT planning, compliance, and dispute resolution services.
+                </li>
+                <li>
+                  <strong>R&D Tax Credit Claims:</strong> Maximising relief for qualifying research and development activities.
+                </li>
+                <li>
+                  <strong>Capital Allowances:</strong> Optimising tax relief on business assets and equipment purchases.
+                </li>
+                <li>
+                  <strong>International Tax Compliance:</strong> Managing cross-border tax obligations and transfer pricing requirements.
+                </li>
+                <li>
+                  <strong>HMRC Investigations:</strong> Expert representation during tax enquiries and dispute resolution.
+                </li>
+              </ul>
+            </div>
+
+            <!-- Client Reviews -->
+            <div class="tax-reviews-section">
+              <h3>Client Reviews</h3>
+              <div class="tax-review-stars">
+                <span class="tax-stars">★★★★★</span>
+                <span class="tax-rating-text">5.0 out of 5</span>
+              </div>
+              
+              <div class="tax-review-item">
+                <p>"Citiline's taxation team helped us navigate a complex R&D tax credit claim, securing significant relief we didn't know was available. Their ex-HMRC insight made all the difference."</p>
+                <cite>— Manufacturing Director, Tech Solutions Ltd</cite>
+              </div>
+              
+              <div class="tax-review-item">
+                <p>"When we faced an HMRC investigation, Citiline's expertise and calm approach resolved the matter quickly and professionally. Highly recommended."</p>
+                <cite>— Finance Director, Growth Ventures</cite>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column - Sidebar -->
+          <aside class="tax-sidebar">
+            <!-- Expert Profile Card -->
+            <div class="tax-expert-card">
+              <div class="tax-expert-image">
+                <img src="/placeholder.svg?height=120&width=120" alt="Senior Tax Adviser" />
+              </div>
+              <div class="tax-expert-info">
+                <h4>Daveena Seepaul</h4>
+                <p class="tax-expert-title">Senior Tax Adviser</p>
+                <div class="tax-expert-rating">
+                  <span class="tax-stars">★★★★★</span>
+                  <span>4.9/5 (127 reviews)</span>
+                </div>
+                <p class="tax-expert-description">
+                  Former HMRC inspector with over 15 years of experience in business taxation and compliance.
+                </p>
+                <a href="#" onclick="return openCalendly()" class="tax-btn tax-expert-btn">Book Consultation</a>
+              </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="tax-contact-form-card" id="tax-contact-form">
+              <h4>Contact our Taxation Team</h4>
+              <form class="tax-enquiry-form">
+                <div class="tax-form-group">
+                  <label for="tax-name">Full Name *</label>
+                  <input type="text" id="tax-name" name="name" required>
+                </div>
+                
+                <div class="tax-form-group">
+                  <label for="tax-email">Email Address *</label>
+                  <input type="email" id="tax-email" name="email" required>
+                </div>
+                
+                <div class="tax-form-group">
+                  <label for="tax-phone">Phone Number</label>
+                  <input type="tel" id="tax-phone" name="phone">
+                </div>
+                
+                <div class="tax-form-group">
+                  <label for="tax-company">Company Name</label>
+                  <input type="text" id="tax-company" name="company">
+                </div>
+                
+                <div class="tax-form-group">
+                  <label for="tax-service">Service Required</label>
+                  <select id="tax-service" name="service">
+                    <option value="">Select a service</option>
+                    <option value="corporate-tax">Corporate Tax Advisory</option>
+                    <option value="vat">VAT Compliance</option>
+                    <option value="rd-credits">R&D Tax Credits</option>
+                    <option value="capital-allowances">Capital Allowances</option>
+                    <option value="international">International Tax</option>
+                    <option value="investigations">Tax Investigations</option>
+                  </select>
+                </div>
+                
+                <div class="tax-form-group">
+                  <label for="tax-message">Message</label>
+                  <textarea id="tax-message" name="message" rows="4" placeholder="Tell us about your requirements..."></textarea>
+                </div>
+                
+                <button type="submit" class="tax-btn tax-form-submit">Send Enquiry</button>
+              </form>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact CTA Section -->
+    <section class="tax-contact-cta">
+      <div class="tax-container">
+        <div class="tax-cta-content">
+          <div class="tax-cta-text">
+            <h3>Ready to talk to one of our tax experts?</h3>
+            <p>Get expert taxation advice tailored to your business needs</p>
+          </div>
+          <div class="tax-cta-contact">
+            <a href="tel:02085149000" class="tax-phone-number">
+              <i class="fas fa-phone"></i>
+              020 8514 9000
+            </a>
+            <a href="#" onclick="return openCalendly()" class="tax-btn tax-cta-btn">Request a Callback</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="tax-team-section">
+      <div class="tax-container">
+        <h2>Meet Our Taxation Team</h2>
+        
+        <div class="tax-team-grid">
+          <div class="tax-team-member">
+            <div class="tax-member-image">
+              <img src="/placeholder.svg?height=200&width=200" alt="Arthur Mullinger" />
+            </div>
+            <div class="tax-member-info">
+              <h4>Arthur Mullinger</h4>
+              <p class="tax-member-title">Senior Partner</p>
+              <p class="tax-member-credentials">ACA, CTA</p>
+              <div class="tax-member-rating">
+                <span class="tax-stars">★★★★★</span>
+                <span>4.9/5</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="tax-team-member">
+            <div class="tax-member-image">
+              <img src="/placeholder.svg?height=200&width=200" alt="Charles Newman" />
+            </div>
+            <div class="tax-member-info">
+              <h4>Charles Newman</h4>
+              <p class="tax-member-title">Tax Director</p>
+              <p class="tax-member-credentials">FCCA, ATT</p>
+              <div class="tax-member-rating">
+                <span class="tax-stars">★★★★★</span>
+                <span>4.8/5</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="tax-team-member">
+            <div class="tax-member-image">
+              <img src="/placeholder.svg?height=200&width=200" alt="Daveena Seepaul" />
+            </div>
+            <div class="tax-member-info">
+              <h4>Daveena Seepaul</h4>
+              <p class="tax-member-title">Senior Tax Adviser</p>
+              <p class="tax-member-credentials">Ex-HMRC, CTA</p>
+              <div class="tax-member-rating">
+                <span class="tax-stars">★★★★★</span>
+                <span>4.9/5</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="tax-team-member">
+            <div class="tax-member-image">
+              <img src="/placeholder.svg?height=200&width=200" alt="Tony Walton" />
+            </div>
+            <div class="tax-member-info">
+              <h4>Tony Walton</h4>
+              <p class="tax-member-title">Tax Manager</p>
+              <p class="tax-member-credentials">ACCA, ATT</p>
+              <div class="tax-member-rating">
+                <span class="tax-stars">★★★★★</span>
+                <span>4.7/5</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tax-team-cta">
+          <a href="about.html" class="tax-btn tax-outline">Meet the full team</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related News Section -->
+    <section class="tax-news-section">
+      <div class="tax-container">
+        <h2>Related News</h2>
+        <p class="tax-news-subtitle">Keeping you up to date</p>
+        
+        <div class="tax-news-grid">
+          <article class="tax-news-item">
+            <div class="tax-news-image">
+              <img src="/placeholder.svg?height=200&width=300" alt="Corporation Tax Changes" />
+            </div>
+            <div class="tax-news-content">
+              <h4>Corporation Tax rate changes for 2024</h4>
+              <p>Understanding the impact of the new corporation tax rates and what businesses need to know for their tax planning.</p>
+              <a href="#" class="tax-read-more">Read more</a>
+            </div>
+          </article>
+          
+          <article class="tax-news-item">
+            <div class="tax-news-image">
+              <img src="/placeholder.svg?height=200&width=300" alt="R&D Tax Credits" />
+            </div>
+            <div class="tax-news-content">
+              <h4>R&D Tax Credit reforms: What you need to know</h4>
+              <p>Recent changes to R&D tax credit legislation and how they affect your business's ability to claim relief.</p>
+              <a href="#" class="tax-read-more">Read more</a>
+            </div>
+          </article>
+          
+          <article class="tax-news-item">
+            <div class="tax-news-image">
+              <img src="/placeholder.svg?height=200&width=300" alt="VAT Updates" />
+            </div>
+            <div class="tax-news-content">
+              <h4>VAT compliance updates for 2024</h4>
+              <p>Key VAT changes affecting businesses and practical steps to ensure continued compliance.</p>
+              <a href="#" class="tax-read-more">Read more</a>
+            </div>
+          </article>
+          
+          <article class="tax-news-item">
+            <div class="tax-news-image">
+              <img src="/placeholder.svg?height=200&width=300" alt="HMRC Investigations" />
+            </div>
+            <div class="tax-news-content">
+              <h4>Handling HMRC investigations effectively</h4>
+              <p>Expert guidance on managing tax investigations and protecting your business interests.</p>
+              <a href="#" class="tax-read-more">Read more</a>
+            </div>
+          </article>
+        </div>
+        
+        <div class="tax-news-cta">
+          <a href="news.html" class="tax-btn tax-outline">View all taxation news</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+    <!-- Scripts -->
     <script src="javascript/script.js"></script>
+    <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
     
 </body>
 </html>
