@@ -1,0 +1,175 @@
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+      <div class="logo">
+        <a href="index.html" aria-label="Citiline Accountants Home">
+          <img
+            src="Assets/citiline_accountants_logo_transparent.png"
+            alt="Citiline Accountants – Chartered Tax Advisers"
+            width="200"
+            height="60"
+          >
+        </a>
+      </div>
+
+      <button class="menu-icon" onclick="toggleMenu()" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks" role="menubar">
+        <!-- Services Dropdown -->
+        <li class="dropdown" role="none">
+          <a href="#" class="has-arrow" role="menuitem" aria-haspopup="true" aria-expanded="false">
+            Our Services
+          </a>
+
+          <!-- Mega Menu Panel -->
+          <div class="dropdown-menu mega" role="menu" aria-label="Services submenu">
+            <div class="mega-wrapper">
+              <!-- Video Preview Column -->
+              <div class="mega-left">
+                <div class="mega-preview">
+                  <video
+                    id="megaPreview"
+                    class="mega-video"
+                    muted
+                    autoplay
+                    loop
+                    playsinline
+                    aria-label="Services preview video"
+                  >
+                    <source src="Assets/videos/preview-video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </div>
+
+              <!-- Primary Services Menu -->
+              <ul class="mega-col primary-menu" role="none">
+                <li data-key="all" role="none">
+                  <a href="services.html" role="menuitem">All Services</a>
+                </li>
+                <li data-key="tax" role="none">
+                  <a href="services-taxation.html" role="menuitem">Taxation for Businesses</a>
+                </li>
+                <li data-key="acct" role="none">
+                  <a href="services-accounting.html" role="menuitem">Accounting &amp; Bookkeeping</a>
+                </li>
+                <li data-key="audit" role="none">
+                  <a href="services-audit.html" role="menuitem">Audit &amp; Assurance</a>
+                </li>
+                <li data-key="adv" role="none">
+                  <a href="services-advisory.html" role="menuitem">Business Advisory</a>
+                </li>
+                <li data-key="start" role="none">
+                  <a href="services-formation.html" role="menuitem">Company Formation &amp; Start-ups</a>
+                </li>
+                <li data-key="personal" role="none">
+                  <a href="services-personal.html" role="menuitem">Personal Services</a>
+                </li>
+                <li data-key="wealth" role="none">
+                  <a href="services-wealth.html" role="menuitem">Wealth Management &amp; Financial Planning</a>
+                </li>
+                <li data-key="spec" role="none">
+                  <a href="services-specialist.html" role="menuitem">Specialist Individual Services</a>
+                </li>
+                <li data-key="industry" role="none">
+                  <a href="services-industry.html" role="menuitem">Industry-Specific Services</a>
+                </li>
+              </ul>
+
+              <!-- Sub-Services Menu -->
+              <div class="mega-col sub-menu">
+                <!-- Taxation for Businesses -->
+                <ul class="sub-block" data-key="tax" role="none">
+                  <li role="none"><a href="services-tax-corp.html" role="menuitem">Corporate Tax Advisory</a></li>
+                  <li role="none"><a href="services-tax-vat.html" role="menuitem">VAT Compliance &amp; Planning</a></li>
+                  <li role="none"><a href="services-tax-rd.html" role="menuitem">R&amp;D Tax Credits</a></li>
+                  <li role="none"><a href="services-tax-caps.html" role="menuitem">Capital Allowances</a></li>
+                  <li role="none"><a href="services-tax-intl.html" role="menuitem">International Tax</a></li>
+                  <li role="none"><a href="services-tax-inv.html" role="menuitem">Tax Investigations &amp; Disputes</a></li>
+                </ul>
+
+                <!-- Accounting & Bookkeeping -->
+                <ul class="sub-block" data-key="acct" role="none">
+                  <li role="none"><a href="services-acct-cloud.html" role="menuitem">Cloud Accounting Solutions</a></li>
+                  <li role="none"><a href="services-acct-mgmt.html" role="menuitem">Management Accounts</a></li>
+                  <li role="none"><a href="services-acct-statutory.html" role="menuitem">Statutory Accounts Preparation</a></li>
+                  <li role="none"><a href="services-acct-book.html" role="menuitem">Bookkeeping Services</a></li>
+                  <li role="none"><a href="services-acct-payroll.html" role="menuitem">Payroll Management</a></li>
+                  <li role="none"><a href="services-acct-secretarial.html" role="menuitem">Company Secretarial Services</a></li>
+                </ul>
+
+                <!-- Audit & Assurance -->
+                <ul class="sub-block" data-key="audit" role="none">
+                  <li role="none"><a href="services-audit-statutory.html" role="menuitem">Statutory Audits</a></li>
+                  <li role="none"><a href="services-audit-internal.html" role="menuitem">Internal Audits</a></li>
+                  <li role="none"><a href="services-audit-diligence.html" role="menuitem">Due Diligence</a></li>
+                  <li role="none"><a href="services-audit-special.html" role="menuitem">Special Purpose Audits</a></li>
+                </ul>
+
+                <!-- Business Advisory -->
+                <ul class="sub-block" data-key="adv" role="none">
+                  <li role="none"><a href="services-adv-planning.html" role="menuitem">Business Planning &amp; Strategy</a></li>
+                  <li role="none"><a href="services-adv-cashflow.html" role="menuitem">Cash Flow Forecasting &amp; Budgeting</a></li>
+                  <li role="none"><a href="services-adv-valuations.html" role="menuitem">Business Valuations</a></li>
+                  <li role="none"><a href="services-adv-mna.html" role="menuitem">Mergers &amp; Acquisitions Support</a></li>
+                  <li role="none"><a href="services-adv-succession.html" role="menuitem">Succession Planning</a></li>
+                  <li role="none"><a href="services-adv-systems.html" role="menuitem">Financial Systems Review</a></li>
+                </ul>
+
+                <!-- Company Formation & Start-ups -->
+                <ul class="sub-block" data-key="start" role="none">
+                  <li role="none"><a href="services-start-register.html" role="menuitem">Company Registration</a></li>
+                  <li role="none"><a href="services-start-structure.html" role="menuitem">Business Structure Advice</a></li>
+                  <li role="none"><a href="services-start-plan.html" role="menuitem">Business Plan Development Support</a></li>
+                </ul>
+
+                <!-- Personal Services -->
+                <ul class="sub-block" data-key="personal" role="none">
+                  <li role="none"><a href="services-personal-sat.html" role="menuitem">Self-Assessment Tax Returns</a></li>
+                  <li role="none"><a href="services-personal-income.html" role="menuitem">Income Tax Planning</a></li>
+                  <li role="none"><a href="services-personal-cgt.html" role="menuitem">CGT Advisory</a></li>
+                  <li role="none"><a href="services-personal-iht.html" role="menuitem">IHT Planning</a></li>
+                  <li role="none"><a href="services-personal-ndom.html" role="menuitem">Non-Domicile Tax Advice</a></li>
+                  <li role="none"><a href="services-personal-property.html" role="menuitem">Property Tax Advice</a></li>
+                  <li role="none"><a href="services-personal-pensions.html" role="menuitem">Pension Planning</a></li>
+                </ul>
+
+                <!-- Wealth Management & Financial Planning -->
+                <ul class="sub-block" data-key="wealth" role="none">
+                  <li role="none"><a href="services-wealth-invest.html" role="menuitem">Investment Tax Advice</a></li>
+                  <li role="none"><a href="services-wealth-estate.html" role="menuitem">Estate Planning &amp; Trusts</a></li>
+                  <li role="none"><a href="services-wealth-expat.html" role="menuitem">Expatriate Tax Services</a></li>
+                </ul>
+
+                <!-- Specialist Individual Services -->
+                <ul class="sub-block" data-key="spec" role="none">
+                  <li role="none"><a href="services-spec-cis.html" role="menuitem">Construction Industry Scheme (CIS)</a></li>
+                  <li role="none"><a href="services-spec-hnw.html" role="menuitem">High Net Worth Services</a></li>
+                  <li role="none"><a href="services-spec-rental.html" role="menuitem">Rental Income Tax Advice</a></li>
+                </ul>
+
+                <!-- Industry-Specific Services -->
+                <ul class="sub-block" data-key="industry" role="none">
+                  <li role="none"><a href="services-ind-property.html" role="menuitem">Property &amp; Real Estate</a></li>
+                  <li role="none"><a href="services-ind-healthcare.html" role="menuitem">Healthcare Professionals</a></li>
+                  <li role="none"><a href="services-ind-tech.html" role="menuitem">Technology &amp; Start-ups</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- Other Navigation Items -->
+        <li role="none">
+            <a href="about.html" role="menuitem">About</a>
+        </li>
+        <li role="none">
+          <a href="consultancy.html" role="menuitem">Media Centre</a>
+        </li>
+        <li role="none">
+          <a href="contact.html" class="contact-button" role="menuitem">Contact us</a>
+        </li>
+      </ul>
+    </nav>

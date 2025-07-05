@@ -9,141 +9,8 @@
     <link rel="stylesheet" href="css/navbar.style.css">
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <nav class="navbar">
-  <div class="logo">
-    <a href="index.html">
-      <img
-        src="Assets/citiline_accountants_logo_transparent.png"
-        alt="Citiline Accountants – Chartered Tax Advisers Logo"
-      >
-    </a>
-  </div>
-
-  <div class="menu-icon" onclick="toggleMenu()"></div>
-
-  <ul class="nav-links" id="navLinks">
-    <!-- SERVICES DROPDOWN -->
-    <li class="dropdown">
-      <a href="services.html" class="has-arrow">Services</a>
-
-      <!-- Mega-menu panel -->
-      <div class="dropdown-menu mega">
-        
-        <!-- left column: top-level service titles -->
-        <ul class="mega-col primary-menu">
-          <li data-key="tax"><a href="services-taxation.html">Taxation for Businesses</a></li>
-          <li data-key="acct"><a href="services-accounting.html">Accounting &amp; Bookkeeping</a></li>
-          <li data-key="audit"><a href="services-audit.html">Audit &amp; Assurance</a></li>
-          <li data-key="adv"><a href="services-advisory.html">Business Advisory</a></li>
-          <li data-key="start"><a href="services-formation.html">Company Formation &amp; Start-ups</a></li>
-          <li data-key="personal"><a href="services-personal.html">Personal Services</a></li>
-          <li data-key="wealth"><a href="services-wealth.html">Wealth Mgmt &amp; Financial Planning</a></li>
-          <li data-key="spec"><a href="services-specialist.html">Specialist Individual Services</a></li>
-          <li data-key="industry"><a href="services-industry.html">Industry-Specific Services</a></li>
-        </ul>
-
-        <!-- right column: sub-sections, each wrapped in its own .sub-block -->
-        <div class="mega-col sub-menu">
-          
-          <!-- Taxation for Businesses -->
-          <ul class="sub-block" data-key="tax">
-            <li class="sub-header">Taxation for Businesses</li>
-            <li><a href="services-tax-corp.html">Corporate Tax Advisory</a></li>
-            <li><a href="services-tax-vat.html">VAT Compliance &amp; Planning</a></li>
-            <li><a href="services-tax-rd.html">R&amp;D Tax Credits</a></li>
-            <li><a href="services-tax-caps.html">Capital Allowances</a></li>
-            <li><a href="services-tax-intl.html">International Tax</a></li>
-            <li><a href="services-tax-inv.html">Tax Investigations &amp; Disputes</a></li>
-          </ul>
-
-          <!-- Accounting & Bookkeeping -->
-          <ul class="sub-block" data-key="acct">
-            <li class="sub-header">Accounting &amp; Bookkeeping</li>
-            <li><a href="services-acct-cloud.html">Cloud Accounting Solutions</a></li>
-            <li><a href="services-acct-mgmt.html">Management Accounts</a></li>
-            <li><a href="services-acct-statutory.html">Statutory Accounts Preparation</a></li>
-            <li><a href="services-acct-book.html">Bookkeeping Services</a></li>
-            <li><a href="services-acct-payroll.html">Payroll Management</a></li>
-            <li><a href="services-acct-secretarial.html">Company Secretarial Services</a></li>
-          </ul>
-
-          <!-- Audit & Assurance -->
-          <ul class="sub-block" data-key="audit">
-            <li class="sub-header">Audit &amp; Assurance</li>
-            <li><a href="services-audit-statutory.html">Statutory Audits</a></li>
-            <li><a href="services-audit-internal.html">Internal Audits</a></li>
-            <li><a href="services-audit-diligence.html">Due Diligence</a></li>
-            <li><a href="services-audit-special.html">Special Purpose Audits</a></li>
-          </ul>
-
-          <!-- Business Advisory -->
-          <ul class="sub-block" data-key="adv">
-            <li class="sub-header">Business Advisory</li>
-            <li><a href="services-adv-planning.html">Business Planning &amp; Strategy</a></li>
-            <li><a href="services-adv-cashflow.html">Cash Flow Forecasting &amp; Budgeting</a></li>
-            <li><a href="services-adv-valuations.html">Business Valuations</a></li>
-            <li><a href="services-adv-mna.html">Mergers &amp; Acquisitions Support</a></li>
-            <li><a href="services-adv-succession.html">Succession Planning</a></li>
-            <li><a href="services-adv-systems.html">Financial Systems Review</a></li>
-          </ul>
-
-          <!-- Company Formation & Start-ups -->
-          <ul class="sub-block" data-key="start">
-            <li class="sub-header">Company Formation &amp; Start-ups</li>
-            <li><a href="services-start-register.html">Company Registration</a></li>
-            <li><a href="services-start-structure.html">Business Structure Advice</a></li>
-            <li><a href="services-start-plan.html">Business Plan Development Support</a></li>
-          </ul>
-
-          <!-- Personal Services -->
-          <ul class="sub-block" data-key="personal">
-            <li class="sub-header">Personal Services</li>
-            <li><a href="services-personal-sat.html">Self-Assessment Tax Returns</a></li>
-            <li><a href="services-personal-income.html">Income Tax Planning</a></li>
-            <li><a href="services-personal-cgt.html">CGT Advisory</a></li>
-            <li><a href="services-personal-iht.html">IHT Planning</a></li>
-            <li><a href="services-personal-ndom.html">Non-Domicile Tax Advice</a></li>
-            <li><a href="services-personal-property.html">Property Tax Advice</a></li>
-            <li><a href="services-personal-pensions.html">Pension Planning</a></li>
-          </ul>
-
-          <!-- Wealth Mgmt & Financial Planning -->
-          <ul class="sub-block" data-key="wealth">
-            <li class="sub-header">Wealth Mgmt &amp; Financial Planning</li>
-            <li><a href="services-wealth-invest.html">Investment Tax Advice</a></li>
-            <li><a href="services-wealth-estate.html">Estate Planning &amp; Trusts</a></li>
-            <li><a href="services-wealth-expat.html">Expatriate Tax Services</a></li>
-          </ul>
-
-          <!-- Specialist Individual Services -->
-          <ul class="sub-block" data-key="spec">
-            <li class="sub-header">Specialist Individual Services</li>
-            <li><a href="services-spec-hnw.html">High Net Worth Services</a></li>
-            <li><a href="services-spec-rental.html">Rental Income Tax Advice</a></li>
-            <li><a href="services-spec-cis.html">Construction Industry Scheme (CIS)</a></li>
-          </ul>
-
-          <!-- Industry-Specific Services -->
-          <ul class="sub-block" data-key="industry">
-            <li class="sub-header">Industry-Specific Services</li>
-            <li><a href="services-ind-charities.html">Charities &amp; Not-for-Profit</a></li>
-            <li><a href="services-ind-property.html">Property &amp; Real Estate</a></li>
-            <li><a href="services-ind-healthcare.html">Healthcare Professionals</a></li>
-            <li><a href="services-ind-tech.html">Technology &amp; Start-ups</a></li>
-          </ul>
-
-        </div>
-      </li>
-
-      <!-- other nav items -->
-      <li><a href="consultancy.html">Consultancy</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html" class="contact-button">Contact us</a></li>
-    </ul>
-  </nav>
-    </header>
+    <!--Header (+ Navbar)-->
+    <header id="site-navbar"></header>
 
     <main>
         <!-- Hero Section -->
@@ -451,7 +318,6 @@
     <!-- Calendly Widget -->
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-
     
 </body>
 </html>
