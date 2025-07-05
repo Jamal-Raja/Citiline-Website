@@ -364,7 +364,7 @@ footer {
 
 /* === PARALLAX BACKGROUND STYLE === */
 .parallax-bg {
-  background-image: url('/citiline-website/Assets/parrallax-background.jpg');
+  background-image: url('citiline-website/Assets/parrallax-background.jpg');
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
