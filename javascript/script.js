@@ -74,7 +74,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const newSrc = videoMap[key] || videoMap.all;
       sourceEl.src = newSrc;
       videoEl.load();
-      videoEl.play();
+      videoEl
+        .play()
+        .catch(() => {});          // swallow the abort
     });
   });
 
