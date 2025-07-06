@@ -230,7 +230,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
 
-      const articles = data.items.slice(0, 9);
+      const articles = data.items.slice(0, 6);
 
       articles.forEach(item => {
         const article = document.createElement("article");
