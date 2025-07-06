@@ -835,22 +835,52 @@ footer {
 /* Taxation Services Page Styles */
 
 /* Hero Section */
-.tax-service-hero {
+.services-hero {
   background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
   color: white;
-  padding: 120px 0 80px;
+  padding: 0;
+  margin: 100px 0 0 0;
   position: relative;
   overflow: hidden;
 }
 
-.tax-hero-container {
+.service-hero-container {
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+  margin: 0;
+  padding: 0;
+  height: 52vh;
+  min-height: 0px;  
+  max-width: none;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
+  align-items: stretch;
+}
+
+.service-hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 77px 10px;
+  color: white;
+}
+
+.service-hero-content h1 {
+  font-size: 36px;               
+  line-height: 1.2;                
+  background-color: #000;          /* solid black behind the text */
+  color: #fff;                     
+  display: inline-block;           /* shrink-wrap the background to the text */
+  padding: 0.5rem 1rem;            /* breathing room around the letters */
+  margin-bottom: 20px;             /* space before the subtitle */
+  width: auto;                  /* let the width adjust to the text */
+}
+
+.service-subtitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  opacity: 0.9;
 }
 
 .tax-breadcrumb {
@@ -874,19 +904,6 @@ footer {
 
 .tax-breadcrumb a:hover {
   text-decoration: underline;
-}
-
-.tax-service-hero h1 {
-  font-size: 3.5rem;
-  font-weight: 700;
-  margin-bottom: 20px;
-  line-height: 1.2;
-}
-
-.tax-hero-subtitle {
-  font-size: 1.25rem;
-  margin-bottom: 30px;
-  opacity: 0.9;
 }
 
 .service-hero-buttons {
@@ -927,24 +944,30 @@ footer {
 }
 
 .tax-hero-video {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.tax-video-circle {
-  width: 400px;
-  height: 400px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 6px solid var(--main-colour);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-}
-
-.tax-video-circle video {
+  position: relative;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  overflow: hidden;
+}
+
+.tax-hero-video::after {
+  content: "";
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);  /* tiny dark overlay */
+  pointer-events: none;             /* so it doesn’t catch any clicks */
+}
+
+.tax-hero-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       /* fills, cropping as needed */
+  object-position: center; /* centres the focal point */
+  display: block;          /* removes inline spacing */
+  filter: contrast(1.05) brightness(1.05);
 }
 
 /* Services Grid */
@@ -1465,13 +1488,16 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .tax-hero-container {
+  .service-hero-container {
     grid-template-columns: 1fr;
-    gap: 40px;
-    text-align: center;
+    height: auto;
   }
 
-  .tax-service-hero h1 {
+  .tax-hero-video {
+    height: 300px;
+  }
+
+  .services-hero h1 {
     font-size: 2.5rem;
   }
 
