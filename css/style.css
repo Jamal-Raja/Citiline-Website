@@ -861,7 +861,7 @@ footer {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  padding: 0 77px 10px;
+  padding: 20px 77px 20px;
   color: white;
 }
 
@@ -884,14 +884,19 @@ footer {
 }
 
 .tax-breadcrumb {
+  position: relative;      
+  width: 100vw;            
+  left: 50%;               
+  transform: translateX(-50%); 
+  background: white;
+  padding: 10px 140px;
   font-size: 14px;
   font-weight: bold;
   opacity: 0.8;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  margin-top: 10px;
+  max-width: none;
+  margin: 0;
 }
+
 
 .tax-breadcrumb a {
   color: black;
@@ -969,7 +974,7 @@ footer {
 /* Services Grid */
 .tax-services-grid-section {
   padding: 80px 0;
-  background: #f8fafc;
+  background: white;
 }
 
 .tax-container {
@@ -992,7 +997,7 @@ footer {
 }
 
 .tax-service-item {
-  background: white;
+  background: #f8fafc;
   padding: 30px;
   border-radius: 12px;
   text-align: center;
@@ -1061,6 +1066,7 @@ footer {
 /* Main Content Layout */
 .tax-main-content-section {
   padding: 80px 0;
+  background: white;
 }
 
 .tax-content-layout {
@@ -1184,11 +1190,36 @@ footer {
 /* Expert Card */
 .tax-expert-card {
   background: white;
+  border: 1px solid #3b82f6;            /* your brand-blue border as default */
   border-radius: 12px;
   padding: 30px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   text-align: center;
+
+  /* default (previous hover) shadow */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+
+  /* smooth transitions */
+  transition: transform 0.3s ease,
+              box-shadow 0.3s ease,
+              border-color 0.3s ease;
 }
+
+.tax-expert-card:hover {
+  transform: translateY(-5px) scale(1.02);   /* lift + slight pop */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);/* deeper shadow */
+  border-color: #1e40af;                     /* darker-blue border */
+}
+
+/* keep your image accent if you like */
+.tax-expert-card .tax-expert-image img {
+  border: 2px solid #3b82f6;
+  transition: border-color 0.3s ease;
+}
+
+.tax-expert-card:hover .tax-expert-image img {
+  border-color: #1e40af;
+}
+
 
 .tax-expert-image {
   margin-bottom: 20px;
@@ -1244,10 +1275,55 @@ footer {
 /* Contact Form Card */
 .tax-contact-form-card {
   background: white;
+  border: 1px solid #dc2626;                /* default strong red border */
   border-radius: 12px;
   padding: 30px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);/* default lifted shadow */
+  transition: transform 0.3s ease,
+              box-shadow 0.3s ease,
+              border-color 0.3s ease;
+  text-align: left;
 }
+
+/* Hover state – lift and deepen */
+.tax-contact-form-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  border-color: #991b1b;                    /* darker red on hover */
+}
+
+/* Keep headings consistent */
+.tax-contact-form-card h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #1e3a8a;
+}
+
+/* Inputs remain same but accent on focus in red */
+.tax-form-group input:focus,
+.tax-form-group select:focus,
+.tax-form-group textarea:focus {
+  outline: none;
+  border-color: #dc2626;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+/* Submit button default red to match border */
+.tax-form-submit {
+  background: #dc2626;
+  color: white;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+/* Darker red on hover */
+.tax-form-submit:hover {
+  background: #991b1b;
+}
+
 
 .tax-contact-form-card h4 {
   font-size: 1.25rem;
@@ -1416,7 +1492,7 @@ footer {
 /* Team Section */
 .tax-team-section {
   padding: 80px 0;
-  background: #f8fafc;
+  background: white;
 }
 
 .tax-team-section h2 {
@@ -1504,6 +1580,7 @@ footer {
 /* News Section */
 .tax-news-section {
   padding: 80px 0;
+  background: white;
 }
 
 .tax-news-section h2 {
@@ -1522,25 +1599,25 @@ footer {
 
 .tax-news-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
   margin-bottom: 40px;
 }
 
 .tax-news-item {
   background: white;
-  border-radius: 12px;
+  border-radius: 0;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: none;
   transition: transform 0.3s ease;
 }
 
 .tax-news-item:hover {
-  transform: translateY(-5px);
+  transform: translateY(-3px);
 }
 
 .tax-news-image {
-  height: 200px;
+  height: 220px;
   overflow: hidden;
 }
 
@@ -1548,40 +1625,56 @@ footer {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
 .tax-news-content {
-  padding: 20px;
+  padding: 15px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tax-news-content time {
+  font-size: 0.85rem;
+  color: #6b7280;
+  font-weight: 500;
 }
 
 .tax-news-content h4 {
-  font-size: 1.125rem;
-  font-weight: 600;
-  margin-bottom: 10px;
-  color: #1e3a8a;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+  line-height: 1.4;
 }
 
 .tax-news-content p {
-  color: #64748b;
-  font-size: 14px;
-  line-height: 1.6;
-  margin-bottom: 15px;
+  color: #4b5563;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
 }
 
 .tax-read-more {
-  color: #3b82f6;
-  text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
+  color: #1e40af;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 0.9rem;
+  text-decoration: none;
 }
 
 .tax-read-more:hover {
   text-decoration: underline;
+  color: #1d4ed8;
 }
 
 .tax-news-cta {
   text-align: center;
+  margin-top: 40px;
 }
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
