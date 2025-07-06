@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
         video.classList.add('fade-in');
         video.play().catch(err => console.error('Playback error:', err));
       };
-    }, 100);
+    }, 200);
   }
   video.addEventListener('ended', playNextVideo);
 });
