@@ -220,89 +220,83 @@ document.addEventListener("DOMContentLoaded", function () {
   const feedUrl = encodeURIComponent("https://www.gov.uk/government/organisations/hm-revenue-customs.atom");
   const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${feedUrl}`;
 
-  container.innerHTML = "";
+  const cacheKey = "hmrcNewsCache";
+  const cacheTimeKey = "hmrcNewsCacheExpiry";
+  const now = Date.now();
+  const oneHour = 60 * 60 * 1000;
 
-  fetch(apiUrl)
-    .then(response => response.json())
-    .then(data => {
-      if (data.status !== "ok" || !data.items) {
-        container.innerHTML = "<p>No news available at the moment.</p>";
-        return;
-      }
+  const cached = localStorage.getItem(cacheKey);
+  const cachedTime = localStorage.getItem(cacheTimeKey);
 
-      const articles = data.items.slice(0, 6);
-
-      articles.forEach(item => {
-        const article = document.createElement("article");
-        article.className = "tax-news-item";
-
-        // ✅ Flattened image detection logic
-        let imageUrl = "Assets/news-feed-images/news-default.png";
-        const title = item.title.toLowerCase();
-
-        if (title.includes("vat")) {
-          imageUrl = "Assets/news-feed-images/vat.png";
-        } else if (title.includes("corporation tax") || title.includes("company tax")) {
-          imageUrl = "Assets/news-feed-images/corporation-tax.png";
-        } else if (title.includes("self assessment") || title.includes("self-assessment")) {
-          imageUrl = "Assets/news-feed-images/self-assessment.png";
-        } else if (title.includes("money laundering") || title.includes("criminal finance")) {
-          imageUrl = "Assets/news-feed-images/money-laundering.png";
-        } else if (title.includes("hmrc contact") || title.includes("scam") || title.includes("phishing") || title.includes("fraud")) {
-          imageUrl = "Assets/news-feed-images/security.png";
-        } else if (title.includes("pay tables") || title.includes("payroll") || title.includes("wages")) {
-          imageUrl = "Assets/news-feed-images/payroll.jpg";
-        } else if (title.includes("compliance") || title.includes("guidelines") || title.includes("standards")) {
-          imageUrl = "Assets/news-feed-images/compliance.jpg";
-        } else if (title.includes("tax return") || title.includes("submit return") || title.includes("file return")) {
-          imageUrl = "Assets/news-feed-images/tax-return.jpg";
-        } else if (title.includes("penalty") || title.includes("penalties") || title.includes("fine") || title.includes("interest charge") || title.includes("late filing")) {
-          imageUrl = "Assets/news-feed-images/penalty.jpg";
-        } else if (title.includes("budget") || title.includes("statement") || title.includes("obr") || title.includes("spring statement")) {
-          imageUrl = "Assets/news-feed-images/budget.jpg";
-        } else if (title.includes("registration") || title.includes("registered") || title.includes("register")) {
-          imageUrl = "Assets/news-feed-images/registration.jpg";
-        } else if (title.includes("r&d") || title.includes("research and development")) {
-          imageUrl = "Assets/news-feed-images/rd-tax.jpg";
-        } else if (title.includes("making tax digital") || title.includes("mtd")) {
-          imageUrl = "Assets/news-feed-images/mtd.jpg";
-        } else if (title.includes("covid") || title.includes("coronavirus")) {
-          imageUrl = "Assets/news-feed-images/covid-support.jpg";
-        } else if (title.includes("expenses") || title.includes("deductions") || title.includes("allowable expenses")) {
-          imageUrl = "Assets/news-feed-images/expenses.jpg";
-        } else if (title.includes("capital gains") || title.includes("cgt")) {
-          imageUrl = "Assets/news-feed-images/capital-gains.jpg";
-        } else if (title.includes("inheritance tax") || title.includes("iht")) {
-          imageUrl = "Assets/news-feed-images/inheritance-tax.jpg";
-        } else if (title.includes("dividends") || title.includes("dividend tax")) {
-          imageUrl = "Assets/news-feed-images/dividends.jpg";
-        } else if (title.includes("employment") || title.includes("paye")) {
-          imageUrl = "Assets/news-feed-images/employment.jpg";
-        } else if (title.includes("national insurance") || title.includes("ni contributions")) {
-          imageUrl = "Assets/news-feed-images/national-insurance.jpg";
-        } else if (title.includes("cash flow") || title.includes("forecast")) {
-          imageUrl = "Assets/news-feed-images/cash-flow.jpg";
-        } else if (title.includes("investment") || title.includes("investor") || title.includes("eis")) {
-          imageUrl = "Assets/news-feed-images/investment.jpg";
+  if (cached && cachedTime && now - cachedTime < oneHour) {
+    renderNews(JSON.parse(cached));
+  } else {
+    fetch(apiUrl)
+      .then(response => response.json())
+      .then(data => {
+        if (data.status === "ok" && data.items) {
+          localStorage.setItem(cacheKey, JSON.stringify(data));
+          localStorage.setItem(cacheTimeKey, now);
+          renderNews(data);
+        } else {
+          container.innerHTML = "<p>No news available at the moment.</p>";
         }
-
-        // 🧱 Build the news card
-        article.innerHTML = `
-          <div class="tax-news-image">
-            <img src="${imageUrl}" alt="${item.title}" />
-          </div>
-          <div class="tax-news-content">
-            <h4>${item.title}</h4>
-            <p>${item.description.substring(0, 140)}...</p>
-            <a href="${item.link}" target="_blank" rel="noopener" class="tax-read-more">Read more</a>
-          </div>
-        `;
-
-        container.appendChild(article);
+      })
+      .catch(error => {
+        console.error("Error fetching feed:", error);
+        container.innerHTML = "<p>Unable to load news right now.</p>";
       });
-    })
-    .catch(error => {
-      console.error("Error fetching feed:", error);
-      container.innerHTML = "<p>Unable to load news right now.</p>";
+  }
+
+  function renderNews(data) {
+    const articles = data.items.slice(0, 3);
+    container.innerHTML = "";
+
+    articles.forEach(item => {
+      const article = document.createElement("article");
+      article.className = "tax-news-item";
+
+      let imageUrl = "Assets/news-feed-images/news-default.png";
+      const title = item.title.toLowerCase();
+
+      if (title.includes("vat")) imageUrl = "Assets/news-feed-images/vat.png";
+      else if (title.includes("corporation tax") || title.includes("company tax")) imageUrl = "Assets/news-feed-images/corporation-tax.png";
+      else if (title.includes("self assessment") || title.includes("self-assessment")) imageUrl = "Assets/news-feed-images/self-assessment.png";
+      else if (title.includes("money laundering") || title.includes("criminal finance")) imageUrl = "Assets/news-feed-images/money-laundering.png";
+      else if (title.includes("hmrc contact") || title.includes("scam") || title.includes("phishing") || title.includes("fraud")) imageUrl = "Assets/news-feed-images/security.png";
+      else if (title.includes("pay tables") || title.includes("payroll") || title.includes("wages")) imageUrl = "Assets/news-feed-images/payroll.jpg";
+      else if (title.includes("compliance") || title.includes("guidelines") || title.includes("standards")) imageUrl = "Assets/news-feed-images/compliance.jpg";
+      else if (title.includes("tax return") || title.includes("submit return") || title.includes("file return")) imageUrl = "Assets/news-feed-images/tax-return.jpg";
+      else if (title.includes("penalty") || title.includes("penalties") || title.includes("fine") || title.includes("interest charge") || title.includes("late filing")) imageUrl = "Assets/news-feed-images/penalty.jpg";
+      else if (title.includes("budget") || title.includes("statement") || title.includes("obr") || title.includes("spring statement")) imageUrl = "Assets/news-feed-images/budget.jpg";
+      else if (title.includes("registration") || title.includes("registered") || title.includes("register")) imageUrl = "Assets/news-feed-images/registration.jpg";
+      else if (title.includes("r&d") || title.includes("research and development")) imageUrl = "Assets/news-feed-images/rd-tax.jpg";
+      else if (title.includes("making tax digital") || title.includes("mtd")) imageUrl = "Assets/news-feed-images/mtd.jpg";
+      else if (title.includes("covid") || title.includes("coronavirus")) imageUrl = "Assets/news-feed-images/covid-support.jpg";
+      else if (title.includes("expenses") || title.includes("deductions") || title.includes("allowable expenses")) imageUrl = "Assets/news-feed-images/expenses.jpg";
+      else if (title.includes("capital gains") || title.includes("cgt")) imageUrl = "Assets/news-feed-images/capital-gains.jpg";
+      else if (title.includes("inheritance tax") || title.includes("iht")) imageUrl = "Assets/news-feed-images/inheritance-tax.jpg";
+      else if (title.includes("dividends") || title.includes("dividend tax")) imageUrl = "Assets/news-feed-images/dividends.jpg";
+      else if (title.includes("employment") || title.includes("paye")) imageUrl = "Assets/news-feed-images/employment.jpg";
+      else if (title.includes("national insurance") || title.includes("ni contributions")) imageUrl = "Assets/news-feed-images/national-insurance.jpg";
+      else if (title.includes("cash flow") || title.includes("forecast")) imageUrl = "Assets/news-feed-images/cash-flow.jpg";
+      else if (title.includes("investment") || title.includes("investor") || title.includes("eis")) imageUrl = "Assets/news-feed-images/investment.jpg";
+
+      article.innerHTML = `
+        <div class="tax-news-image">
+          <img src="${imageUrl}" loading="lazy" alt="${item.title}" />
+        </div>
+        <div class="tax-news-content">
+          <time datetime="${item.pubDate}">${new Date(item.pubDate).toLocaleDateString('en-GB', {
+            day: '2-digit', month: 'short', year: 'numeric'
+          })}</time>
+          <h4>${item.title}</h4>
+          <p>${item.description.substring(0, 140)}...</p>
+          <a href="${item.link}" target="_blank" rel="noopener" class="tax-read-more">Read more</a>
+        </div>
+      `;
+
+      container.appendChild(article);
     });
+  }
 });
