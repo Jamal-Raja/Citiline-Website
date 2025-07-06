@@ -1122,10 +1122,10 @@ footer {
 
 /* Reviews Section */
 .tax-reviews-section {
-  background: #f8fafc;
-  padding: 40px;
+  background: #dffaff;
   border-radius: 12px;
   margin-top: 40px;
+  padding: 24px;
 }
 
 .tax-reviews-section h3 {
@@ -1155,6 +1155,12 @@ footer {
   background: white;
   border-radius: 8px;
   border-left: 4px solid #3b82f6;
+  transition: transform 0.2s ease;
+}
+
+.tax-review-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
 }
 
 .tax-review-item p {
@@ -1292,10 +1298,32 @@ footer {
 .tax-form-submit:hover {
   background: #1e3a8a;
 }
+/* Animations for tax-expert-card and tax-contact-form-card */
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* initial hidden state */
+.animate-on-scroll {
+  opacity: 0;
+}
+
+/* single “slide in from right” class */
+.slide-in-right {
+  animation: slideInRight 0.8s ease-out forwards;
+}
+
 
 /* Contact CTA */
 .tax-contact-cta {
-  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(30, 58, 138, 0.7) 0%,
+      rgba(59, 130, 246, 0.7) 100%
+    ),
+    url('../Assets/cta-bg.jpg') center/cover fixed no-repeat;
   color: white;
   padding: 60px 0;
 }
@@ -1333,6 +1361,16 @@ footer {
   gap: 10px;
 }
 
+.tax-phone-number i {
+  display: inline-block;
+  transform-origin: center 4px;  /* pivot near the “ear” of the handset */
+}
+
+/* only runs once when .ring is applied */
+.tax-phone-number i.ring {
+  animation: phoneRing 1s ease-in-out forwards; 
+}
+
 .tax-phone-number:hover {
   opacity: 0.8;
 }
@@ -1346,6 +1384,34 @@ footer {
 .tax-cta-btn:hover {
   background: #f8fafc;
 }
+
+@keyframes phoneRing {
+  0%   { transform: rotate(0deg); }
+  1%   { transform: rotate(30deg); }
+  3%   { transform: rotate(-28deg); }
+  5%   { transform: rotate(34deg); }
+  7%   { transform: rotate(-32deg); }
+  9%   { transform: rotate(30deg); }
+  11%  { transform: rotate(-28deg); }
+  13%  { transform: rotate(26deg); }
+  15%  { transform: rotate(-24deg); }
+  17%  { transform: rotate(22deg); }
+  19%  { transform: rotate(-20deg); }
+  21%  { transform: rotate(18deg); }
+  23%  { transform: rotate(-16deg); }
+  25%  { transform: rotate(14deg); }
+  27%  { transform: rotate(-12deg); }
+  29%  { transform: rotate(10deg); }
+  31%  { transform: rotate(-8deg); }
+  33%  { transform: rotate(6deg); }
+  35%  { transform: rotate(-4deg); }
+  37%  { transform: rotate(2deg); }
+  39%  { transform: rotate(-1deg); }
+  41%  { transform: rotate(1deg); }
+  43%  { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+
 
 /* Team Section */
 .tax-team-section {

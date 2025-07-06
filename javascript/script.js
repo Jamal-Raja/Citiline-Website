@@ -114,9 +114,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 });
 
-// ==============================
-// Hero video background rotation
-// ==============================
+// =======================================
+// Homepage Hero video background rotation
+// =======================================
 document.addEventListener('DOMContentLoaded', () => {
   const video = document.getElementById('heroVideo');
   const source = document.getElementById('videoSource');
@@ -153,7 +153,7 @@ function openCalendly() {
 
 // ==============================
 // AOS animation initialisation
-// ==============================
+// ============================== 
 document.addEventListener('DOMContentLoaded', () => {
   AOS.init({
     once: false,
@@ -162,4 +162,45 @@ document.addEventListener('DOMContentLoaded', () => {
     easing: 'ease-out-cubic',
     mirror: false
   });
+});
+
+// ===========================================
+// Intersection Observer for scroll animations
+// This adds slide-in-right animation
+// to elements with class "animate-on-scroll"
+// ===========================================
+document.addEventListener('DOMContentLoaded', () => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const el = entry.target;
+      if (entry.isIntersecting) {
+        el.classList.add('slide-in-right');
+      }
+      else {
+        el.classList.remove('slide-in-right');
+      }
+    });
+  }, { threshold: 0.2 });
+
+  document.querySelectorAll('.animate-on-scroll')
+          .forEach(el => observer.observe(el));
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const phoneIcon = document.querySelector('.tax-phone-icon');
+
+  function triggerRing() {
+    // force reflow so re-adding the class will replay the animation
+    phoneIcon.classList.remove('ring');
+    void phoneIcon.offsetWidth;
+    phoneIcon.classList.add('ring');
+  }
+
+  // When one ring finishes, wait then ring again
+  phoneIcon.addEventListener('animationend', () => {
+    setTimeout(triggerRing, 4000);  // 4s delay between rings
+  });
+
+  // Kick off the first ring
+  triggerRing();
 });
