@@ -223,12 +223,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const cacheKey = "hmrcNewsCache";
   const cacheTimeKey = "hmrcNewsCacheExpiry";
   const now = Date.now();
-  const oneHour = 60 * 60 * 1000;
+  const oneHour = 60 * 60 * 1000; 
 
   const cached = localStorage.getItem(cacheKey);
   const cachedTime = localStorage.getItem(cacheTimeKey);
 
-  if (cached && cachedTime && now - cachedTime < oneHour) {
+  if (cached && cachedTime && now - cachedTime < oneHour) { 
     renderNews(JSON.parse(cached));
   } else {
     fetch(apiUrl)
