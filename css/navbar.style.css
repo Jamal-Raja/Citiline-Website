@@ -218,13 +218,6 @@ header {
   background-color: white;
 }
 
-/* shrink on mobile */
-@media (max-width: 768px) {
-  .mega-video {
-    max-height: 200px;
-  }
-}
-
 /*  ──────────────────────────────────────────────────────────
     VIDEO PREVIEW WRAPPER
     ────────────────────────────────────────────────────────── */
@@ -267,38 +260,183 @@ header {
   z-index: -1;
 }
 
-/* responsive tweak */
-@media (max-width: 768px) {
-  .mega-preview {
-    width: 100%;
-    height: auto;
-    margin: 0 0 1rem 0;
-  }
-  .mega-preview video {
-    height: auto;
-  }
+.mobile-nav-overlay {
+  display: none;
 }
 
 /* ================================
    Responsive (Mobile)
    ================================ */
 @media (max-width:768px) {
-  .menu-icon { display:block }
-  .logo img { height:50px }
+  .mobile-nav-overlay {
+  display: flex;
+  }
+  .mobile-nav-header {
+    height: 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 1.5rem 1rem;
+    border-bottom: 1px solid #eee;
+  }
+  .mobile-nav-logo {
+    max-height: 80px;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 40px;
+  }
+  .menu-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    z-index: 10001;
+  }
+  .menu-icon span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #000; /* PwC uses black */
+    border-radius: 1px;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  .logo img { 
+    height:80px;
+  }
 
-  /* collapse mega-menu into panel */
-  .dropdown-menu.mega {
-    position: static; transform:none;
-    flex-direction:column; padding:1rem;
-    background: rgba(255,255,255,0.97);
+  .nav-links {
+    display: none;
   }
-  .mega-wrapper { flex-direction:column; gap:0 }
-  .primary-menu, .sub-menu {
-    width:100%; margin-bottom:1rem;
+
+  .navbar {
+    justify-content: space-between;
+    padding: 0 1rem;
   }
-  .primary-menu a,
-  .sub-menu a {
-    padding:.6rem 1rem;
-    color: #333;
+
+  .mobile-nav-overlay {
+    position: fixed;
+    top: 0;
+    right: -100vw;
+    width: 100vw;
+    height: 100vh;
+    background: #ffffff;
+    z-index: 9999;
+    transition: right 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+    box-sizing: border-box;
+    overflow-y: auto;
+    visibility: hidden;
+    opacity: 0;
+    
+  }
+
+/* SHOW when toggled */
+  .mobile-nav-overlay.open {
+    right: 0;
+    visibility: visible;
+    opacity: 1;
+  }
+  .close-mobile-nav {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    font-weight: bold;
+    align-self: flex-end;
+    margin-bottom: 10px;
+    cursor: pointer;
+    color: #000;
+  }
+  .mobile-nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .mobile-nav-links li a {
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: #000;
+    padding: 0.75rem 0;
+    display: block;
+  }
+  .mobile-submenu {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    transition: left 0.3s ease;
+    padding: 2rem 1.5rem;
+    box-sizing: border-box;
+    z-index: 10000;
+  }
+  .mobile-submenu.open {
+  left: 0;
+  }
+  .submenu-toggle {
+    all: unset; /* reset all default styles */
+    display: block;
+    width: 100%;
+    padding: 0.75rem 0;
+    text-align: left;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #000;
+    cursor: pointer;
+  }
+  .back-button {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #000;
+    margin-bottom: 2rem;
+    cursor: pointer;
+    transform: translateY(15px);
+  }
+  .back-button-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .back-button-wrapper h2 {
+    margin: 0;
+  }
+
+  .mobile-submenu-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .mobile-submenu-links li {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 0.75rem;
+  }
+
+  .mobile-submenu-links li a {
+    text-decoration: none;
+    color: #000;
+    font-size: 1rem;
+    display: block;
+    padding: 0.5rem 0;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-nav-overlay {
+    display: none !important;
   }
 }

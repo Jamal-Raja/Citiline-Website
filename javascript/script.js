@@ -85,11 +85,6 @@ function initializeNavbar() {
     sourceEl.src = videoMap.all;
     videoEl.load();
   });
-
-  // 6) mobile menu toggle
-  window.toggleMenu = function() {
-    document.getElementById('navLinks').classList.toggle('open');
-  };
 }
 
 // If navbar already present in DOM, initialize immediately
@@ -300,3 +295,26 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+function openSubmenu() {
+  document.getElementById('servicesSubmenu').classList.add('open');
+  document.getElementById('mainMobileMenu').style.display = 'none';
+}
+
+function closeSubmenu() {
+  document.getElementById('servicesSubmenu').classList.remove('open');
+  document.getElementById('mainMobileMenu').style.display = 'flex';
+}
+
+function toggleMobileMenu() {
+  const nav = document.getElementById('mobileNav');
+  const toggleBtn = document.getElementById('menuToggleBtn');
+
+  nav.classList.toggle('open');
+
+  // Lock or unlock scroll
+  document.body.style.overflow = nav.classList.contains('open') ? 'hidden' : '';
+
+  // Show or hide hamburger button
+  toggleBtn.style.display = nav.classList.contains('open') ? 'none' : 'flex';
+}

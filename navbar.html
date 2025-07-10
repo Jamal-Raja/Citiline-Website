@@ -10,12 +10,6 @@
         </a>
       </div>
 
-      <button class="menu-icon" onclick="toggleMenu()" aria-label="Toggle navigation menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
       <ul class="nav-links" id="navLinks" role="menubar">
         <!-- Services Dropdown -->
         <li class="dropdown" role="none">
@@ -172,4 +166,50 @@
           <a href="contact.html" class="contact-button" role="menuitem">Contact us</a>
         </li>
       </ul>
+
+
+      <!-- Mobile Slide-in Menu -->
+      <button class="menu-icon" id="menuToggleBtn" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+
+      <div class="mobile-nav-overlay" id="mobileNav">
+        <div class="mobile-nav-header">
+          <img src="Assets/citiline_accountants_logo_transparent.png" alt="Citiline Logo" class="mobile-nav-logo" />
+          <button class="close-mobile-nav" onclick="toggleMobileMenu()" aria-label="Open mobile menu">×</button>
+        </div>
+        
+        <ul class="mobile-nav-links">
+          <li><button class="submenu-toggle" onclick="openSubmenu()">Our Services</button></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="consultancy.html">Media Centre</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="mobile-submenu" id="servicesSubmenu">
+          
+          <div class="back-button-wrapper">
+            <h2>Our Services</h2>
+            <button class="back-button" onclick="closeSubmenu()">← Back</button>
+          </div>
+        <ul class="mobile-submenu-links">
+          <li><a href="services.html">All Services</a></li>
+          <li><a href="services-taxation.html">Taxation</a></li>
+          <li><a href="services-accounting.html">Accounting</a></li>
+          <li><a href="services-audit.html">Audit & Assurance</a></li>
+          <li><a href="services-advisory.html">Business Advisory</a></li>
+          <li><a href="services-formation.html">Startups & Formation</a></li>
+          <li><a href="services-personal.html">Personal Services</a></li>
+          <li><a href="services-wealth.html">Wealth & Financial</a></li>
+          <li><a href="services-specialist.html">Specialist</a></li>
+          <li><a href="services-industry.html">Industry-Specific</a></li>
+        </ul>
+      </div>
+      </div>
+
+
+
     </nav>
