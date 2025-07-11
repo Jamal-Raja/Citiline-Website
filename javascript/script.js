@@ -370,7 +370,7 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     try {
-      const response = await fetch('https://callback-server.onrender.com/callback', {
+      const response = await fetch('https://citiline-website.onrender.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
