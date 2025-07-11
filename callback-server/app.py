@@ -1,24 +1,35 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify 
 import os
 import requests
 from dotenv import load_dotenv
+from flask_cors import CORS 
 
 load_dotenv()
 
 app = Flask(__name__)
 
+# ✅ Allow only GitHub Pages origin explicitly
+CORS(app, origins=["https://jamal-raja.github.io"])
+
 SLACK_WEBHOOK_URL = os.getenv("SLACK_WEBHOOK_URL")
 
-@app.route('/callback', methods=['POST'])
+
+@app.route('/callback', methods=['POST', 'OPTIONS'])  # ✅ include OPTIONS
 def callback():
+    if request.method == 'OPTIONS':
+        # Preflight request: just return OK
+        return jsonify({'status': 'ok'}), 200
+
     data = request.json
 
     name = data.get("name")
+    phone = data.get("phone")
     email = data.get("email")
     date = data.get("date")
     time = data.get("time")
+    message_text = data.get("message")
 
-    message = f"📞 *New Callback Request*\n👤 Name: {name}\n📧 Email: {email}\n📅 Date: {date}\n🕑 Time: {time}"
+    message = f"*📞 New Callback Request*\n👤 Name: {name}\n📧 Email: {email}\n📱 Phone: {phone}\n📅 Date: {date}\n🕒 Time: {time}\n💬 Message: {message_text}"
 
     response = requests.post(SLACK_WEBHOOK_URL, json={"text": message})
 
@@ -27,5 +38,7 @@ def callback():
     else:
         return jsonify({"success": False, "message": "Failed to send to Slack"}), 500
 
+
 if __name__ == '__main__':
     app.run(debug=True)
+
