@@ -277,13 +277,19 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 1.5rem 1rem;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #979797;
+    width: 100vw;              /* Force full screen width */
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);  /* Center it across screen */
+    box-sizing: border-box;    /* Ensure padding behaves properly */
   }
   .mobile-nav-logo {
     max-height: 80px;
     width: auto;
     object-fit: contain;
-    margin-bottom: 40px;
+    position: relative;
+    top: -20px;
   }
   .menu-icon {
     display: flex;
@@ -337,7 +343,7 @@ header {
     
   }
 
-/* SHOW when toggled */
+  /* SHOW when toggled */
   .mobile-nav-overlay.open {
     right: 0;
     visibility: visible;
@@ -422,7 +428,6 @@ header {
   }
   
   .mobile-submenu-links li {
-    border-bottom: 1px solid #eee;
     margin-bottom: 0.75rem;
   }
 
