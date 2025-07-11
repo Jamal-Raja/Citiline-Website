@@ -318,3 +318,76 @@ function toggleMobileMenu() {
   // Show or hide hamburger button
   toggleBtn.style.display = nav.classList.contains('open') ? 'none' : 'flex';
 }
+
+
+// Callback form modal logic
+function openCallbackForm() {
+    document.getElementById('callbackModal').style.display = 'flex';
+  }
+
+function closeCallbackForm() {
+    document.getElementById('callbackModal').style.display = 'none';
+  }
+
+document.addEventListener("DOMContentLoaded", function () {
+  const dateInput = document.getElementById("callbackDate");
+
+  // Set min date
+  const today = new Date();
+  const yyyy = today.getFullYear();
+  const mm = String(today.getMonth() + 1).padStart(2, '0');
+  const dd = String(today.getDate()).padStart(2, '0');
+  dateInput.min = `${yyyy}-${mm}-${dd}`;
+
+  // Block weekends
+  dateInput.addEventListener('input', function () {
+    const selectedDate = new Date(this.value);
+    const day = selectedDate.getDay();
+    if (day === 0 || day === 6) {
+      alert("Please select a weekday (Mon–Fri) for your callback.");
+      this.value = '';
+    }
+  });
+
+  // ✅ Add the submit handler *after* DOM is ready
+  const form = document.getElementById('callbackForm');
+  if (!form) {
+    console.error('Form not found!');
+    return;
+  }
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(this);
+    const data = {
+      name: formData.get('name'),
+      phone: formData.get('phone'),
+      email: formData.get('email'),
+      date: formData.get('callbackDate'),
+      time: formData.get('callbackTime'),
+      message: formData.get('message')
+    };
+
+    try {
+      const response = await fetch('https://callback-server.onrender.com/callback', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      });
+
+      if (response.ok) {
+        alert('Your callback request has been sent!');
+        this.reset();
+        closeCallbackForm(); // Optional: hide modal
+      } else {
+        alert('There was an error. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Failed to connect to server.');
+    }
+  });
+});

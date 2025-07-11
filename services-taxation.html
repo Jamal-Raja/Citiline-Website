@@ -274,14 +274,44 @@
             <p>Get expert taxation advice tailored to your business needs</p>
           </div>
           <div class="tax-cta-contact">
-            <a href="tel:02085149000" class="tax-phone-number">
+            <a href="tel:01582514988" class="tax-phone-number">
               <i class="fas fa-phone tax-phone-icon"></i>
               01582 514 988
             </a>
-            <a href="#" onclick="return openCalendly()" class="tax-btn tax-cta-btn">Request a Callback</a>
+            <button class="tax-btn tax-cta-btn" onclick="openCallbackForm()">Request a Callback</button>
           </div>
         </div>
       </div>
+      <!-- Modal Callback Form -->
+      <div id="callbackModal" class="callback-modal">
+        <div class="callback-form-container">
+          <h3>Request a Callback</h3>
+          <form id="callbackForm">
+            <input type="text" name="name" placeholder="Your Name" required>
+
+            <input type="tel" name="phone" placeholder="Your Phone Number" required>
+
+            <input type="email" name="email" placeholder="Your Email Address" required>
+
+            <label for="callbackDate">Preferred Callback Date</label>
+            <input type="date" name="callbackDate" id="callbackDate" min="" required>
+
+            <label for="callbackTime">Preferred Time</label>
+            <select name="callbackTime" id="callbackTime" required>
+              <option value="">Select...</option>
+              <option value="Morning">Morning (9am – 12pm)</option>
+              <option value="Afternoon">Afternoon (1pm – 5pm)</option>
+            </select>
+            
+            <label for="message">How can we help you?</label>
+            <textarea name="message" placeholder="How can we help you?"></textarea>
+
+            <button type="submit">Submit</button>
+            <button type="button" onclick="closeCallbackForm()">Cancel</button>
+          </form>
+        </div>
+      </div>
+
     </section>
 
     <!-- Team Section -->
