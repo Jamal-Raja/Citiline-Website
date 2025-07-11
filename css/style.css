@@ -865,15 +865,22 @@ footer {
   color: white;
 }
 
-.service-hero-content h1 {
-  font-size: 36px;               
-  line-height: 1.2;                
-  background-color: #000;          /* solid black behind the text */
-  color: #fff;                     
-  display: inline-block;           /* shrink-wrap the background to the text */
-  padding: 0.5rem 1rem;            /* breathing room around the letters */
-  margin-bottom: 20px;             /* space before the subtitle */
-  width: auto;                  /* let the width adjust to the text */
+.service-hero-title {
+  font-size: 36px;
+  line-height: 1;                 
+  display: flex;                  
+  flex-wrap: wrap;               
+  gap: 0;                         
+  margin-bottom: 1rem;
+}
+
+.service-hero-title span {
+  background-color: #000;
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  margin: 0;                      /* no margin to avoid spacing */
+  line-height: 1;                 /* keep height tight */
+  display: inline-block;
 }
 
 .service-subtitle {
