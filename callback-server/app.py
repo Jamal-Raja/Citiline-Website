@@ -20,27 +20,38 @@ def callback():
         # Preflight request: just return OK
         return jsonify({'status': 'ok'}), 200
 
-    data = request.json
+    if not SLACK_WEBHOOK_URL:
+        print("❌ ERROR: SLACK_WEBHOOK_URL not set")
+        return jsonify({"success": False, "message": "Server config error (missing webhook URL)"}), 500
 
-    name = data.get("name")
-    phone = data.get("phone")
-    email = data.get("email")
-    date = data.get("date")
-    time = data.get("time")
-    message_text = data.get("message")
+    try:
+        data = request.json
+        print("📩 Received data:", data)
 
-    message = f"*📞 New Callback Request*\n👤 Name: {name}\n📧 Email: {email}\n📱 Phone: {phone}\n📅 Date: {date}\n🕒 Time: {time}\n💬 Message: {message_text}"
+        name = data.get("name")
+        phone = data.get("phone")
+        email = data.get("email")
+        date = data.get("date")
+        time = data.get("time")
+        message_text = data.get("message")
 
-    response = requests.post(SLACK_WEBHOOK_URL, json={"text": message})
+        message = f"*📞 New Callback Request*\n👤 Name: {name}\n📧 Email: {email}\n📱 Phone: {phone}\n📅 Date: {date}\n🕒 Time: {time}\n💬 Message: {message_text}"
 
-    if response.status_code == 200:
-        return jsonify({"success": True, "message": "Callback request sent to Slack!"}), 200
-    else:
-        return jsonify({"success": False, "message": "Failed to send to Slack"}), 500
+        response = requests.post(SLACK_WEBHOOK_URL, json={"text": message})
+
+        print("✅ Slack response status:", response.status_code)
+        print("📨 Slack response body:", response.text)
+
+        if response.status_code == 200:
+            return jsonify({"success": True, "message": "Callback request sent to Slack!"}), 200
+        else:
+            return jsonify({"success": False, "message": "Slack error"}), 500
+
+    except Exception as e:
+        print("💥 EXCEPTION:", str(e))
+        return jsonify({"success": False, "message": "Server crashed"}), 500
 
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
-
-
