@@ -381,7 +381,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (response.ok) {
         alert('Your callback request has been sent!');
         this.reset();
-        closeCallbackForm(); // Optional: hide modal
+        closeCallbackForm(); 
       } else {
         alert('There was an error. Please try again.');
       }

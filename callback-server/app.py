@@ -13,6 +13,10 @@ CORS(app, origins=["https://jamal-raja.github.io"])
 
 SLACK_WEBHOOK_URL = os.getenv("SLACK_WEBHOOK_URL")
 
+# Check if SLACK_WEBHOOK_URL is set
+@app.route('/')
+def home():
+    return "Flask server is running ✅"
 
 @app.route('/callback', methods=['POST', 'OPTIONS'])  # ✅ include OPTIONS
 def callback():
