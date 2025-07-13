@@ -73,11 +73,11 @@ def callback():
 
     except Exception as e:
         print("💥 Exception occurred:", str(e))
-        traceback.print_exc()
-        return jsonify({
-            "success": False,
-            "message": "Internal server error"
-        }), 500
+    traceback.print_exc()  # 👈 This prints the error traceback
+    return jsonify({
+        "success": False,
+        "message": "Internal server error"
+    }), 500
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
