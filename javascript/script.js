@@ -319,18 +319,17 @@ function toggleMobileMenu() {
   toggleBtn.style.display = nav.classList.contains('open') ? 'none' : 'flex';
 }
 
-
 // Callback form modal logic
 function openCallbackForm() {
-    document.getElementById('callbackModal').style.display = 'flex';
-  }
+  document.getElementById('callbackModal').style.display = 'flex';
+}
 
 function closeCallbackForm() {
-    document.getElementById('callbackModal').style.display = 'none';
-  }
+  document.getElementById('callbackModal').style.display = 'none';
+}
 
 document.addEventListener("DOMContentLoaded", function () {
-// Add click listener to the callback button
+  // Callback form handler with alert
   const callbackForm = document.getElementById('callbackForm');
   if (callbackForm) {
     callbackForm.addEventListener('submit', async function (e) {
@@ -345,9 +344,7 @@ document.addEventListener("DOMContentLoaded", function () {
         message: formData.get('message') || ''
       };
 
-      const messageEl = document.getElementById('form-message');
-      messageEl.textContent = 'Sending...';
-      messageEl.style.display = 'block';
+      alert('Sending...'); // Show sending status
 
       try {
         const response = await fetch('https://citiline-website.onrender.com/callback', {
@@ -356,21 +353,21 @@ document.addEventListener("DOMContentLoaded", function () {
           body: JSON.stringify(data)
         });
         const result = await response.json();
-        messageEl.style.color = response.ok ? 'green' : 'red';
-        messageEl.textContent = result.message;
         if (response.ok) {
+          alert(result.message); // Show success message
           this.reset();
           closeCallbackForm();
+        } else {
+          alert(result.message || 'Failed to submit callback request.'); // Show error message
         }
       } catch (error) {
         console.error('Error:', error);
-        messageEl.style.color = 'red';
-        messageEl.textContent = 'Failed to connect to server.';
+        alert('Failed to connect to server. Please try again later.');
       }
     });
   }
 
-  // Tax enquiry form handler
+  // Tax enquiry form handler (unchanged)
   const taxEnquiryForm = document.getElementById('taxEnquiryForm');
   if (taxEnquiryForm) {
     taxEnquiryForm.addEventListener('submit', async function (e) {
@@ -393,9 +390,7 @@ document.addEventListener("DOMContentLoaded", function () {
       try {
         const response = await fetch('https://citiline-website.onrender.com/tax-enquiry', {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
+          headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data)
         });
         const result = await response.json();
@@ -421,13 +416,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const dd = String(today.getDate()).padStart(2, '0');
     dateInput.min = `${yyyy}-${mm}-${dd}`;
 
-      dateInput.addEventListener('input', function () {
-        const selectedDate = new Date(this.value);
-        const day = selectedDate.getDay();
-        if (day === 0 || day === 6) {
-          alert("Please select a weekday (Mon–Fri) for your callback.");
-          this.value = '';
-        }
-      });
-    }
-  });
+    dateInput.addEventListener('input', function () {
+      const selectedDate = new Date(this.value);
+      const day = selectedDate.getDay();
+      if (day === 0 || day === 6) {
+        alert("Please select a weekday (Mon–Fri) for your callback.");
+        this.value = '';
+      }
+    });
+  }
+});
