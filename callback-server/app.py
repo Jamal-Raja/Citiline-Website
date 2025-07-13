@@ -110,14 +110,14 @@ def tax_enquiry():
     try:
         if not request.is_json:
             return jsonify({
-                "success": false,
+                "success": False,
                 "message": "Request body must be JSON"
             }), 400
 
         data = request.get_json(force=True)
         print("📩 Received tax enquiry data:", data)
 
-        required_fields = ['name', 'email']  # Only name and email are required
+        required_fields = ['name', 'email']
         missing_fields = [field for field in required_fields if not data.get(field)]
 
         if missing_fields:
@@ -126,7 +126,6 @@ def tax_enquiry():
                 "message": f"Missing fields: {', '.join(missing_fields)}"
             }), 400
 
-        # Compose Slack message
         slack_text = (
             "*📧 New Tax Enquiry Received:*\n"
             f"👤 *Name*: {data['name']}\n"
