@@ -344,8 +344,6 @@ document.addEventListener("DOMContentLoaded", function () {
         message: formData.get('message') || ''
       };
 
-      alert('Sending...'); // Show sending status
-
       try {
         const response = await fetch('https://citiline-website.onrender.com/callback', {
           method: 'POST',
@@ -367,7 +365,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Tax enquiry form handler (unchanged)
+  // Tax enquiry form handler 
   const taxEnquiryForm = document.getElementById('taxEnquiryForm');
   if (taxEnquiryForm) {
     taxEnquiryForm.addEventListener('submit', async function (e) {
