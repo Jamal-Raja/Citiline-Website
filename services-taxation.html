@@ -218,7 +218,7 @@
             <!-- Contact Form -->
             <div class="tax-contact-form-card animate-on-scroll" id="tax-contact-form">
               <h4>Contact our Taxation Team</h4>
-              <form class="tax-enquiry-form">
+              <form class="tax-enquiry-form" id="taxEnquiryForm">
                 <div class="tax-form-group">
                   <label for="tax-name">Full Name *</label>
                   <input type="text" id="tax-name" name="name" required>
@@ -230,8 +230,8 @@
                 </div>
                 
                 <div class="tax-form-group">
-                  <label for="tax-phone">Phone Number</label>
-                  <input type="tel" id="tax-phone" name="phone">
+                  <label for="tax-phone">Phone Number *</label>
+                  <input type="tel" id="tax-phone" name="phone" required>
                 </div>
                 
                 <div class="tax-form-group">
@@ -254,11 +254,12 @@
                 
                 <div class="tax-form-group">
                   <label for="tax-message">Message</label>
-                  <textarea id="tax-message" name="message" rows="4" placeholder="Tell us about your requirements..."></textarea>
+                  <textarea id="tax-message" name="message" rows="4" placeholder="How can we help?"></textarea>
                 </div>
                 
                 <button type="submit" class="tax-btn tax-form-submit">Send Enquiry</button>
               </form>
+              <p id="tax-enquiry-message" style="display: none;"></p>
             </div>
           </aside>
         </div>

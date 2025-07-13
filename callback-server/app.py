@@ -6,7 +6,10 @@ import traceback
 
 # Initialize Flask app
 app = Flask(__name__)
-CORS(app, resources={r"/callback": {"origins": "https://jamal-raja.github.io"}}, supports_credentials=True)
+CORS(app, resources={
+    r"/callback": {"origins": "https://jamal-raja.github.io"},
+    r"/tax-enquiry": {"origins": "https://jamal-raja.github.io"}
+}, supports_credentials=True)
 
 # Slack webhook from environment
 SLACK_WEBHOOK_URL = os.environ.get("SLACK_WEBHOOK_URL")
@@ -18,7 +21,6 @@ def home():
 @app.route("/callback", methods=["POST", "OPTIONS"])
 def callback():
     if request.method == "OPTIONS":
-        # Return CORS headers for preflight request
         response = jsonify({"status": "ok"})
         response.headers.add("Access-Control-Allow-Origin", "https://jamal-raja.github.io")
         response.headers.add("Access-Control-Allow-Methods", "POST, OPTIONS")
@@ -32,7 +34,6 @@ def callback():
         }), 500
 
     try:
-        # Ensure JSON
         if not request.is_json:
             return jsonify({
                 "success": False,
@@ -42,7 +43,6 @@ def callback():
         data = request.get_json(force=True)
         print("📩 Received data:", data)
 
-        # Validate fields
         required_fields = ['name', 'phone', 'email', 'date', 'time', 'message']
         missing_fields = [field for field in required_fields if not data.get(field)]
 
@@ -52,7 +52,6 @@ def callback():
                 "message": f"Missing fields: {', '.join(missing_fields)}"
             }), 400
 
-        # Compose Slack message
         slack_text = (
             "*📞 New Callback Request Received:*\n"
             f"👤 *Name*: {data['name']}\n"
@@ -63,7 +62,7 @@ def callback():
             f"💬 *Message*: {data['message']}"
         )
 
-        response = requests.post(SLACK_WEBHOOK_URL, json={"text": slack_text})
+        response = requests.post(SLACK_WEBHOOK_URL, json={"text": slack_text}, timeout=10)
         print("✅ Slack status:", response.status_code)
         print("📨 Slack response:", response.text)
 
@@ -75,11 +74,93 @@ def callback():
         else:
             return jsonify({
                 "success": False,
-                "message": "Failed to post to Slack"
+                "message": f"Failed to post to Slack: {response.text}"
             }), 500
 
+    except requests.RequestException as e:
+        print("💥 Slack request error:", str(e))
+        traceback.print_exc()
+        return jsonify({
+            "success": False,
+            "message": f"Failed to connect to Slack: {str(e)}"
+        }), 500
     except Exception as e:
-        print("💥 Error:", str(e))
+        print("💥 Unexpected error:", str(e))
+        traceback.print_exc()
+        return jsonify({
+            "success": False,
+            "message": "Internal server error"
+        }), 500
+
+@app.route("/tax-enquiry", methods=["POST", "OPTIONS"])
+def tax_enquiry():
+    if request.method == "OPTIONS":
+        response = jsonify({"status": "ok"})
+        response.headers.add("Access-Control-Allow-Origin", "https://jamal-raja.github.io")
+        response.headers.add("Access-Control-Allow-Methods", "POST, OPTIONS")
+        response.headers.add("Access-Control-Allow-Headers", "Content-Type")
+        return response, 200
+
+    if not SLACK_WEBHOOK_URL:
+        return jsonify({
+            "success": False,
+            "message": "Server misconfiguration: missing Slack webhook URL"
+        }), 500
+
+    try:
+        if not request.is_json:
+            return jsonify({
+                "success": false,
+                "message": "Request body must be JSON"
+            }), 400
+
+        data = request.get_json(force=True)
+        print("📩 Received tax enquiry data:", data)
+
+        required_fields = ['name', 'email']  # Only name and email are required
+        missing_fields = [field for field in required_fields if not data.get(field)]
+
+        if missing_fields:
+            return jsonify({
+                "success": False,
+                "message": f"Missing fields: {', '.join(missing_fields)}"
+            }), 400
+
+        # Compose Slack message
+        slack_text = (
+            "*📧 New Tax Enquiry Received:*\n"
+            f"👤 *Name*: {data['name']}\n"
+            f"📧 *Email*: {data['email']}\n"
+            f"📱 *Phone*: {data['phone'] or 'Not provided'}\n"
+            f"🏢 *Company*: {data['company'] or 'Not provided'}\n"
+            f"💼 *Service Required*: {data['service'] or 'Not specified'}\n"
+            f"💬 *Message*: {data['message'] or 'None'}"
+        )
+
+        response = requests.post(SLACK_WEBHOOK_URL, json={"text": slack_text}, timeout=10)
+        print("✅ Slack status:", response.status_code)
+        print("📨 Slack response:", response.text)
+
+        if response.status_code == 200:
+            return jsonify({
+                "success": True,
+                "message": "Tax enquiry sent successfully!"
+            }), 200
+        else:
+            return jsonify({
+                "success": False,
+                "message": f"Failed to post to Slack: {response.text}"
+            }), 500
+
+    except requests.RequestException as e:
+        print("💥 Slack request error:", str(e))
+        traceback.print_exc()
+        return jsonify({
+            "success": False,
+            "message": f"Failed to connect to Slack: {str(e)}"
+        }), 500
+    except Exception as e:
+        print("💥 Unexpected error:", str(e))
         traceback.print_exc()
         return jsonify({
             "success": False,

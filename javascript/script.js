@@ -330,64 +330,104 @@ function closeCallbackForm() {
   }
 
 document.addEventListener("DOMContentLoaded", function () {
-  const dateInput = document.getElementById("callbackDate");
+// Add click listener to the callback button
+  const callbackForm = document.getElementById('callbackForm');
+  if (callbackForm) {
+    callbackForm.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const formData = new FormData(this);
+      const data = {
+        name: formData.get('name'),
+        phone: formData.get('phone'),
+        email: formData.get('email'),
+        date: formData.get('callbackDate'),
+        time: formData.get('callbackTime'),
+        message: formData.get('message') || ''
+      };
 
-  // Set min date
-  const today = new Date();
-  const yyyy = today.getFullYear();
-  const mm = String(today.getMonth() + 1).padStart(2, '0');
-  const dd = String(today.getDate()).padStart(2, '0');
-  dateInput.min = `${yyyy}-${mm}-${dd}`;
+      const messageEl = document.getElementById('form-message');
+      messageEl.textContent = 'Sending...';
+      messageEl.style.display = 'block';
 
-  // Block weekends
-  dateInput.addEventListener('input', function () {
-    const selectedDate = new Date(this.value);
-    const day = selectedDate.getDay();
-    if (day === 0 || day === 6) {
-      alert("Please select a weekday (Mon–Fri) for your callback.");
-      this.value = '';
-    }
-  });
-
-  const form = document.getElementById('callbackForm');
-  if (!form) {
-    console.error('Form not found!');
-    return;
+      try {
+        const response = await fetch('https://citiline-website.onrender.com/callback', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        const result = await response.json();
+        messageEl.style.color = response.ok ? 'green' : 'red';
+        messageEl.textContent = result.message;
+        if (response.ok) {
+          this.reset();
+          closeCallbackForm();
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        messageEl.style.color = 'red';
+        messageEl.textContent = 'Failed to connect to server.';
+      }
+    });
   }
 
-  form.addEventListener('submit', async function (e) {
-    e.preventDefault();
+  // Tax enquiry form handler
+  const taxEnquiryForm = document.getElementById('taxEnquiryForm');
+  if (taxEnquiryForm) {
+    taxEnquiryForm.addEventListener('submit', async function (e) {
+      e.preventDefault();
 
-    const formData = new FormData(this);
-    const data = {
-      name: formData.get('name'),
-      phone: formData.get('phone'),
-      email: formData.get('email'),
-      date: formData.get('callbackDate'),
-      time: formData.get('callbackTime'),
-      message: formData.get('message') || '' // Default to empty string if not provided
-    };
+      const formData = new FormData(this);
+      const data = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        phone: formData.get('phone') || '',
+        company: formData.get('company') || '',
+        service: formData.get('service') || '',
+        message: formData.get('message') || ''
+      };
 
-    try {
-      const response = await fetch('https://citiline-website.onrender.com/callback', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-      });
+      const messageEl = document.getElementById('tax-enquiry-message');
+      messageEl.textContent = 'Sending...';
+      messageEl.style.display = 'block';
 
-      const result = await response.json();
-      if (response.ok) {
-        alert(result.message);
-        this.reset();
-        closeCallbackForm();
-      } else {
-        alert(`Error: ${result.message || 'Please try again.'}`);
+      try {
+        const response = await fetch('https://citiline-website.onrender.com/tax-enquiry', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        });
+        const result = await response.json();
+        messageEl.style.color = response.ok ? 'green' : 'red';
+        messageEl.textContent = result.message;
+        if (response.ok) {
+          this.reset();
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        messageEl.style.color = 'red';
+        messageEl.textContent = 'Failed to connect to server.';
       }
-    } catch (error) {
-      console.error('Error:', error);
-      alert('Failed to connect to server. Check console for details.');
+    });
+  }
+
+  // Date validation
+  const dateInput = document.getElementById("callbackDate");
+  if (dateInput) {
+    const today = new Date();
+    const yyyy = today.getFullYear();
+    const mm = String(today.getMonth() + 1).padStart(2, '0');
+    const dd = String(today.getDate()).padStart(2, '0');
+    dateInput.min = `${yyyy}-${mm}-${dd}`;
+
+      dateInput.addEventListener('input', function () {
+        const selectedDate = new Date(this.value);
+        const day = selectedDate.getDay();
+        if (day === 0 || day === 6) {
+          alert("Please select a weekday (Mon–Fri) for your callback.");
+          this.value = '';
+        }
+      });
     }
   });
-});
