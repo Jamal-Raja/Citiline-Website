@@ -349,7 +349,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // ✅ Add the submit handler *after* DOM is ready
   const form = document.getElementById('callbackForm');
   if (!form) {
     console.error('Form not found!');
@@ -366,8 +365,8 @@ document.addEventListener("DOMContentLoaded", function () {
       email: formData.get('email'),
       date: formData.get('callbackDate'),
       time: formData.get('callbackTime'),
-      message: formData.get('message')
-      };
+      message: formData.get('message') || '' // Default to empty string if not provided
+    };
 
     try {
       const response = await fetch('https://citiline-website.onrender.com/callback', {
@@ -378,16 +377,17 @@ document.addEventListener("DOMContentLoaded", function () {
         body: JSON.stringify(data)
       });
 
+      const result = await response.json();
       if (response.ok) {
-        alert('Your callback request has been sent!');
+        alert(result.message);
         this.reset();
-        closeCallbackForm(); 
+        closeCallbackForm();
       } else {
-        alert('There was an error. Please try again.');
+        alert(`Error: ${result.message || 'Please try again.'}`);
       }
     } catch (error) {
       console.error('Error:', error);
-      alert('Failed to connect to server.');
+      alert('Failed to connect to server. Check console for details.');
     }
   });
 });
