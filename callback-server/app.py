@@ -1,60 +1,83 @@
-from flask import Flask, request, jsonify 
-import os
-import requests
+from flask import Flask, request, jsonify
+from flask_cors import CORS
 from dotenv import load_dotenv
-from flask_cors import CORS 
+import requests
+import os
+import traceback
 
+# Load environment variables
 load_dotenv()
 
+# Initialize Flask app
 app = Flask(__name__)
-
-# ✅ Allow only GitHub Pages origin explicitly
 CORS(app, origins=["https://jamal-raja.github.io"])
 
+# Slack webhook from environment
 SLACK_WEBHOOK_URL = os.getenv("SLACK_WEBHOOK_URL")
 
-# Check if SLACK_WEBHOOK_URL is set
 @app.route('/')
 def home():
     return "Flask server is running ✅"
 
-@app.route('/callback', methods=['POST', 'OPTIONS'])  # ✅ include OPTIONS
+@app.route('/callback', methods=['POST', 'OPTIONS'])
 def callback():
     if request.method == 'OPTIONS':
-        # Preflight request: just return OK
         return jsonify({'status': 'ok'}), 200
 
     if not SLACK_WEBHOOK_URL:
         print("❌ ERROR: SLACK_WEBHOOK_URL not set")
-        return jsonify({"success": False, "message": "Server config error (missing webhook URL)"}), 500
+        return jsonify({
+            "success": False,
+            "message": "Server misconfiguration: missing Slack webhook URL"
+        }), 500
 
     try:
-        data = request.json
+        data = request.get_json()
         print("📩 Received data:", data)
 
-        name = data.get("name")
-        phone = data.get("phone")
-        email = data.get("email")
-        date = data.get("date")
-        time = data.get("time")
-        message_text = data.get("message")
+        # Validate required fields
+        required_fields = ['name', 'phone', 'email', 'date', 'time', 'message']
+        missing = [field for field in required_fields if not data.get(field)]
 
-        message = f"*📞 New Callback Request*\n👤 Name: {name}\n📧 Email: {email}\n📱 Phone: {phone}\n📅 Date: {date}\n🕒 Time: {time}\n💬 Message: {message_text}"
+        if missing:
+            return jsonify({
+                "success": False,
+                "message": f"Missing fields: {', '.join(missing)}"
+            }), 400
 
-        response = requests.post(SLACK_WEBHOOK_URL, json={"text": message})
+        # Construct Slack message
+        message = (
+            "*📞 New Callback Request*\n"
+            f"👤 Name: {data['name']}\n"
+            f"📧 Email: {data['email']}\n"
+            f"📱 Phone: {data['phone']}\n"
+            f"📅 Date: {data['date']}\n"
+            f"🕒 Time: {data['time']}\n"
+            f"💬 Message: {data['message']}"
+        )
 
-        print("✅ Slack response status:", response.status_code)
-        print("📨 Slack response body:", response.text)
+        slack_response = requests.post(SLACK_WEBHOOK_URL, json={"text": message})
+        print("✅ Slack status:", slack_response.status_code)
+        print("📨 Slack response:", slack_response.text)
 
-        if response.status_code == 200:
-            return jsonify({"success": True, "message": "Callback request sent to Slack!"}), 200
+        if slack_response.status_code == 200:
+            return jsonify({
+                "success": True,
+                "message": "Callback request sent to Slack!"
+            }), 200
         else:
-            return jsonify({"success": False, "message": "Slack error"}), 500
+            return jsonify({
+                "success": False,
+                "message": "Failed to post to Slack"
+            }), 500
 
     except Exception as e:
-        print("💥 EXCEPTION:", str(e))
-        return jsonify({"success": False, "message": "Server crashed"}), 500
-
+        print("💥 Exception occurred:", str(e))
+        traceback.print_exc()
+        return jsonify({
+            "success": False,
+            "message": "Internal server error"
+        }), 500
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
