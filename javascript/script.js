@@ -367,7 +367,7 @@ document.addEventListener("DOMContentLoaded", function () {
       date: formData.get('callbackDate'),
       time: formData.get('callbackTime'),
       message: formData.get('message')
-    };
+      };
 
     try {
       const response = await fetch('https://citiline-website.onrender.com/callback', {
