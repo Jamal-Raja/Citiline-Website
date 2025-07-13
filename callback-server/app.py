@@ -12,7 +12,7 @@ load_dotenv()
 app = Flask(__name__)
 CORS(app, origins=["https://jamal-raja.github.io"])
 
-# Slack webhook from environment
+# Slack webhook URL
 SLACK_WEBHOOK_URL = os.getenv("SLACK_WEBHOOK_URL")
 
 @app.route('/')
@@ -33,6 +33,13 @@ def callback():
 
     try:
         data = request.get_json()
+        if not data:
+            print("❌ No JSON received")
+            return jsonify({
+                "success": False,
+                "message": "Invalid or missing JSON in request"
+            }), 400
+
         print("📩 Received data:", data)
 
         # Validate required fields
@@ -40,6 +47,7 @@ def callback():
         missing = [field for field in required_fields if not data.get(field)]
 
         if missing:
+            print(f"⚠️ Missing fields: {missing}")
             return jsonify({
                 "success": False,
                 "message": f"Missing fields: {', '.join(missing)}"
@@ -56,28 +64,26 @@ def callback():
             f"💬 Message: {data['message']}"
         )
 
+        print("📤 Posting to Slack with message:")
+        print(message)
+        print("🔗 Using webhook:", SLACK_WEBHOOK_URL)
+
         slack_response = requests.post(SLACK_WEBHOOK_URL, json={"text": message})
-        print("✅ Slack status:", slack_response.status_code)
-        print("📨 Slack response:", slack_response.text)
+        print("✅ Slack response code:", slack_response.status_code)
+        print("📨 Slack response body:", slack_response.text)
 
         if slack_response.status_code == 200:
-            return jsonify({
-                "success": True,
-                "message": "Callback request sent to Slack!"
-            }), 200
+            return jsonify({"success": True, "message": "Callback request sent to Slack!"}), 200
         else:
-            return jsonify({
-                "success": False,
-                "message": "Failed to post to Slack"
-            }), 500
+            return jsonify({"success": False, "message": "Failed to post to Slack"}), 500
 
     except Exception as e:
         print("💥 Exception occurred:", str(e))
-    traceback.print_exc()  # 👈 This prints the error traceback
-    return jsonify({
-        "success": False,
-        "message": "Internal server error"
-    }), 500
+        traceback.print_exc()
+        return jsonify({
+            "success": False,
+            "message": "Internal server error"
+        }), 500
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
