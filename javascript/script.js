@@ -146,18 +146,6 @@ function openCalendly() {
   return false;
 }
 
-// ==============================
-// AOS animation initialisation
-// ============================== 
-document.addEventListener('DOMContentLoaded', () => {
-  AOS.init({
-    once: false,
-    offset: 120,
-    duration: 800,
-    easing: 'ease-out-cubic',
-    mirror: false
-  });
-});
 
 // ===========================================
 // Intersection Observer for scroll animations

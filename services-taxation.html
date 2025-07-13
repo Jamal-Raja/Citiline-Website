@@ -48,7 +48,6 @@
                 muted 
                 loop 
                 playsinline 
-                poster="path/to/fallback.jpg" 
                 aria-label="Explainer animation about taxation services">
                 Your browser doesn’t support HTML5 video.
             </video>
@@ -305,10 +304,11 @@
             </select>
             
             <label for="message">How can we help you?</label>
-            <textarea name="message" placeholder="How can we help you?"></textarea>
+            <textarea name="message" id="message" placeholder="How can we help you?"></textarea>
 
             <button type="submit">Submit</button>
-            <button type="button" onclick="closeCallbackForm()">Cancel</button>          
+            <button type="button" onclick="closeCallbackForm()">Cancel</button>
+          
           </form>
         </div>
       </div>

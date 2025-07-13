@@ -48,7 +48,6 @@
                 muted 
                 loop 
                 playsinline 
-                poster="path/to/fallback.jpg" 
                 aria-label="Explainer animation about taxation services">
                 Your browser doesn’t support HTML5 video.
             </video>
@@ -227,8 +226,8 @@
 
             <!-- Contact Form -->
             <div class="tax-contact-form-card animate-on-scroll" id="tax-contact-form">
-              <h4>Contact our Taxation Team</h4>
-              <form class="tax-enquiry-form">
+              <h4>Contact our Accounting Team</h4>
+              <form class="tax-enquiry-form" id="taxEnquiryForm">
                 <div class="tax-form-group">
                   <label for="tax-name">Full Name *</label>
                   <input type="text" id="tax-name" name="name" required>
@@ -240,8 +239,8 @@
                 </div>
                 
                 <div class="tax-form-group">
-                  <label for="tax-phone">Phone Number</label>
-                  <input type="tel" id="tax-phone" name="phone">
+                  <label for="tax-phone">Phone Number *</label>
+                  <input type="tel" id="tax-phone" name="phone" required>
                 </div>
                 
                 <div class="tax-form-group">
@@ -253,22 +252,23 @@
                   <label for="tax-service">Service Required</label>
                   <select id="tax-service" name="service">
                     <option value="">Select a service</option>
-                    <option value="corporate-tax">Corporate Tax Advisory</option>
-                    <option value="vat">VAT Compliance</option>
-                    <option value="rd-credits">R&D Tax Credits</option>
-                    <option value="capital-allowances">Capital Allowances</option>
-                    <option value="international">International Tax</option>
-                    <option value="investigations">Tax Investigations</option>
+                    <option value="corporate-tax">Cloud Accounting</option>
+                    <option value="vat">Management Accounts</option>
+                    <option value="rd-credits">Statutory Accounts</option>
+                    <option value="capital-allowances">Bookkeeping Services</option>
+                    <option value="international">Payroll</option>
+                    <option value="investigations">Company Secretarial Services</option>
                   </select>
                 </div>
                 
                 <div class="tax-form-group">
                   <label for="tax-message">Message</label>
-                  <textarea id="tax-message" name="message" rows="4" placeholder="Tell us about your requirements..."></textarea>
+                  <textarea id="tax-message" name="message" rows="4" placeholder="How can we help?"></textarea>
                 </div>
                 
                 <button type="submit" class="tax-btn tax-form-submit">Send Enquiry</button>
               </form>
+              <p id="tax-enquiry-message" style="display: none;"></p>
             </div>
           </aside>
         </div>
@@ -277,27 +277,58 @@
 
     <!-- Contact CTA Section -->
     <section class="tax-contact-cta">
-      <div class="tax-container">
-        <div class="tax-cta-content">
-          <div class="tax-cta-text">
-            <h3>We're here to help you, give us a call</h3>
-            <p>Get expert taxation advice tailored to your business needs</p>
-          </div>
-          <div class="tax-cta-contact">
-            <a href="tel:01582514988" class="tax-phone-number">
-              <i class="fas fa-phone tax-phone-icon"></i>
-              01582 514 988
-            </a>
-            <a href="#" onclick="return openCalendly()" class="tax-btn tax-cta-btn">Request a Callback</a>
-          </div>
+        <div class="tax-container">
+            <div class="tax-cta-content">
+            <div class="tax-cta-text">
+                <h3>We're here to help you, give us a call</h3>
+                <p>Get expert accounting advice tailored to your business needs</p>
+            </div>
+            <div class="tax-cta-contact">
+                <a href="tel:01582514988" class="tax-phone-number">
+                <i class="fas fa-phone tax-phone-icon"></i>
+                01582 514 988
+                </a>
+                <button class="tax-btn tax-cta-btn" onclick="openCallbackForm()">Request a Callback</button>
+            </div>
+            </div>
         </div>
-      </div>
-    </section>
+        <!-- Modal Callback Form -->
+        <div id="callbackModal" class="callback-modal">
+            <div class="callback-form-container">
+            <h3>Request a Callback</h3>
+            <form id="callbackForm">
+                <input type="text" name="name" placeholder="Your Name" required>
+
+                <input type="tel" name="phone" placeholder="Your Phone Number" required>
+
+                <input type="email" name="email" placeholder="Your Email Address" required>
+
+                <label for="callbackDate">Preferred Callback Date</label>
+                <input type="date" name="callbackDate" id="callbackDate" min="" required>
+
+                <label for="callbackTime">Preferred Time</label>
+                <select name="callbackTime" id="callbackTime" required>
+                <option value="">Select...</option>
+                <option value="Morning">Morning (9am – 12pm)</option>
+                <option value="Afternoon">Afternoon (1pm – 5pm)</option>
+                </select>
+                
+                <label for="message">How can we help you?</label>
+                <textarea name="message" id="message" placeholder="How can we help you?"></textarea>
+
+                <button type="submit">Submit</button>
+                <button type="button" onclick="closeCallbackForm()">Cancel</button>
+            
+            </form>
+            </div>
+        </div>
+
+        </section>
 
     <!-- Team Section -->
     <section class="tax-team-section">
       <div class="tax-container">
-        <h2>Meet Our Taxation Team</h2>
+        <h2>Meet Our Accounting Team</h2>
         
         <div class="tax-team-grid">
           <div class="tax-team-member">

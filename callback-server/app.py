@@ -127,7 +127,7 @@ def tax_enquiry():
             }), 400
 
         slack_text = (
-            "*📧 New Tax Enquiry Received:*\n"
+            "*📧 New Enquiry Received:*\n"
             f"👤 *Name*: {data['name']}\n"
             f"📧 *Email*: {data['email']}\n"
             f"📱 *Phone*: {data['phone'] or 'Not provided'}\n"
