@@ -223,18 +223,15 @@
                   <label for="tax-service">Service Required</label>
                   <select id="tax-service" name="service">
                     <option value="">Select a service</option>
-                    <option value="corporate-tax">Cloud Accounting</option>
-                    <option value="vat">Management Accounts</option>
-                    <option value="rd-credits">Statutory Accounts</option>
-                    <option value="capital-allowances">Bookkeeping Services</option>
-                    <option value="international">Payroll</option>
-                    <option value="investigations">Company Secretarial Services</option>
+                    <option value="corporate-tax">Internal Audits</option>
+                    <option value="vat">Due Dilligence</option>
+                    <option value="investigations">Special Purpose Audits</option>
                   </select>
                 </div>
                 
                 <div class="tax-form-group">
-                  <label for="tax-message">Message</label>
-                  <textarea id="tax-message" name="message" rows="4" placeholder="How can we help?"></textarea>
+                  <label for="tax-message">Message *</label>
+                  <textarea id="tax-message" name="message" rows="4" placeholder="How can we help?" required></textarea>
                 </div>
                 
                 <button type="submit" class="tax-btn tax-form-submit">Send Enquiry</button>

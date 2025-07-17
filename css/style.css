@@ -1418,6 +1418,10 @@ footer {
   gap: 40px;
 }
 
+.tax-cta-text {
+  max-width: 62%;
+}
+
 .tax-cta-text h3 {
   font-size: 1.75rem;
   font-weight: 700;

@@ -3,22 +3,423 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Citiline | TEMPLATE PAGE</title>
+    <title>Citiline | Business Advisory</title>
+
+    <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/navbar.style.css">
+
+    <!-- Other -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"> <!-- Calendly widget styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" /> <!-- Font Awesome for icons -->
+
 </head>
 <body>
     <!--Header (+ Navbar)-->
     <header id="site-navbar"></header>
 
-    <!-- Main Content -->
-    <section class="template" id="template">
-        <!--[INSERT CONTENT HERE]-->
-        <h1>THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST </h1>
+    <!-- Skip to main content for accessibility -->
+  <a href="#advisory-main-content" class="tax-sr-only tax-sr-only-focusable">Skip to main content</a>
+
+  <!-- Main Content -->
+  <main id="advisory-main-content" role="main">
+    
+    <!-- Hero Section -->
+    <section class="services-hero">
+      <div class="service-hero-container">
+        <div class="service-hero-content">
+          
+            <h1 class="service-hero-title">
+                <span>Business Advisory</span>
+            </h1>
+          <p class="service-subtitle">Unlock growth. Fortify decisions. Drive transformation with confidence.</p>
+          
+          <div class="service-hero-buttons">
+              <a href="contact.html" class="tax-btn tax-secondary">Contact Us</a>
+            <a href="#" onclick="return openCalendly()" class="tax-btn tax-primary">Book Appointment</a>
+          </div>
+        </div>
+        
+        <!-- Hero Video -->
+        <div class="tax-hero-video">
+            <video 
+                src="Assets/videos/services-advisory-hero.mp4" 
+                autoplay 
+                muted 
+                loop 
+                playsinline 
+                aria-label="Explainer animation about advisory services">
+                Your browser doesn’t support HTML5 video.
+            </video>
+          </div>
+      </div>
+    </section>
+    
+    <!-- Breadcrumb For Navigation-->
+    <div class="tax-breadcrumb">
+        <a href="index.html">Home</a> > <a href="services.html">Services</a> > <span>Business Advisory</span>
+    </div>
+
+    <!-- Services Grid -->
+    <section class="tax-services-grid-section">
+    <div class="tax-container">
+        <div class="tax-services-grid">
+
+          
+              <a href="advisory-planing.html" class="tax-service-link">
+                  <div class="tax-service-item">
+                    <div class="tax-service-icon">
+                      <i class="fa-solid fa-chess-king"></i>
+                    </div>
+                    <h3>Business Planning & Stratergy</h3>
+                    <p>Architect growth with intent. We identify operational blind spots, strengthen decision-making frameworks, and align planning with investor-grade expectations.</p>
+                  </div>
+              </a>
+          
+          <a href="advisory-cashflow.html" class="tax-service-link">
+              <div class="tax-service-item">
+                <div class="tax-service-icon">
+                  <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <h3>Cash Flow Forecasting & Budgeting</h3>
+                <p>Control liquidity with confidence. We translate volatility into insight—equipping leaders with dynamic forecasts that support timely, high-impact decisions.</p>
+              </div>
+          </a>
+          
+          <a href="advisory-valuations" class="tax-service-link">
+              <div class="tax-service-item">
+                <div class="tax-service-icon">
+                  <i class="fa-solid fa-scale-balanced"></i>
+                </div>
+                <h3>Business Valuations</h3>
+                <p>Know the true value behind the numbers. Our rigorous, scenario-based valuations support funding, M&A, and board-level decisions with absolute credibility.</p>
+              </div>
+          </a>
+
+          <a href="advisory-mergers" class="tax-service-link">
+              <div class="tax-service-item">
+                <div class="tax-service-icon">
+                  <i class="fa-solid fa-handshake"></i>
+                </div>
+                <h3>Mergers & Acquisitions Support</h3>
+                <p>Navigate transactions with strategic precision. From diligence to execution, we mitigate risk and optimise outcomes—on both sides of the table.</p>
+              </div>
+          </a>
+
+          <a href="advisory-succession" class="tax-service-link">
+              <div class="tax-service-item">
+                <div class="tax-service-icon">
+                  <i class="fa-solid fa-people-arrows"></i>
+                </div>
+                <h3>Succession Planing</h3>
+                <p>Secure continuity without compromise. We structure ownership transitions that protect enterprise value, strengthen governance, and inspire stakeholder trust.</p>
+              </div>
+          </a>
+
+          <a href="advisory-financial" class="tax-service-link">
+              <div class="tax-service-item">
+                <div class="tax-service-icon">
+                  <i class="fa-solid fa-gears"></i>
+                </div>
+                <h3>Financial Systems Review</h3>
+                <p>Elevate finance from function to force. We assess, optimise, and align financial systems to deliver speed, resilience, and strategic intelligence.</p>
+              </div>
+          </a>
+        </div>
+      </div>
     </section>
 
-    <!-- Javascript -->
+    <!-- Main Content Area -->
+    <section class="tax-main-content-section">
+      <div class="tax-container">
+        <div class="tax-content-layout">
+          <!-- Left Column - Main Content -->
+          <div class="tax-main-content">
+            <div class="tax-content-block">
+                <h2>Business Advisory That Moves Your Business Forward</h2>
+                <p>
+                    In a world of shifting markets, tight margins, and rising pressure, SMEs need more than accounting—they need clarity, confidence, and a trusted advisor in the room. At Citiline, we blend deep commercial insight with real-world experience to help business owners make smarter decisions, faster. Whether you're aiming for growth, navigating risk, or planning your next move—we guide you from uncertainty to opportunity.
+                </p>
+            </div>
+
+            <div class="tax-content-block">
+            <h2>What We Deliver</h2>
+            <ul class="tax-service-list">
+                <li>
+                <strong>Growth & Expansion Strategy:</strong>
+                Practical, data-backed plans to help you scale sustainably—whether you're opening new locations, launching new services, or entering new markets.
+                </li>
+                <li>
+                <strong>Cashflow & Working Capital Advisory:</strong>
+                Tailored forecasting and cashflow solutions that keep your business resilient—even in tough times.
+                </li>
+                <li>
+                <strong>Profitability & Cost Control:</strong>
+                Pinpoint where profits leak, where efficiencies lie, and how to protect your margins without compromising on delivery or growth.
+                </li>
+                <li>
+                <strong>Owner-Led Exit & Succession Planning:</strong>
+                Whether you’re preparing to sell, pass down, or step back, we help you extract maximum value—and peace of mind.
+                </li>
+                <li>
+                <strong>Business Health Reviews:</strong>
+                Periodic, no-nonsense diagnostics of your financial position, pricing, and systems—so you can act before small problems become big ones.
+                </li>
+                <li>
+                <strong>Founder & Director Advisory:</strong>
+                Confidential support for business owners navigating tough calls, key hires, or high-stress turning points.
+                </li>
+            </ul>
+            </div>
+
+            <div class="tax-content-block">
+            <h2>For Owners Who Want to Lead, Not Just Operate</h2>
+            <p>
+                We know what it’s like to carry the weight of payroll, tax deadlines, and tomorrow’s strategy—often all at once. Our role is to lift that weight with you. At Citiline, you don’t just get advice. You get a thinking partner. Someone to sense-check the big ideas, strengthen your decision-making, and keep your business on the front foot.
+            </p>
+            <p>
+                This isn’t about blue-sky strategy. It’s about what works. If you’re ready for a fresh perspective and grounded solutions, <strong>give us a call today</strong>—we’re here when it matters.
+            </p>
+            </div>
+
+
+
+            <!-- Client Reviews -->
+            <div class="tax-reviews-section">
+                <h3>Client Reviews</h3>
+                <div class="tax-review-stars">
+                    <span class="tax-stars">★★★★★</span>
+                    <span class="tax-rating-text">5.0 out of 5</span>
+                </div>
+                
+                <div class="tax-review-item">
+                    <p>"The audit process was thorough, seamless, and surprisingly insightful. Citiline didn’t just tick compliance boxes—they uncovered operational blind spots and gave us clarity we didn’t know we were missing."</p>
+                    <cite>— CFO, Stratus Renewable Group</cite>
+                </div>
+
+                <div class="tax-review-item">
+                    <p>"What stood out most was Nadeem’s ability to simplify the complex. His guidance during our audit helped us move faster, with more confidence, at a crucial turning point in our growth."</p>
+                    <cite>— Managing Director, Veritas Health Ltd</cite>
+                </div>
+
+            </div>
+          </div>
+
+          <!-- Right Column - Sidebar -->
+          <aside class="tax-sidebar">
+            <!-- Expert Profile Card -->
+            <div class="tax-expert-card animate-on-scroll">
+              <div class="tax-expert-image">
+                <img src="Assets/headshot-1.png" alt="Senior Tax Adviser" />
+              </div>
+              <div class="tax-expert-info">
+                <h4>Daveena Seepaul</h4>
+                <p class="tax-expert-title">Senior Tax Adviser</p>
+                <div class="tax-expert-rating">
+                  <span class="tax-stars">★★★★★</span>
+                  <span>4.9/5 (127 reviews)</span>
+                </div>
+                <p class="tax-expert-description">
+                  Former HMRC inspector with over 15 years of experience in business taxation and compliance.
+                </p>
+                <a href="#" onclick="return openCalendly()" class="tax-btn tax-expert-btn">Book Consultation</a>
+              </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="tax-contact-form-card animate-on-scroll" id="tax-contact-form">
+              <h4>Contact our Advisory Team</h4>
+              <form class="tax-enquiry-form" id="taxEnquiryForm">
+                <div class="tax-form-group">
+                  <label for="tax-name">Full Name *</label>
+                  <input type="text" id="tax-name" name="name" required>
+                </div>
+                
+                <div class="tax-form-group">
+                  <label for="tax-email">Email Address *</label>
+                  <input type="email" id="tax-email" name="email" required>
+                </div>
+                
+                <div class="tax-form-group">
+                  <label for="tax-phone">Phone Number *</label>
+                  <input type="tel" id="tax-phone" name="phone" required>
+                </div>
+                
+                <div class="tax-form-group">
+                  <label for="tax-company">Company Name</label>
+                  <input type="text" id="tax-company" name="company">
+                </div>
+                
+                <div class="tax-form-group">
+                  <label for="tax-service">Service Required</label>
+                  <select id="tax-service" name="service">
+                    <option value="">Select a service</option>
+                    <option value="corporate-tax">Business Planning & Stratergy</option>
+                    <option value="vat">Cash Flow Forecasting & Budgeting</option>
+                    <option value="rd-credits">Business Valuations</option>
+                    <option value="capital-allowances">Mergers & Acquisitions Support</option>
+                    <option value="international">Sucession Planning</option>
+                    <option value="investigations">Financial Systems Review</option>
+                  </select>
+                </div>
+                
+                <div class="tax-form-group">
+                  <label for="tax-message">Message *</label>
+                  <textarea id="tax-message" name="message" rows="4" placeholder="How can we help?" required></textarea>
+                </div>
+                
+                <button type="submit" class="tax-btn tax-form-submit">Send Enquiry</button>
+              </form>
+              <p id="tax-enquiry-message" style="display: none;"></p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact CTA Section -->
+    <section class="tax-contact-cta">
+        <div class="tax-container">
+            <div class="tax-cta-content">
+            <div class="tax-cta-text">
+                <h3>We're here to help you, give us a call</h3>
+                <p>For SMEs ready to outpace the market—not just survive it—we engineer clarity, conviction, and competitive edge.</p>
+            </div>
+            <div class="tax-cta-contact">
+                <a href="tel:01582514988" class="tax-phone-number">
+                <i class="fas fa-phone tax-phone-icon"></i>
+                01582 514 988
+                </a>
+                <button class="tax-btn tax-cta-btn" onclick="openCallbackForm()">Request a Callback</button>
+            </div>
+            </div>
+        </div>
+        <!-- Modal Callback Form -->
+        <div id="callbackModal" class="callback-modal">
+            <div class="callback-form-container">
+            <h3>Request a Callback</h3>
+            <form id="callbackForm">
+                <input type="text" name="name" placeholder="Your Name" required>
+
+                <input type="tel" name="phone" placeholder="Your Phone Number" required>
+
+                <input type="email" name="email" placeholder="Your Email Address" required>
+
+                <label for="callbackDate">Preferred Callback Date</label>
+                <input type="date" name="callbackDate" id="callbackDate" min="" required>
+
+                <label for="callbackTime">Preferred Time</label>
+                <select name="callbackTime" id="callbackTime" required>
+                <option value="">Select...</option>
+                <option value="Morning">Morning (9am – 12pm)</option>
+                <option value="Afternoon">Afternoon (1pm – 5pm)</option>
+                </select>
+                
+                <label for="message">How can we help you?</label>
+                <textarea name="message" id="message" placeholder="How can we help you?"></textarea>
+
+                <button type="submit">Submit</button>
+                <button type="button" onclick="closeCallbackForm()">Cancel</button>
+            
+            </form>
+            </div>
+        </div>
+
+        </section>
+
+    <!-- Team Section -->
+    <section class="tax-team-section">
+      <div class="tax-container">
+        <h2>Meet Our Team</h2>
+        
+        <div class="tax-team-grid">
+          <div class="tax-team-member">
+            <div class="tax-member-image">
+              <img src="Assets/headshot-2.png" alt="Arthur Mullinger" />
+            </div>
+            <div class="tax-member-info">
+              <h4>Arthur Mullinger</h4>
+              <p class="tax-member-title">Senior Partner</p>
+              <p class="tax-member-credentials">ACA, CTA</p>
+              <div class="tax-member-rating">
+                <span class="tax-stars">★★★★★</span>
+                <span>4.9/5</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="tax-team-member">
+            <div class="tax-member-image">
+              <img src="Assets/headshot-3.png" alt="Charles Newman" />
+            </div>
+            <div class="tax-member-info">
+              <h4>Charles Newman</h4>
+              <p class="tax-member-title">Tax Director</p>
+              <p class="tax-member-credentials">FCCA, ATT</p>
+              <div class="tax-member-rating">
+                <span class="tax-stars">★★★★★</span>
+                <span>4.8/5</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="tax-team-member">
+            <div class="tax-member-image">
+              <img src="Assets/headshot-1.png" alt="Daveena Seepaul" />
+            </div>
+            <div class="tax-member-info">
+              <h4>Daveena Seepaul</h4>
+              <p class="tax-member-title">Senior Tax Adviser</p>
+              <p class="tax-member-credentials">Ex-HMRC, CTA</p>
+              <div class="tax-member-rating">
+                <span class="tax-stars">★★★★★</span>
+                <span>4.9/5</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="tax-team-member">
+            <div class="tax-member-image">
+              <img src="Assets/headshot-4.png" alt="Aimen Farooq" />
+            </div>
+            <div class="tax-member-info">
+              <h4>Aimen Farooq</h4>
+              <p class="tax-member-title">Accounts Assistant</p>
+              <p class="tax-member-credentials">AAT</p>
+              <div class="tax-member-rating">
+                <span class="tax-stars">★★★★★</span>
+                <span>4.7/5</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tax-team-cta">
+          <a href="about.html" class="tax-btn tax-outline">Meet the full team</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related News Section -->
+    <section class="tax-news-section">
+      <div class="tax-container">
+        <h2>Related News</h2>
+        <p class="tax-news-subtitle">Keeping you up to date</p>
+        
+        <div class="tax-news-grid">
+            <!-- News cards will be dynamically injected here by JavaScript -->
+        </div>
+        
+        <div class="tax-news-cta">
+          <a href="news.html" class="tax-btn tax-outline">View all taxation news</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+    <!-- Scripts -->
     <script src="javascript/script.js"></script>
+    <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
     
 </body>
 </html>
