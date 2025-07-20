@@ -930,25 +930,33 @@ footer {
   border: 2px solid transparent;
 }
 
-.tax-btn.tax-primary {
-  background: white;
-  color: #1e3a8a;
-}
-
-.tax-btn.tax-primary:hover {
-  background: #f8fafc;
-  transform: translateY(-2px);
+.tax-btn::after {
+  content: "→";              
+  display: inline-block;
+  margin-left: 0.5em;        
+  font-size: 1em;            
+  vertical-align: middle;    
 }
 
 .tax-btn.tax-secondary {
-  background: transparent;
-  color: white;
-  border-color: white;
+  background: white;
+  color: #1e3a8a;
 }
 
 .tax-btn.tax-secondary:hover {
-  background: white;
-  color: #1e3a8a;
+  background: black;
+  color: white;  
+}
+
+.tax-btn.tax-primary {
+  background: transparent;
+  border:2px solid white;
+  color: white;
+}
+
+.tax-btn.tax-primary:hover {
+  background: black;
+  border: 2px solid black;
 }
 
 .tax-hero-video {
@@ -1801,3 +1809,781 @@ footer {
   z-index: 1000;
 }
 
+/* Reset and Base Styles */
+.svc-page * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.svc-page {    
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+}
+
+.svc-page-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Button Styles */
+.svc-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s;
+}
+
+.svc-btn:focus-visible {
+  outline: none;  /* kill the UA default */
+  box-shadow: 
+    0 0 0 3px rgba(255,255,255,0.8),   /* white halo */
+    0 4px 12px rgba(0,0,0,0.1);        /* gentle lift */
+}
+
+.svc-btn::after {
+    content: "→";
+    display: inline-block;
+    margin-left: 8px;
+    font-size: 1em;
+    vertical-align: middle;
+}
+
+.svc-btn-primary {
+  background: white;
+  color: #1e3a8a;
+  border: 2px solid transparent; 
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.svc-btn-primary:hover {
+  background: black;
+  color: white;
+}
+
+.svc-btn-secondary {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+.svc-btn-secondary:hover {
+  background: black;
+  border: 2px solid black;
+}
+
+
+.svc-btn-lg {
+    padding: 12px 32px;
+    font-size: 18px;
+}
+
+/* Header Styles */
+.svc-header {
+    background: #2563eb;
+    color: white;
+    padding: 12px 0;
+    font-size: 14px;
+}
+
+.svc-header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.svc-header-contact {
+    display: flex;
+    gap: 24px;
+}
+
+.svc-header-nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.svc-header-nav a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.svc-header-nav a:hover {
+    color: #93c5fd;
+}
+
+/* Hero Section */
+.svc-hero {
+    background: linear-gradient(135deg, #1e3a8a 20%, #3b82f6 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+    padding: 120px 0 112px;
+    
+}
+
+.svc-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(37, 99, 235, 0.2) 0%, transparent 100%);
+}
+
+.svc-hero-curve {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 96px;
+    fill: white;
+}
+
+.svc-hero-content {
+    position: relative;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 48px;
+    align-items: center;
+}
+
+/* 1) Keyframes define start/end states */
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 2) Apply the animation to your hero text */
+.svc-hero-text {
+  /* make sure it’s hidden at start */
+  opacity: 0;
+  transform: translateX(-100px);
+
+  /* fire the slide-in on load */
+  animation: slideInFromLeft 0.8s ease-out  /* duration & easing */
+             0.2s                          /* delay (optional) */
+             forwards;                     /* keep end state */
+}
+
+.svc-hero-text h1 {
+    font-size: 60px;
+    font-weight: bold;
+    line-height: 0.9;
+    margin-bottom: 16px;
+}
+
+.svc-hero-text p {
+    font-size: 20px;  
+    color: #dbeafe;
+    margin-top: 30px;
+    margin-bottom: 62px;
+    line-height: 1.6;
+}
+
+.svc-hero-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.svc-hero-image {
+    position: relative;
+    margin-left: auto;
+}
+
+.svc-hero-image-circle {
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #fff;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.svc-hero-image-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Breadcrumb */
+.svc-breadcrumb-container {
+  background: white;
+  padding: 16px 0;
+}
+
+.svc-breadcrumb {
+  max-width: 1280px; /* match your main content container */
+  margin: 0 auto;
+  padding: 0 24px;
+  font-size: 14px;
+  font-weight: bold;
+  opacity: 0.8;
+  
+
+}
+
+.svc-breadcrumb a, .svc-breadcrumb span {
+    color: black;
+    text-decoration: none;
+}
+
+.svc-breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content */
+.svc-main-content {
+    padding: 64px 0;
+}
+
+.svc-content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 48px;
+}
+
+.svc-content-section h2 {
+    font-size: 2rem;
+    font-weight: 300;
+    color: #2563eb;
+    margin-bottom: 32px;
+}
+
+.svc-content-section p {
+    color: #374151;
+    line-height: 1.8;
+    margin-bottom: 32px;
+    font-size: 18px;
+}
+
+.svc-key-points {
+    margin-bottom: 48px;
+}
+
+.svc-key-point {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.svc-check-icon {
+    width: 24px;
+    height: 24px;
+    color: #2563eb;
+    flex-shrink: 0;
+    margin-top: 4px;
+}
+
+.svc-key-point p {
+    color: #374151;
+    line-height: 1.6;
+    margin: 0;
+    font-size: 16px;
+}
+
+/* CTA Section */
+.svc-cta-section {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 50%, #1e40af 100%);
+    color: white;
+    padding: 32px;
+    border-radius: 8px;
+    margin-bottom: 48px;
+}
+
+.svc-cta-section h3 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 24px;
+}
+
+.svc-cta-section p {
+    color: #d1d5db;
+    margin-bottom: 32px;
+    line-height: 1.6;
+}
+
+.svc-cta-box {
+    background: #2563eb;
+    padding: 24px;
+    border-radius: 8px;
+}
+
+.svc-cta-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.svc-cta-phone {
+    text-align: center;
+}
+
+.svc-cta-phone p {
+    color: #dbeafe;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.svc-cta-phone .svc-phone-number {
+    display: flex;
+    align-items: center;
+    font-size: 1.875rem;
+    font-weight: 300;
+    gap: 12px;
+}
+
+.svc-cta-divider {
+    color: #dbeafe;
+    font-size: 14px;
+}
+
+/* Contact Form */
+.svc-contact-form {
+    border: 2px solid #fbbf24;
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    background: white;
+}
+
+.svc-form-header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.svc-form-header h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #2563eb;
+    margin-bottom: 8px;
+}
+
+.svc-form-header h4 {
+    font-size: 1.125rem;
+    color: #fbbf24;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.svc-form-header p {
+    font-size: 14px;
+    color: #6b7280;
+    margin: 0;
+}
+
+.svc-form-group {
+    margin-bottom: 16px;
+}
+
+.svc-form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 4px;
+}
+
+.svc-form-group input,
+.svc-form-group textarea {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.svc-form-group input:focus,
+.svc-form-group textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.svc-form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.svc-checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 16px;
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.svc-checkbox-group input[type="checkbox"] {
+    margin-top: 4px;
+}
+
+.svc-btn-submit {
+    width: 100%;
+    background: #2563eb;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.svc-btn-submit:hover {
+    background: #1d4ed8;
+}
+
+.svc-helpline {
+    text-align: center;
+    margin-top: 24px;
+}
+
+.svc-helpline p:first-child {
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 4px;
+}
+
+.svc-helpline p:last-child {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #2563eb;
+    margin: 0;
+}
+
+/* Other Services */
+.svc-other-services {
+    padding: 64px 0;
+    background: #f9fafb;
+}
+
+.svc-services-header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.svc-services-header h2 {
+    font-size: 2rem;
+    font-weight: 300;
+    color: #2563eb;
+    margin-bottom: 16px;
+}
+
+.svc-services-divider {
+    width: 96px;
+    height: 4px;
+    background: #fbbf24;
+    margin: 0 auto;
+}
+
+.svc-services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.svc-service-item {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    color: #2563eb;
+    font-weight: 500;
+    border-left: 4px solid transparent;
+    transition: all 0.3s;
+}
+
+.svc-service-item:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-left-color: #fbbf24;
+    transform: translateY(-2px);
+}
+
+.svc-service-icon {
+    width: 32px;
+    height: 32px;
+    background: #2563eb;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 16px;
+    transition: background-color 0.3s;
+}
+
+.svc-service-icon::after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+}
+
+.svc-service-item:hover .svc-service-icon {
+    background: #2563eb;
+}
+
+.svc-service-indicator {
+    width: 16px;
+    height: 16px;
+    background: #fbbf24;
+    border-radius: 50%;
+    margin-left: auto;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.svc-service-item:hover .svc-service-indicator {
+    opacity: 1;
+}
+
+/* Animation Classes */
+.svc-fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.svc-fade-in.svc-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Message Styles */
+.svc-error-message {
+    background: #fee2e2;
+    color: #dc2626;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    border: 1px solid #fecaca;
+    font-size: 14px;
+}
+
+.svc-success-message {
+    background: #dcfce7;
+    color: #166534;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    border: 1px solid #bbf7d0;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .svc-hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .svc-hero-text h1 {
+        font-size: 3rem;
+    }
+
+    .svc-content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .svc-cta-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .svc-hero-image {
+      display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .svc-hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .svc-hero-buttons .svc-btn {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+    }
+
+    .svc-services-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 640px) {
+    .svc-page-container {
+        padding: 0 16px;
+    }
+
+    .svc-header-content {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .svc-header-nav {
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .svc-hero {
+        padding: 120px 0 80px;
+    }
+
+    .svc-hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .svc-hero-text p {
+        font-size: 18px;
+    }
+
+    .svc-hero-buttons {
+        flex-direction: column;
+    }
+    
+    .svc-hero-image {
+      display: none;
+    }
+
+    .svc-hero-image-circle {
+        width: 250px;
+        height: 250px;
+    }
+
+    .svc-main-content {
+        padding: 32px 0;
+    }
+
+    .svc-content-section h2 {
+        font-size: 1.75rem;
+    }
+
+    .svc-content-section p {
+        font-size: 16px;
+    }
+
+    .svc-other-services {
+        padding: 32px 0;
+    }
+
+    .svc-services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .svc-cta-content {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .svc-cta-phone .svc-phone-number {
+        font-size: 1.5rem;
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .svc-hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .svc-hero-image-circle {
+        width: 200px;
+        height: 200px;
+    }
+
+    .svc-contact-form {
+        padding: 16px;
+    }
+
+    .svc-cta-section {
+        padding: 24px 16px;
+    }
+
+    .svc-services-header h2 {
+        font-size: 1.75rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .svc-header,
+    .svc-hero-buttons,
+    .svc-contact-form,
+    .svc-cta-section {
+        display: none;
+    }
+
+    .svc-hero {
+        background: white;
+        color: black;
+        padding: 20px 0;
+    }
+
+    .svc-hero-text h1 {
+        color: #2563eb;
+    }
+
+    .svc-page {
+        font-size: 12px;
+        line-height: 1.4;
+    }
+}
+
+/* Accessibility Improvements */
+@media (prefers-reduced-motion: reduce) {
+    .svc-page * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Focus Styles for Better Accessibility */
+.svc-form-group input:focus,
+.svc-form-group textarea:focus,
+.svc-service-item:focus {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    .svc-hero {
+        background: #000;
+    }
+    
+    .svc-btn-primary {
+        border: 2px solid #2563eb;
+    }
+    
+    .svc-service-item {
+        border: 1px solid #2563eb;
+    }
+}
