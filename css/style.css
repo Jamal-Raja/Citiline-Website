@@ -1298,6 +1298,10 @@ footer {
               box-shadow 0.3s ease,
               border-color 0.3s ease;
   text-align: left;
+  height: auto;  
+  
+  align-self: start;    
+  
 }
 
 /* Hover state – lift and deepen */
@@ -1810,15 +1814,12 @@ footer {
 }
 
 /* Reset and Base Styles */
-.svc-page * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.svc-page * {   
+    box-sizing: border-box; 
 }
 
 .svc-page {    
     line-height: 1.6;
-    color: #333;
     background-color: #fff;
 }
 
@@ -2048,12 +2049,12 @@ footer {
 
 /* Main Content */
 .svc-main-content {
-    padding: 64px 0;
+    padding: 54px 0;
 }
 
 .svc-content-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 2fr .75fr;
     gap: 48px;
 }
 
@@ -2358,18 +2359,6 @@ footer {
 
 .svc-service-item:hover .svc-service-indicator {
     opacity: 1;
-}
-
-/* Animation Classes */
-.svc-fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.svc-fade-in.svc-visible {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 /* Message Styles */
