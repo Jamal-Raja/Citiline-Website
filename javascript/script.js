@@ -109,6 +109,22 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 });
 
+// ==============================
+// Footer injector (external footer.html)
+// ==============================
+document.addEventListener('DOMContentLoaded', async () => {
+  const placeholder = document.getElementById('site-footer');
+  if (!placeholder) return;
+  try {
+    const resp = await fetch('footer.html');
+    if (!resp.ok) throw new Error(`Footer load error: ${resp.status}`); 
+    const html = await resp.text(); 
+    placeholder.innerHTML = html; 
+  } catch (err) { 
+    console.error(err); 
+  }
+});
+
 // =======================================
 // Homepage Hero video background rotation
 // =======================================
