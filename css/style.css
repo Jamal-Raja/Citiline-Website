@@ -980,15 +980,34 @@ footer {
 .tax-hero-video video {
   width: 100%;
   height: 100%;
-  object-fit: cover;       /* fills, cropping as needed */
-  object-position: center; /* centres the focal point */
-  display: block;          /* removes inline spacing */
+  object-fit: cover;       
+  object-position: center; 
+  display: block;          
   filter: contrast(1.05) brightness(1.05);
 }
 
+.services-header {  
+  font-size: 2rem;
+  text-align: center;
+  color: #1e3a8a;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.services-header::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background-color: #0a1f44;
+  margin: 0.5rem auto 0;
+}
+
+
 /* Services Grid */
 .tax-services-grid-section {
-  padding: 80px 0;
+  padding: 30px 0;
   background: white;
 }
 
@@ -1209,7 +1228,7 @@ footer {
   border-radius: 12px;
   padding: 30px;
   text-align: center;
-
+  
   /* default (previous hover) shadow */
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 
@@ -1297,11 +1316,12 @@ footer {
   transition: transform 0.3s ease,
               box-shadow 0.3s ease,
               border-color 0.3s ease;
-  text-align: left;
+  text-align: left;    
+}
+
+.stop-stretch {
   height: auto;  
-  
   align-self: start;    
-  
 }
 
 /* Hover state – lift and deepen */
@@ -1453,7 +1473,7 @@ footer {
 .tax-phone-number {
   color: white;
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 700;
   display: flex;
   align-items: center;
@@ -1881,12 +1901,6 @@ footer {
   border: 2px solid black;
 }
 
-
-.svc-btn-lg {
-    padding: 12px 32px;
-    font-size: 18px;
-}
-
 /* Header Styles */
 .svc-header {
     background: #2563eb;
@@ -1956,7 +1970,6 @@ footer {
     align-items: center;
 }
 
-/* 1) Keyframes define start/end states */
 @keyframes slideInFromLeft {
   from {
     opacity: 0;
@@ -1968,16 +1981,13 @@ footer {
   }
 }
 
-/* 2) Apply the animation to your hero text */
 .svc-hero-text {
-  /* make sure it’s hidden at start */
   opacity: 0;
   transform: translateX(-100px);
 
-  /* fire the slide-in on load */
-  animation: slideInFromLeft 0.8s ease-out  /* duration & easing */
-             0.2s                          /* delay (optional) */
-             forwards;                     /* keep end state */
+  animation: slideInFromLeft 0.8s ease-out 
+             0.2s                          
+             forwards;                     
 }
 
 .svc-hero-text h1 {
@@ -2060,16 +2070,15 @@ footer {
 
 .svc-content-section h2 {
     font-size: 2rem;
-    font-weight: 300;
-    color: #2563eb;
-    margin-bottom: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #1e3a8a;
 }
 
 .svc-content-section p {
-    color: #374151;
-    line-height: 1.8;
-    margin-bottom: 32px;
-    font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  color: #475569;
 }
 
 .svc-key-points {
@@ -2086,7 +2095,7 @@ footer {
 .svc-check-icon {
     width: 24px;
     height: 24px;
-    color: #2563eb;
+    color: #1e3a8a;
     flex-shrink: 0;
     margin-top: 4px;
 }
@@ -2120,41 +2129,114 @@ footer {
 }
 
 .svc-cta-box {
-    background: #2563eb;
-    padding: 24px;
-    border-radius: 8px;
+  background: transparent;
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 40px 32px;
+  color: white;
+  position: relative;
+  z-index: 1;
+
+  /* animation setup */
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.svc-cta-parallax-wrapper {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(30, 58, 138, 0.7) 0%,
+      rgba(59, 130, 246, 0.7) 100%
+    ),
+    url('../Assets/images/cta-bg2\ 18.19.40.jpg') center/cover no-repeat;
+  background-attachment: fixed;
+  border-radius: 8px;
+}
+
+.svc-cta-box.slide-in {
+  animation: slideInFromLeft 0.8s ease-out 0.2s forwards;
 }
 
 .svc-cta-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;         
+  gap: 32px;   
+  margin: 0 40px;              
 }
 
 .svc-cta-phone {
-    text-align: center;
-}
-
-.svc-cta-phone p {
-    color: #dbeafe;
-    margin-bottom: 8px;
-    font-size: 14px;
-}
-
-.svc-cta-phone .svc-phone-number {
-    display: flex;
-    align-items: center;
-    font-size: 1.875rem;
-    font-weight: 300;
-    gap: 12px;
+  text-align: left;         
 }
 
 .svc-cta-divider {
-    color: #dbeafe;
-    font-size: 14px;
+  position: relative;       /* for the pseudo‐elements */
+  flex: none;
+  padding: 0 24px;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  /* no height here! let it size to the text */
 }
+
+/* common line styling */
+.svc-cta-divider::before,
+.svc-cta-divider::after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 45px;                     /* control how tall each little stroke is */
+  background: rgba(255, 255, 255, 0.608);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* line above the text */
+.svc-cta-divider::before {
+  top: 2;                           /* flush to the top edge */
+  transform: translate(-50%, -100%);/* move it up so it sits above the “OR” */
+}
+
+/* line below the text */
+.svc-cta-divider::after {
+  bottom: 2;                        /* flush to the bottom edge */
+  transform: translate(-50%, 100%); /* move it down so it sits below the “OR” */
+}
+
+
+
+
+.svc-cta-phone p {
+  color: white;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+.svc-phone-number {
+  display: flex;
+  align-items: center;
+  font-size: 1.875rem;      
+  font-weight: 300;
+  gap: 12px;
+}
+
+.svc-btn-lg {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+.large-text {
+  font-size: 19px !important;          
+  display: flex;
+  align-items: center;
+}
+
 
 /* Contact Form */
 .svc-contact-form {
@@ -2403,6 +2485,17 @@ footer {
     }
 
     .svc-hero-image {
+      display: none;
+    }
+
+    .svc-cta-divider::before {
+      display: none;
+    }
+    .svc-cta-divider::after {
+      display: none;
+    }
+    
+    .svc-cta-parallax-wrapper {
       display: none;
     }
 }

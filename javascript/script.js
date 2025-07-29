@@ -200,6 +200,19 @@ document.addEventListener('DOMContentLoaded', () => {
   triggerRing();
 });
 
+function isInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return rect.top < window.innerHeight - 100;
+  }
+
+  window.addEventListener("scroll", () => {
+    const cta = document.querySelector(".svc-cta-box");
+
+    if (cta && isInViewport(cta) && !cta.classList.contains("slide-in")) {
+      cta.classList.add("slide-in");
+    }
+  });
+
 // ==============================
 // Related news cards from HMRC Atom feed
 // ==============================
