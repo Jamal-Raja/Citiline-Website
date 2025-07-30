@@ -5,7 +5,7 @@
 /* Ensures consistent spacing and box model across browsers */
 /* RESET */
 :root {
-  --main-colour: #00b4d8; /* Main brand color */
+  --main-colour: #2971fd; /* Main brand color */
 }
 
 * {
@@ -259,8 +259,7 @@ footer {
   align-items: center;
   text-align: center;
   max-width: 1000px; /* Limits the width */
-  margin: 0 auto; /* Centers it within its parent */
-  cursor: pointer;
+  margin: 0 auto; /* Centers it within its parent */  
 }
 
 .footer-brand img {

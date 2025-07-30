@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
 
 :root {
-  --main-colour: #00b4d8; /* Main brand color */
+  --main-colour: #2971fd; /* Main brand color */
 }
 
 * {
@@ -47,7 +47,7 @@ header {
 /* ================================
    Logo, Menu Toggle & Main Links
    ================================ */
-.logo img { height:90px; object-fit:contain; transition:transform .2s; }
+.logo img { height:90px; object-fit:contain; transition:transform .2s; padding-top: 10px;}
 
 .logo img:hover { transform:scale(1.05) }
 
@@ -82,7 +82,7 @@ header {
   bottom: -4px;
   width: 100%;
   height: 2px;
-  background-color: #00b4d8;
+  background-color: var(--main-colour);
   transform: scaleX(0);
   transform-origin: right;
   transition: transform 0.3s ease;
@@ -97,14 +97,17 @@ header {
 
 /* contact button */
 .contact-button {
-  background:#00b4d8; color:#ffffff;
-  padding:.6rem 1.4rem; border-radius:25px;
+  background:var(--main-colour); 
+  color:#ffffff;
+  padding:.6rem 1.4rem; 
+  border-radius:25px;
   box-shadow:0 3px 6px rgba(0,0,0,0.1);
   transition:background .2s, transform .2s;
 }
+
 .contact-button:hover {
   background: #ffffff;
-  color: #00b4d8;
+  color: var(--main-colour);
   box-shadow: 0 6px 16px rgba(0, 180, 216, 0.3);
 }
 
@@ -123,7 +126,7 @@ header {
   top: 100px; left: 50%;
   transform: translateX(-50%);
   width: 90vw; max-width: 1300px;
-  background: #f1fafc;
+  background: #fbfcff;
   border-radius: 8px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.1);
   font-family: 'Montserrat', sans-serif; 
@@ -185,14 +188,14 @@ header {
 /* mark the active primary item (keeps highlight when submenu open) */
 .primary-menu li.active > a {
   background: rgba(0,180,216,0.2);
-  color: #00b4d8;
+  color: var(--main-colour);
   font-weight: 600;
 }
 
 .primary-menu li.active > a::after {
   content: '▸';
   margin-left: 0.5rem;
-  color: #00b4d8;
+  color: var(--main-colour);
 }
 
 /* hide all sub-blocks, show only .active */
@@ -251,7 +254,7 @@ header {
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   object-fit: cover;
-  background-color: white;
+  background-color: white;  
 }
 
 /*  ──────────────────────────────────────────────────────────
@@ -259,22 +262,21 @@ header {
     ────────────────────────────────────────────────────────── */
 .mega-preview {
   position: relative;
-  width: 300px;               /* adjust to your desired size */
-  height: 300px;              /* keep square or tweak */
-  margin-right: 2rem;         /* space from your menu */
-  border: 6px solid rgba(0, 180, 216, 0.8);
-  border-radius: 8px;
+  width: 300px;               
+  height: 300px;              
+  margin-right: 2rem;         
+  border: 6px solid var(--main-colour);
+  border-radius: 14px;
   overflow: hidden;
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-  flex-shrink: 0;             /* so it never shrinks in the flex layout */
+  flex-shrink: 0;             
 }
 
 .mega-preview video {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
-  border-radius: 4px;
+  display: block; 
 }
 
 /* soft “glow” underneath the video */
