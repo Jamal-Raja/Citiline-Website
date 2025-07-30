@@ -102,8 +102,15 @@ header {
   box-shadow:0 3px 6px rgba(0,0,0,0.1);
   transition:background .2s, transform .2s;
 }
-.contact-button:hover { background:white; transform:translateY(-2px) }
-.contact-button:active { transform:translateY(1px); box-shadow:0 4px 12px rgba(0,150,199,0.2) }
+.contact-button:hover {
+  background: #ffffff;
+  color: #00b4d8;
+  box-shadow: 0 6px 16px rgba(0, 180, 216, 0.3);
+}
+
+.contact-button:active {
+  box-shadow: 0 4px 12px rgba(0, 150, 199, 0.2);
+}
 
 
 /* ================================
