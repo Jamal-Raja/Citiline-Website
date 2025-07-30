@@ -328,7 +328,7 @@ footer {
   bottom: -2px;
   width: 100%;
   height: 2px;
-  background-color: red;
+  background-color: var(--main-colour);
   transform: scaleX(0);
   transform-origin: right;
   transition: transform 0.3s ease, background-color 0.3s ease;
