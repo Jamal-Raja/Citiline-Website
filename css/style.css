@@ -280,7 +280,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2rem 8rem; /* row gap, column gap */
+    gap: 2rem 3rem; /* row gap, column gap */
     margin: 2rem 0;
 }
 
