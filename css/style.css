@@ -2234,6 +2234,10 @@ footer {
 }
 
 /* CTA Section */
+.callback-cta-section {
+  padding-bottom: 54px;
+}
+
 .svc-cta-section {
     background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 50%, #1e40af 100%);
     color: white;
@@ -2280,6 +2284,8 @@ footer {
     url('../Assets/images/cta-bg2\ 18.19.40.jpg') center/cover no-repeat;
   background-attachment: fixed;
   border-radius: 8px;
+  width: 80%;
+  margin: 0 auto; /* ✅ Centers the element */
 }
 
 .svc-cta-box.slide-in {
