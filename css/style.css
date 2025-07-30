@@ -242,10 +242,10 @@ html {
 /* === FOOTER STYLES === */
 .footer {
   background: #1e3a8a;
-  color: #ffffff;
+  color: #fff;
   text-align: center;
   padding: 3rem 1rem;
-  border-top: 8px solid var(--main-colour); 
+  
 
 }
 
@@ -254,7 +254,8 @@ html {
   width: 100%;
   height: auto;
   display: block;
-  margin: 0 auto 1rem; /* centers image and adds spacing below */
+  margin: 0 auto 1rem; 
+  
 }
 
 .footer p {
@@ -273,12 +274,30 @@ html {
 }
 
 .footer-links a {
+  position: relative;
   color: #ffffff;
   text-decoration: none;
+  padding-bottom: 2px;
+}
+
+.footer-links a::after {
+  content: "";
+  position: absolute;
+  right: 100%; /* Start offscreen to the right */
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: red; /* Choose a colour that suits your theme */
+  transition: all 0.3s ease-out;
+}
+
+.footer-links a:hover::after {
+  right: 0;
+  width: 100%;
 }
 
 .footer-links span{
-  color: var(--main-colour);
+  color: white;
 }
 
 .footer-badges {
@@ -292,7 +311,7 @@ html {
 .footer-badges img {
   max-height: 60px;
   width: auto;
-  object-fit: contain;
+  object-fit: contain;    
 }
 
 .footer-bottom {
