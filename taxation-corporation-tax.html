@@ -124,10 +124,40 @@
                                     </div>
                                     <div class="svc-cta-divider">OR</div>
                             
-                                    <a href="#" class="svc-btn svc-btn-primary svc-btn-lg">Request a Callback</a>
+                                    <a class="svc-btn svc-btn-primary svc-btn-lg" onclick="openCallbackForm()">Request a Callback</a>
                                 </div>
                             </div>
                         </div>             
+                </div>
+                <!-- Modal Callback Form -->
+                <div id="callbackModal" class="callback-modal">
+                    <div class="callback-form-container">
+                    <h3>Request a Callback</h3>
+                    <form id="callbackForm">
+                        <input type="text" name="name" placeholder="Your Name" required>
+
+                        <input type="tel" name="phone" placeholder="Your Phone Number" required>
+
+                        <input type="email" name="email" placeholder="Your Email Address" required>
+
+                        <label for="callbackDate">Preferred Callback Date</label>
+                        <input type="date" name="callbackDate" id="callbackDate" min="" required>
+
+                        <label for="callbackTime">Preferred Time</label>
+                        <select name="callbackTime" id="callbackTime" required>
+                        <option value="">Select...</option>
+                        <option value="Morning">Morning (9am – 12pm)</option>
+                        <option value="Afternoon">Afternoon (1pm – 5pm)</option>
+                        </select>
+                        
+                        <label for="message">How can we help you?</label>
+                        <textarea name="message" id="message" placeholder="How can we help you?"></textarea>
+
+                        <button type="submit">Submit</button>
+                        <button type="button" onclick="closeCallbackForm()">Cancel</button>
+                    
+                    </form>
+                    </div>
                 </div>
 
                 <!-- Contact Form -->
@@ -151,9 +181,11 @@
                         <div class="tax-form-group">
                         <label for="tax-message">Message</label>
                         <textarea id="tax-message" name="message" rows="4" placeholder="How can we help?"></textarea>
-                        </div>                
+                        </div>
+                        
                         <button type="submit" class="tax-btn tax-form-submit">Send Enquiry</button>
-                    </form>                                           
+                    </form>
+                    <p id="tax-enquiry-message" style="display: none;"></p>
                 </div>
         </div>
     </section>
