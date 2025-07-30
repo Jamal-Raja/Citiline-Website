@@ -1098,6 +1098,7 @@ footer {
   font-weight: bold;
   margin-bottom: 1rem;
   position: relative;
+  margin-top: 3rem;
 }
 
 .services-header::after {
