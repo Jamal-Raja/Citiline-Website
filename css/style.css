@@ -295,7 +295,7 @@ footer {
 
 .footer-brand p {
     font-size: 0.875rem;
-    color: #6b7280;
+    color: var(--main-colour);
     margin-bottom: 1rem;
 }
 
