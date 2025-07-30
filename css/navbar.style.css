@@ -63,7 +63,37 @@ header {
   color:#fff; text-decoration:none; font-weight:500;
   transition:color .2s;
 }
-.nav-links a:hover { color:#00b4d8 }
+
+/* Base styles for target nav links */
+.nav-links > li:not(:last-child) > a {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  cursor: pointer;
+}
+
+/* Underline effect */
+.nav-links > li:not(:last-child) > a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background-color: #00b4d8;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+
+.nav-links > li:not(:last-child) > a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
 
 /* contact button */
 .contact-button {
@@ -152,10 +182,9 @@ header {
   font-weight: 600;
 }
 
-/* add a little arrow before the active primary link */
-.primary-menu li.active > a::before {
+.primary-menu li.active > a::after {
   content: '▸';
-  margin-right: .5rem;
+  margin-left: 0.5rem;
   color: #00b4d8;
 }
 
