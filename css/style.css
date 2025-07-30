@@ -1005,6 +1005,10 @@ footer {
   margin: 0;
 }
 
+.tax-breadcrumb span {
+  color: #1e3a8a;
+}
+
 
 .tax-breadcrumb a {
   color: black;
@@ -2166,7 +2170,11 @@ footer {
 
 }
 
-.svc-breadcrumb a, .svc-breadcrumb span {
+.svc-breadcrumb span {
+  color: #1e3a8a;
+}
+
+.svc-breadcrumb a {
     color: black;
     text-decoration: none;
 }
