@@ -2234,8 +2234,8 @@ footer {
 }
 
 /* CTA Section */
-.callback-cta-section {
-  padding-bottom: 54px;
+.callback-cta-section {  
+  padding-bottom: 54px !important;  
 }
 
 .svc-cta-section {
@@ -2284,7 +2284,7 @@ footer {
     url('../Assets/images/cta-bg2\ 18.19.40.jpg') center/cover no-repeat;
   background-attachment: fixed;
   border-radius: 8px;
-  width: 80%;
+  width: 1141px;
   margin: 0 auto; /* ✅ Centers the element */
 }
 
