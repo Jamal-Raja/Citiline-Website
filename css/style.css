@@ -2275,6 +2275,7 @@ footer {
 }
 
 .svc-cta-parallax-wrapper {
+  width: 100%;
   background:
     linear-gradient(
       135deg,
@@ -2284,8 +2285,8 @@ footer {
     url('../Assets/images/cta-bg2\ 18.19.40.jpg') center/cover no-repeat;
   background-attachment: fixed;
   border-radius: 8px;
-  width: 1141px;
-  margin: 0 auto; /* ✅ Centers the element */
+  box-sizing: border-box;
+  margin-top: 2.5rem;
 }
 
 .svc-cta-box.slide-in {
