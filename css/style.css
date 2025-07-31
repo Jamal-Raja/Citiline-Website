@@ -2597,6 +2597,368 @@ footer {
     font-size: 14px;
 }
 
+/*Contact Us Page */
+/* Hero */
+.cln-hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.cln-bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Container */
+.ct-container {  
+  margin: 0 auto;
+  padding: 100px 80px;
+  background-color: white;
+}
+
+/* Contact Section */
+.ct-contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+@media (min-width: 768px) {
+  .ct-contact-wrapper {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+/* Sidebar Container */
+/* Sidebar Container */
+.ct-sidebar {
+  background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+  padding: 30px 25px;
+  border-radius: 12px;
+  color: #fff;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+/* Sidebar Image */
+.ct-sidebar-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  object-fit: cover;
+}
+
+/* Contact Item Wrapper */
+.ct-contact-item {
+  position: relative;
+  margin-bottom: 25px;
+  padding: 10px 0;
+  transition: background 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+  padding: 10px 20px;    
+}
+
+/* Hover: slide + glow */
+.ct-contact-item:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateX(6px);
+}
+
+/* Contact Label (e.g. “Call us on”) */
+.ct-contact-label {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #d4af37;            /* subtle gold accent */
+  margin-bottom: 6px;
+  transition: color 0.3s ease;
+}
+
+/* Hover: label turns white */
+.ct-contact-item:hover .ct-contact-label {
+  color: #fff;
+}
+
+/* Contact Value (e.g. phone number) */
+.ct-contact-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  display: inline-block;
+  padding-bottom: 2px;
+}
+
+/* Link inside value */
+.ct-contact-value a {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* Underline effect */
+.ct-contact-value a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background-color: #d4af37;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+/* Hover: link turns gold + underline expands */
+.ct-contact-item:hover .ct-contact-value a {
+  color: #d4af37;
+}
+.ct-contact-item:hover .ct-contact-value a::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Form Section */
+.ct-form-title {
+  color: #d4af37;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.ct-form-subtitle {
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 600;
+  
+}
+.ct-form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+}
+.ct-form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 10px;
+}
+@media (min-width: 600px) {
+  .ct-form-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.ct-form-full {
+  grid-template-columns: 1fr;
+}
+.ct-form input[type="text"],
+.ct-form input[type="email"],
+.ct-form select,
+.ct-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+.ct-form textarea {
+  resize: vertical;
+  min-height: 180px;
+}
+.ct-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin: 15px 0;
+}
+
+.ct-checkbox a {
+  color: black;
+  text-decoration: underline;
+}
+
+.ct-checkbox a:hover {
+  color: #d4af37;
+}
+
+.ct-checkbox input {
+  margin-right: 8px;
+}
+
+/* Base button */
+.ct-submit-btn {
+  position: relative;
+  display: inline-block;
+  padding: 12px 72px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 50px;
+  background: #e0d09d;
+  color: #fff;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 
+    background 0.3s ease, 
+    transform 0.3s ease, 
+    box-shadow 0.3s ease;
+}
+
+/* Shine overlay */
+.ct-submit-btn::after {
+  content: "";
+  position: absolute;
+  top: 0; 
+  left: -100%;
+  width: 100%; 
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0.6) 0%,
+    rgba(255,255,255,0.1) 60%,
+    rgba(255,255,255,0) 100%
+  );
+  transform: skewX(-20deg);
+}
+
+/* Hover state: lift + color + shadow + trigger shine */
+.ct-submit-btn:hover {
+  background: #d4af37;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+}
+.ct-submit-btn:hover::after {
+  animation: shine 0.75s forwards;
+}
+
+/* Pressed state */
+.ct-submit-btn:active {
+  transform: scale(0.96);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+/* Keyframes for the shine sweep */
+@keyframes shine {
+  from { left: -100%; }
+  to   { left: 200%; }
+}
+
+
+/* Map Section */
+.ct-map-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  margin-bottom: 40px;
+}
+.ct-map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Offices Section */
+.ct-offices-main-title {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #0a1d3f;
+}
+.ct-office-location-title {
+  margin-bottom: 20px;
+  border-bottom: 2px solid #0a1d3f;
+  display: inline-block;
+}
+.ct-office-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+@media (min-width: 768px) {
+  .ct-office-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.ct-office-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.ct-office-details p {
+  margin-bottom: 5px;
+}
+.ct-office-map {
+  width: 100%;
+  height: 200px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.ct-office-map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Reviews Section */
+.ct-reviews {
+  background: #f5faff;
+  padding: 40px 20px;
+  border-radius: 8px;
+  margin-top: 40px;
+}
+.ct-reviews-title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #0a1d3f;
+}
+.ct-review-item {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.ct-stars {
+  color: #adff00;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+.ct-review-text {
+  font-style: italic;
+  margin-bottom: 10px;
+}
+.ct-review-author {
+  font-weight: bold;
+}
+.ct-dots {
+  text-align: center;
+  margin-top: 15px;
+}
+.ct-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: #ccc;
+  border-radius: 50%;
+  margin: 0 5px;
+}
+.ct-dot.active {
+  background: #0a1d3f;
+}
+
+
+
+
 /* Responsive Design */
 @media (max-width: 1024px) {
     .svc-hero-content {
