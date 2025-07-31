@@ -407,6 +407,7 @@ document.addEventListener("DOMContentLoaded", function () {
         phone: formData.get('phone') || '',
         company: formData.get('company') || '',
         service: formData.get('service') || '',
+        time: formData.get('time') || '',
         message: formData.get('message') || ''
       };
 

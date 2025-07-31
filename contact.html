@@ -86,22 +86,22 @@
 
         <!-- Form Section-->
         <section class="ct-form-section">            
-            <form class="ct-form">            
+            <form class="ct-form" id="taxEnquiryForm">            
                 <h2 class="ct-form-title">Online form</h2>
                 <p class="ct-form-subtitle">
                 If you would like us to contact you, please complete and submit the form
                 </p>
 
                 <div class="ct-form-row">
-                    <input type="text" name="firstName" placeholder="First Name*" required />
-                    <input type="text" name="lastName" placeholder="Last Name*" required />
+                    <input type="text" placeholder="First Name*" id="tax-name" name="name" required />
+                    <input type="text" placeholder="Last Name*" id="tax-name" name="name" required />
                 </div>
                 <div class="ct-form-row">
-                    <input type="text" name="contactNumber" placeholder="Contact Number*" required />
-                    <input type="email" name="email" placeholder="Email Address*" required />
+                    <input type="text" placeholder="Contact Number*" id="tax-phone" name="phone" required />
+                    <input type="email" placeholder="Email Address*" id="tax-email" name="email" required />
                 </div>
                 <div class="ct-form-row ct-form-full">
-                    <select name="department" required>
+                    <select name="service" required>
                     <option value="">Select Relevant Department for Your Enquiry*</option>
                     <option>Taxation for Businesses</option>
                     <option>Accounting &amp; Bookkeeping</option>
@@ -114,14 +114,14 @@
                     </select>
                 </div>
                 <div class="ct-form-row ct-form-full">
-                    <select name="office" required>
+                    <select name="time" required>
                     <option value="">Preferred Time*</option>
                     <option>Morning (9am - 12pm)</option>
                     <option>Afternoon (1pm - 5pm)</option>
                     </select>
                 </div>
                 <div class="ct-form-row ct-form-full">
-                    <textarea name="details" placeholder="Please provide a few details about how we can help*" required></textarea>
+                    <textarea name="message" placeholder="Please provide a few details about how we can help*" required></textarea>
                 </div>
                 <div class="ct-checkbox">
                     <input type="checkbox" name="privacy" id="ct-privacy" required />
@@ -129,6 +129,7 @@
                 </div>
                 <button type="submit" class="ct-submit-btn">Submit</button>
             </form>
+            <p id="tax-enquiry-message" style="display: none;"></p>
         </section>
         </div>
 
