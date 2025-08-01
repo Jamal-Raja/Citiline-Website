@@ -2883,6 +2883,7 @@ footer {
   background: var(--ct-bg-light);
   padding: 80px 20px;
   overflow: hidden;
+  border-radius: 12px;
 }
 .ct-offices-main-title {
   font-size: 2rem;
@@ -3002,10 +3003,17 @@ footer {
 
 
 /* Reviews Section */
+
+/* Carousel container */
+.ct-review-carousel {
+  position: relative;
+  overflow: hidden;
+  min-height: 160px;
+}
 .ct-reviews {
   background: #f5faff;
   padding: 40px 20px;
-  border-radius: 8px;
+  border-radius: 12px;
   margin-top: 40px;
 }
 .ct-reviews-title {
@@ -3030,22 +3038,41 @@ footer {
 .ct-review-author {
   font-weight: bold;
 }
-.ct-dots {
-  text-align: center;
-  margin-top: 15px;
-}
-.ct-dot {
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  background: #ccc;
-  border-radius: 50%;
-  margin: 0 5px;
-}
-.ct-dot.active {
-  background: #0a1d3f;
+
+/* Each slide */
+.ct-review-item {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  opacity: 0;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: opacity 0.6s ease;
 }
 
+/* The visible slide */
+.ct-review-item.active {
+  opacity: 1;
+  position: relative;
+}
+
+/* Dots */
+.ct-dots {
+  text-align: center;
+  margin-top: 16px;
+}
+.ct-dots .ct-dot {
+  display: inline-block;
+  width: 10px; height: 10px;
+  margin: 0 6px;
+  background: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.ct-dots .ct-dot.active {
+  background: #0a1d3f;
+}
 
 
 

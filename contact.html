@@ -18,7 +18,7 @@
         <!-- CSS -->
         <link rel="stylesheet" href="css/navbar.style.css">
         <link rel="stylesheet" href="css/style.css">
-    </html>
+    
 
     <body>
         <!--Header (+ Navbar)-->
@@ -131,12 +131,7 @@
             </form>
             <p id="tax-enquiry-message" style="display: none;"></p>
         </section>
-        </div>
-
-        <!-- Map Section -->
-        <div class="ct-map-container">
-            <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1TRwDNd_7f8bHTvfVGx4tE8pwrzplgO0&ehbc=2E312F&noprof=1" width="640" height="480"></iframe>
-        </div>
+        </div>    
 
         <!-- Offices Section -->
         <section class="ct-offices">
@@ -144,36 +139,82 @@
         <h3 class="ct-office-location-title">Luton Office</h3>
         <div class="ct-office-list">
             <div class="ct-office-item">
-            <div class="ct-office-details">
-                <p><strong>Tel:</strong> 01582 514 988</p>                
-                <p><strong>Address:</strong> 51 Cardiff Road, Luton, Bedfordshire, LU1 1PP</p>
-                <p><strong>Opening Hours:</strong></p>
-                <p>Mon–Fri: 9am – 5pm</p>
+            <div class="ct-office-details">                             
+                <p>
+                    <strong>Address:</strong>
+                    <a
+                        href="https://www.google.com/maps/search/?api=1&query=Citiline+Accountants+51+Cardiff+Road+Luton+Bedfordshire+LU1+1PP"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="ct-address-link"
+                    >
+                        51 Cardiff Road, Luton, Bedfordshire, LU1 1PP
+                    </a>
+                </p>
+                                <p><strong>Opening Hours:</strong></p>
+                <p>Monday 9am – 5pm</p>
+                <p>Tuesday 9am – 5pm</p>
+                <p>Wednesday 9am – 5pm</p>
+                <p>Thursday 9am – 5pm</p>
+                <p>Friday 9am – 4pm</p>
             </div>
             <div class="ct-office-map">
                 <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1TRwDNd_7f8bHTvfVGx4tE8pwrzplgO0&ehbc=2E312F&noprof=1" width="640" height="480"></iframe>
             </div>                        
         </div>
         </section>
-
-        <!-- Reviews Section -->
+        
+        <!-- Google Review Carousel-->
         <section class="ct-reviews">
-        <h2 class="ct-reviews-title">Latest Google Reviews</h2>
-        <div class="ct-review-item">
-            <div class="ct-stars">★★★★★</div>
-            <div class="ct-review-text">
-            “The team at Citiline was professional, responsive, and exceeded our expectations. Highly recommended!”
+            <h2 class="ct-reviews-title">Latest Google Reviews</h2>
+
+            <!-- Carousel Wrapper -->
+            <div class="ct-review-carousel">
+                <div class="ct-review-item active">
+                <div class="ct-stars">★★★★★</div>
+                <div class="ct-review-text">
+                    “Excellent professional team and outstanding customer services, we have being working with Citiline for many years and quality of services has always being absolutely amazing. I would highly recommended businesses and individuals who require an accountant to be in touch with them without any hesitation !”
+                </div>
+                <div class="ct-review-author">— Golden Century</div>
+                </div>
+
+                <div class="ct-review-item">
+                <div class="ct-stars">★★★★★</div>
+                <div class="ct-review-text">
+                    “Thanks Great accountant & awesome support from Citiline Accountants. They helped me with my HMRC Enquiry & property accounts. Thanks Nadeem for a smooth stress free service. They kept me informed & saved me over £3000 in tax.”
+                </div>
+                <div class="ct-review-author">— Salman Khan</div>
+                </div>
+
+                <div class="ct-review-item">
+                <div class="ct-stars">★★★★★</div>
+                <div class="ct-review-text">
+                    “Thanks Citiline for helping me with my HMRC Investigation. I didn’t know that Nadeem was an ex HMRC Inspector- I got great advice & helped me with tax enquiry. I will definitely recommend Citiline. Very professional & knowledgeable in tax & business.”
+                </div>
+                <div class="ct-review-author">— Pudoo Baja</div>
+                </div>
+
+                <div class="ct-review-item">
+                <div class="ct-stars">★★★★★</div>
+                <div class="ct-review-text">
+                    “The advice and business support over the years from Nadeem at Citiline Accountants has been first class!”
+                </div>
+                <div class="ct-review-author">— M. Deria</div>
+                </div>
+
+                <div class="ct-review-item">
+                <div class="ct-stars">★★★★★</div>
+                <div class="ct-review-text">
+                    “Very helpful and reassuring. Understood my needs clearly and executed very swiftly and professionally”
+                </div>
+                <div class="ct-review-author">— Sam Okwulehie</div>
+                </div>
             </div>
-            <div class="ct-review-author">— Jane Doe</div>
-            <div class="ct-dots">
-            <span class="ct-dot active"></span>
-            <span class="ct-dot"></span>
-            <span class="ct-dot"></span>
-            <span class="ct-dot"></span>
-            <span class="ct-dot"></span>
-            </div>
-        </div>
+
+            <!-- Dots Navigation -->
+            <div class="ct-dots"></div>
         </section>
+
     </div>
 
             
@@ -185,3 +226,4 @@
         <!-- Javascript -->
         <script src="javascript/script.js"></script>
     </body>
+</html>

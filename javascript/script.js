@@ -454,3 +454,45 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+// reviews-carousel.js
+
+document.addEventListener('DOMContentLoaded', () => {
+  const carousel = document.querySelector('.ct-review-carousel');
+  if (!carousel) return; // bail if no carousel on page
+
+  const slides   = carousel.querySelectorAll('.ct-review-item');
+  const dotsWrap = document.querySelector('.ct-dots');
+  let current    = 0;
+  const interval = 5000; // time between slides (ms)
+
+  // build the dots
+  slides.forEach((_, i) => {
+    const dot = document.createElement('span');
+    dot.className = 'ct-dot' + (i === 0 ? ' active' : '');
+    dot.addEventListener('click', () => goToSlide(i));
+    dotsWrap.appendChild(dot);
+  });
+  const dots = dotsWrap.querySelectorAll('.ct-dot');
+
+  function goToSlide(n) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = n;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+
+  function nextSlide() {
+    goToSlide((current + 1) % slides.length);
+  }
+
+  // start auto-advance
+  let timer = setInterval(nextSlide, interval);
+
+  // pause on hover
+  carousel.addEventListener('mouseenter', () => clearInterval(timer));
+  carousel.addEventListener('mouseleave', () => {
+    timer = setInterval(nextSlide, interval);
+  });
+});
