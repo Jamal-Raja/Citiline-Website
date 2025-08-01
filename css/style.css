@@ -2870,46 +2870,136 @@ footer {
 }
 
 /* Offices Section */
+/* === Variables & Base Section Styling === */
+:root {
+  --ct-bg-light: #eef3f8;
+  --ct-white: #ffffff;
+  --ct-primary: #0a1d3f;
+  --ct-accent: #d4af37;
+  --ct-shadow: rgba(0, 0, 0, 0.08);
+}
+
+.ct-offices {
+  background: var(--ct-bg-light);
+  padding: 80px 20px;
+  overflow: hidden;
+}
 .ct-offices-main-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--ct-primary);
   text-align: center;
-  margin-bottom: 10px;
-  color: #0a1d3f;
+  margin-bottom: 12px;
 }
 .ct-office-location-title {
-  margin-bottom: 20px;
-  border-bottom: 2px solid #0a1d3f;
-  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--ct-primary);
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
 }
+.ct-office-location-title::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--ct-accent);
+  margin: 8px auto 0;
+  border-radius: 2px;
+}
+
+/* === Grid Layout & Entry Animation === */
 .ct-office-list {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-}
-@media (min-width: 768px) {
-  .ct-office-list {
-    grid-template-columns: 1fr 1fr;
-  }
+  max-width: 1200px;
+  margin: 0 auto;
 }
 .ct-office-item {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--ct-white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px var(--ct-shadow);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: fadeInUp 0.8s ease-out both;
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* === Details Panel (Left) === */
+.ct-office-details {
+  position: relative;
+  padding: 40px;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(8px);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.ct-office-details::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 20px;
+  width: 4px;
+  height: calc(100% - 40px);
+  background: var(--ct-accent);
+  border-radius: 2px;
 }
 .ct-office-details p {
-  margin-bottom: 5px;
+  margin: 16px 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
 }
+.ct-office-details p strong {
+  color: var(--ct-primary);
+}
+
+/* Lift details on hover */
+.ct-office-item:hover .ct-office-details {
+  transform: translateX(20px);
+  box-shadow: 0 8px 24px var(--ct-shadow);
+}
+
+/* === Map Panel (Right) === */
 .ct-office-map {
-  width: 100%;
-  height: 200px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  position: relative;
   overflow: hidden;
 }
 .ct-office-map iframe {
   width: 100%;
   height: 100%;
+  min-height: 320px;
   border: 0;
+  transform: scale(1);
+  transition: transform 0.6s ease, filter 0.6s ease;
+  filter: brightness(0.95);
 }
+
+/* Zoom & brighten on hover */
+.ct-office-item:hover .ct-office-map iframe {
+  transform: scale(1.04);
+  filter: brightness(1);
+}
+
+/* === Responsive Adjustments === */
+@media (max-width: 767px) {
+  .ct-office-item {
+    grid-template-columns: 1fr;
+  }
+  .ct-office-details {
+    padding: 24px;
+  }
+  .ct-office-details::before {
+    display: none;
+  }
+  .ct-office-map iframe {
+    min-height: 240px;
+  }
+}
+
 
 /* Reviews Section */
 .ct-reviews {
