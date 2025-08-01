@@ -3075,6 +3075,170 @@ footer {
 }
 
 
+/* === Mobile (up to 599px) === */
+@media (max-width: 599px) {
+  /* Container: tighter padding */
+  .ct-container {
+    padding: 30px 16px;
+  }
+
+  /* Contact: stack fully, center sidebar content */
+  .ct-contact-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .ct-sidebar {
+    text-align: center;
+    padding: 20px 16px;
+  }
+  .ct-contact-item {
+    justify-content: center;
+    padding: 8px 0;
+  }
+
+  /* Form title/subtitle: left align on narrow */
+  .ct-form-title,
+  .ct-form-subtitle {
+    text-align: left;
+  }
+
+  /* Form rows: single-column with tighter gaps */
+  .ct-form-row {
+    grid-template-columns: 1fr !important;
+    gap: 12px;
+    padding: 0;
+  }
+
+  /* Map: shorter on mobile */
+  .ct-map-container {
+    padding-bottom: 75%;
+  }
+
+  /* Offices: stack details/map, full-width card */
+  .ct-office-item {
+    grid-template-columns: 1fr !important;
+    margin-bottom: 24px;
+  }
+  .ct-office-map iframe {
+    min-height: 200px;
+  }
+
+  /* Reviews: smaller text, tighter padding */
+  .ct-reviews {
+    padding: 24px 16px;
+  }
+  .ct-review-item {
+    padding: 16px;
+  }
+  .ct-review-text {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  .ct-stars {
+    font-size: 1.3rem;
+  }
+  .ct-dots .ct-dot {
+    width: 8px;
+    height: 8px;
+    margin: 0 4px;
+  }
+}
+
+/* === Small tablets & large phones (600px–767px) === */
+@media (min-width: 600px) and (max-width: 767px) {
+  /* Forms: two-column for inputs, full-width selects/textareas */
+  .ct-form-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .ct-form-full {
+    grid-column: 1/ -1 !important;
+  }
+
+  /* Sidebar: reduce padding */
+  .ct-sidebar {
+    padding: 24px 20px;
+  }
+}
+
+/* === Tablets & small desktops (768px–1023px) === */
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Contact: sidebar + form two-column */
+  .ct-contact-wrapper {
+    grid-template-columns: 1fr 2fr;
+  }
+  .ct-container {
+    padding: 60px 40px;
+  }
+
+  /* Offices: two-column details + map */
+  .ct-office-item {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 24px;
+  }
+  .ct-office-details {
+    padding: 32px;
+  }
+  .ct-office-map iframe {
+    min-height: 280px;
+  }
+
+  /* Reviews: slightly bigger fonts */
+  .ct-review-text {
+    font-size: 1rem;
+  }
+  .ct-stars {
+    font-size: 1.4rem;
+  }
+}
+
+/* === Desktops (1024px and up) === */
+@media (min-width: 1024px) {
+  .ct-container {
+    padding: 100px 80px;
+  }
+
+  /* Map: standard 16:9 */
+  .ct-map-container {
+    padding-bottom: 56.25%;
+  }
+
+  /* Offices: cap width, center content */
+  .ct-offices {
+    max-width: 1200px;
+    margin: 0 auto 80px;
+  }
+  .ct-office-item {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 32px;
+  }
+  .ct-office-map iframe {
+    min-height: 320px;
+  }
+
+  /* Reviews: comfortable padding */
+  .ct-reviews {
+    padding: 40px 60px;
+  }
+  .ct-review-carousel {
+    min-height: 200px;
+  }
+}
+
+/* prevent hero from hiding under fixed navbar on narrow phones */
+@media (max-width: 375px) {
+  .cln-hero-section {
+    /* assume your navbar is ~64px tall — tweak as needed */
+    padding-top: 64px !important;
+    height: auto !important;       /* let it grow to fit content */
+  }
+  /* if your actual content lives in .ct-container inside the hero: */
+  .cln-hero-section .ct-container {
+    margin-top: 16px;               /* small extra gap below nav */
+  }
+}
+
+
+
 
 /* Responsive Design */
 @media (max-width: 1024px) {
