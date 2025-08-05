@@ -3918,3 +3918,65 @@ footer {
     padding: 0 10px;
   }
 }
+
+/* === Privacy Section Styles === */
+
+.privacy-section {
+  padding: 60px 20px;
+  background: white;
+  color: #222;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+}
+
+.privacy-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.privacy-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #003566;
+}
+
+.privacy-intro {
+  margin-bottom: 30px;
+  font-size: 1rem;
+}
+
+.privacy-heading {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-top: 40px;
+  margin-bottom: 15px;
+  color: #003566; /* Match main title color */
+}
+
+.privacy-list {
+  list-style: disc;
+  padding-left: 20px;
+  margin-bottom: 25px;
+}
+
+.privacy-list li {
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+
+.privacy-container p {
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+/* Responsive Typography */
+@media screen and (max-width: 768px) {
+  .privacy-title {
+    font-size: 1.6rem;
+  }
+}
