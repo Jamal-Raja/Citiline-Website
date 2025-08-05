@@ -3520,10 +3520,6 @@ footer {
    Gallery: 3 images in one row
    ========================================================================== */
 
-/* ==========================================================================
-   Gallery: 1 larger left image + 2 smaller right images, equal height
-   ========================================================================== */
-
 .about-gallery {
   background: #fff;
   padding: 2rem 1rem;
@@ -3531,12 +3527,11 @@ footer {
 
 .about-gallery-grid {
   display: grid;
-  /* make left column wider */
   grid-template-columns: 1.5fr 1fr 1fr;
   gap: 16px;
+  margin: 0 20px; 
 }
 
-/* fixed height for all items to keep them equal height */
 .about-gallery-item {
   position: relative;
   height: 350px;
@@ -3549,7 +3544,6 @@ footer {
 }
 
 .about-gallery-item img {
-  /* fill the container while preserving aspect ratio */
   position: absolute;
   top: 0; left: 0;
   width: 100%;
