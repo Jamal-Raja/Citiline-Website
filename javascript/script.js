@@ -496,3 +496,55 @@ document.addEventListener('DOMContentLoaded', () => {
     timer = setInterval(nextSlide, interval);
   });
 });
+
+gsap.registerPlugin(ScrollTrigger);
+
+// gallery-scroll.js
+
+(function() {
+  // run when DOM is ready
+  window.addEventListener('DOMContentLoaded', () => {
+    // sanity checks
+    if (typeof gsap === 'undefined') {
+      console.error('[GSAP] gsap is undefined — make sure you loaded gsap.min.js before this script.');
+      return;
+    }
+    if (typeof ScrollTrigger === 'undefined') {
+      console.error('[GSAP] ScrollTrigger is undefined — make sure you loaded ScrollTrigger.min.js after gsap.');
+      return;
+    }
+
+    console.log('[GalleryScroll] GSAP v' + gsap.version + ' & ScrollTrigger found.');
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const items = document.querySelectorAll('.about-gallery-item');
+    console.log('[GalleryScroll] Found items:', items.length);
+
+    if (items.length === 0) {
+      console.warn('[GalleryScroll] No .about-gallery-item elements found. Check your HTML/CSS selectors.');
+      return;
+    }
+
+    items.forEach(item => {
+      gsap.fromTo(item,
+        { opacity: 0, y: 100, scale: 0.8 },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: item,
+            start: 'top 85%',
+            end:   'top 50%',
+            scrub: true,
+            markers: true, // <-- shows start/end markers in your viewport
+          }
+        }
+      );
+    });
+  });
+})();
+
+

@@ -3003,7 +3003,6 @@ footer {
 
 
 /* Reviews Section */
-
 /* Carousel container */
 .ct-review-carousel {
   position: relative;
@@ -3448,4 +3447,202 @@ footer {
     .svc-service-item {
         border: 1px solid #2563eb;
     }
+}
+
+
+/* ==========================================================================
+   About Us Page Styles
+   ========================================================================== */
+
+/* Container for the entire about section */
+.about-main {
+  width: 100%;
+  background: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+/* ==========================================================================
+   Hero & Tagline
+   ========================================================================== */
+
+.about-hero {
+  text-align: center;
+  padding-top: 110px;   /* account for 100px nav + 10px gap */
+  padding-bottom: 60px;
+  background-color: #fff;
+}
+
+.about-hero-art {
+  display: block;
+  margin: 0 auto 40px;
+  max-width: 460px;
+  width: 100%;
+  height: auto;
+}
+
+.about-tagline {
+  /* vertical blue gradient clipped into text */
+  background: linear-gradient(
+    to bottom,
+    #007ACC 0%,
+    #005EA5 50%,
+    #003F7F 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  font-size: 2.25rem;
+  font-weight: 300;        /* thin weight */
+  line-height: 1.3;
+  max-width: 700px;
+  margin: 0 auto 30px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+/* ==========================================================================
+   Intro Paragraphs
+   ========================================================================== */
+
+.about-intro {
+  color: #333;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  max-width: 1150px;
+  margin: 0 auto 30px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   Gallery: 3 images in one row
+   ========================================================================== */
+
+/* ==========================================================================
+   Gallery: 1 larger left image + 2 smaller right images, equal height
+   ========================================================================== */
+
+.about-gallery {
+  background: #fff;
+  padding: 2rem 1rem;
+}
+
+.about-gallery-grid {
+  display: grid;
+  /* make left column wider */
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 16px;
+}
+
+/* fixed height for all items to keep them equal height */
+.about-gallery-item {
+  position: relative;
+  height: 350px;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0 cover 40%;
+}
+
+.about-gallery-item img {
+  /* fill the container while preserving aspect ratio */
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    scale: 0.5;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  } 
+}
+
+/* ==========================================================================
+   Responsive Adjustments
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .about-gallery-grid {
+    /* collapse to two columns on medium screens */
+    grid-template-columns: 1fr 1fr;
+  }
+  .about-gallery-item {
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-gallery-grid {
+    /* single column on small screens */
+    grid-template-columns: 1fr;
+  }
+  .about-gallery-item {
+    height: 250px;
+  }
+}
+
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .about-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    padding-top: 180px;
+    padding-bottom: 40px;
+  }
+  .about-hero-art {
+    max-width: 360px;
+    margin-bottom: 30px;
+  }
+  .about-tagline {
+    font-size: 2rem;
+    margin-bottom: 16px;
+  }
+  .about-intro {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+
+  /* collapse gallery into single column */
+  .about-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero {
+    padding-top: 100px;
+    padding-bottom: 30px;
+  }
+  .about-hero-art {
+    max-width: 280px;
+    margin-bottom: 20px;
+  }
+  .about-tagline {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+  }
+  .about-intro {
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+    padding: 0 10px;
+  }
 }
