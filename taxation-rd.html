@@ -3,26 +3,246 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Citiline | TEMPLATE PAGE</title>
+    <title>Citiline | R&D Tax Credits</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/navbar.style.css">
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"> <!-- Calendly widget styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" /> <!-- Font Awesome for icons -->
+
 </head>
-<body>
+<body class="svc-page">
     <!--Header (+ Navbar)-->
     <header id="site-navbar"></header>
+ 
+    <!-- Hero Section -->
+    <section class="svc-hero">
+        <div class="svc-page-container">
+            <div class="svc-hero-content">
+                <div class="svc-hero-text">
+                    <h1>Research & Development Tax Credits</h1>
+                    <p>Because every breakthrough deserves a financial boost.</p>
+                    <div class="svc-hero-buttons">
+                        <a href="contact.html" class="svc-btn svc-btn-primary svc-btn-lg">Contact Us</a>
+                        <a href="#" onclick="return openCalendly()" class="svc-btn svc-btn-secondary svc-btn-lg">Book Appointment</a>
+                    </div>
+                </div>
+                <div class="svc-hero-image">
+                    <div class="svc-hero-image-circle">
+                        <img src="Assets/images/corporation-tax-hero.jpg" alt="Professional Service">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <svg class="svc-hero-curve" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,120 C300,80 600,40 1200,60 L1200,120 Z"></path>
+        </svg>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="svc-breadcrumb-container">
+        <div class="svc-breadcrumb">
+            <a href="index.html">Home</a> > <a href="services.html">Services</a> > <a href="services-taxation.html">Taxation for Businesses</a> > <span>Corporate Tax Advisory</span>
+        </div>
+    </div>
 
     <!-- Main Content -->
-    <section class="template" id="template">
-        <!--[INSERT CONTENT HERE]-->
-        <h1>THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST THIS IS A TEST </h1>
+    <section class="svc-main-content">
+    <div class="svc-page-container">
+        
+        <div class="svc-content-grid">
+        <!-- Content -->
+        <div class="svc-content-section">
+            <h2>Funding the Future of Your Ideas</h2>
+            <p><strong>Turning the cost of progress into a cash injection for your business.</strong></p>
+
+            <p>R&D Tax Relief exists to reward companies that go beyond standard practice to solve problems, create new solutions, or improve existing ones. Whether that means developing a new product, refining a manufacturing process, building bespoke software, or experimenting with materials and methods — if there’s genuine technical uncertainty and a systematic attempt to overcome it, your work could qualify.</p>
+
+            <p>Many businesses assume R&D only applies to high-tech labs, but in reality it spans multiple industries — engineering, manufacturing, food production, software development, construction, and more. At Citiline, we specialise in spotting innovation in places others overlook, then turning that work into a robust, maximised claim that meets HMRC’s exacting standards.</p>
+
+            <h2>How We Build a Strong, Compliant Claim</h2>
+            <p>We begin with an in-depth review of your projects to identify those that meet HMRC’s criteria, focusing on the baseline, the uncertainty, and the steps you took to resolve it. We then map each qualifying project to the correct scheme — the SME programme (up to 186% enhanced deduction, with possible cash credit) or the RDEC scheme (worth up to 20% of qualifying spend).</p>
+
+            <p>From there, we calculate every eligible cost using defensible apportionments and backed by evidence such as project logs, technical documents, prototypes, and code commits. This ensures your claim is maximised without crossing compliance lines.</p>
+
+            <h2>Eligible Costs You Could Be Claiming</h2>
+            <ul class="tax-service-list">
+                <li>Staff salaries, NIC, and pensions for employees directly engaged in R&D.</li>
+                <li>Specialist subcontractors and freelancers contributing to the project.</li>
+                <li>Consumables and materials used in prototypes, trials, or testing.</li>
+                <li>Software licences and cloud costs essential to the R&D process.</li>
+            </ul>
+
+            <h2>Why Businesses Trust Citiline</h2>
+            <p>With over 30 years of tax expertise — including insider HMRC experience — we know exactly how R&D claims are assessed and what it takes to make them stand out. We’re not here to simply process forms; we’re here to translate your innovation into a tangible financial benefit that strengthens your cashflow and fuels your next breakthrough.</p>
+
+            <p><strong>Your next breakthrough could be worth more than you think — let’s make sure you claim it.</strong></p>
+        </div>
+
+
+      <!-- Modal Callback Form -->
+      <div id="callbackModal" class="callback-modal">
+        <div class="callback-form-container">
+          <h3>Request a Callback</h3>
+          <form id="callbackForm">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="tel" name="phone" placeholder="Your Phone Number" required>
+            <input type="email" name="email" placeholder="Your Email Address" required>
+
+            <label for="callbackDate">Preferred Callback Date</label>
+            <input type="date" name="callbackDate" id="callbackDate" min="" required>
+
+            <label for="callbackTime">Preferred Time</label>
+            <select name="callbackTime" id="callbackTime" required>
+              <option value="">Select...</option>
+              <option value="Morning">Morning (9am – 12pm)</option>
+              <option value="Afternoon">Afternoon (1pm – 5pm)</option>
+            </select>
+
+            <label for="message">How can we help you?</label>
+            <textarea name="message" id="message" placeholder="How can we help you?"></textarea>
+
+            <button type="submit">Submit</button>
+            <button type="button" onclick="closeCallbackForm()">Cancel</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="tax-contact-form-card stop-stretch animate-on-scroll" id="tax-contact-form">
+        <h4>Contact Our Team For Professional Advice</h4>
+        <form class="tax-enquiry-form" id="taxEnquiryForm">
+          <div class="tax-form-group">
+            <label for="tax-name">Full Name *</label>
+            <input type="text" id="tax-name" name="name" required>
+          </div>
+
+          <div class="tax-form-group">
+            <label for="tax-email">Email Address *</label>
+            <input type="email" id="tax-email" name="email" required>
+          </div>
+
+          <div class="tax-form-group">
+            <label for="tax-phone">Phone Number *</label>
+            <input type="tel" id="tax-phone" name="phone" required>
+          </div>
+
+          <div class="tax-form-group">
+            <label for="tax-message">Message</label>
+            <textarea id="tax-message" name="message" rows="4" placeholder="How can we help?"></textarea>
+          </div>
+
+          <button type="submit" class="tax-btn tax-form-submit">Send Enquiry</button>
+        </form>
+        <p id="tax-enquiry-message" style="display: none;"></p>
+      </div>
+    </div>
+
+    <!-- Request Callback CTA -->
+    <div class="svc-cta-parallax-wrapper">
+      <div class="svc-cta-box">
+        <div class="svc-cta-content">
+          <div class="svc-cta-phone">
+            <p class="large-text">We're here to help you, call us on</p>
+            <div class="svc-phone-number">
+              <a href="tel:01582514988" class="tax-phone-number">
+                <i class="fas fa-phone tax-phone-icon"></i>
+                01582 514 988
+              </a>
+            </div>
+          </div>
+          <div class="svc-cta-divider">OR</div>
+          <a class="svc-btn svc-btn-primary svc-btn-lg" onclick="openCallbackForm()">Request a Callback</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+        
+    
+
+    <!-- Other Services -->
+    <h1 class="services-header">View Our Other Services</h1>
+    <section class="tax-services-grid-section">
+      <div class="tax-container">
+        <div class="tax-services-grid">                    
+          
+            <a href="taxation-corporation-tax.html" class="tax-service-link">
+                <div class="tax-service-item">
+                <div class="tax-service-icon">
+                    <i class="fas fa-building"></i>
+                </div>
+                <h3>Corporate Tax Advisory</h3>
+                <p>Slash your tax bill, not your ambitions — we build powerful, compliant strategies that fuel growth and protect every pound.</p>
+                </div>
+            </a>
+          
+          <a href="taxation-vat.html" class="tax-service-link">
+              <div class="tax-service-item">
+                <div class="tax-service-icon">
+                  <i class="fas fa-receipt"></i>
+                </div>
+                <h3>VAT Compliance</h3>
+                <p>Stay audit-proof and penalty-free — we take full control of your VAT, reclaim every penny, and keep you one step ahead of HMRC.</p>
+              </div>
+          </a>
+          
+          <a href="taxation-capital-allowances.html" class="tax-service-link">
+              <div class="tax-service-item">
+                <div class="tax-service-icon">
+                  <i class="fas fa-tools"></i>
+                </div>
+                <h3>Capital Allowances</h3>
+                <p>Recover thousands in missed relief — we dig deep into your assets to uncover powerful deductions others overlook.</p>
+              </div>
+          </a>
+          
+          <a href="taxation-international.html" class="tax-service-link">
+              <div class="tax-service-item">
+                <div class="tax-service-icon">
+                  <i class="fas fa-globe"></i>
+                </div>
+                <h3>International Tax</h3>
+                <p>Grow globally, pay smart — we structure your cross-border operations to cut risk, reduce double tax, and unlock global profits</p>
+              </div>
+          </a>
+          
+          <a href="taxation-investigations.html" class="tax-service-link">
+              <div class="tax-service-item">
+                <div class="tax-service-icon">
+                  <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Tax Investigations</h3>
+                <p>HMRC at your door? We’re your shield — expert-led defence that protects your business, resolves fast, and gives you peace of mind.</p>
+              </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="tax-news-section">
+      <div class="tax-container">
+        <h2>Related News</h2>
+        <p class="tax-news-subtitle">Keeping you up to date</p>
+        
+        <div class="tax-news-grid">
+            <!-- News cards will be dynamically injected here by JavaScript -->
+        </div>
+        
+        <div class="tax-news-cta">
+          <a href="news.html" class="tax-btn tax-outline">View all taxation news</a>
+        </div>
+      </div>
     </section>
 
 
     <!-- Footer -->
     <footer id="site-footer"></footer>
 
-    <!-- Javascript -->
+
+    <!-- Scripts -->
     <script src="javascript/script.js"></script>
+    <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
     
 </body>
 </html>
