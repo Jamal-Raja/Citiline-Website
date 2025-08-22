@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citiline | Payroll Management</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.style.css">
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"> <!-- Calendly widget styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" /> <!-- Font Awesome for icons -->
+
+</head>
+<body class="svc-page">
+    <!--Header (+ Navbar)-->
+    <header id="site-navbar"></header>
+ 
+    <!-- Hero Section -->
+    <section class="svc-hero">
+        <div class="svc-page-container">
+            <div class="svc-hero-content">
+                <div class="svc-hero-text">
+                    <h1>Payroll Management</h1>
+                    <p>Scale your headcount, not your workload — automate payroll, cut risk, and keep teams happy with clear reporting.</p>
+                    <div class="svc-hero-buttons">
+                        <a href="contact.html" class="svc-btn svc-btn-primary svc-btn-lg">Contact Us</a>
+                        <a href="#" onclick="return openCalendly()" class="svc-btn svc-btn-secondary svc-btn-lg">Book Appointment</a>
+                    </div>
+                </div>
+                <div class="svc-hero-image">
+                    <div class="svc-hero-image-circle">
+                        <img src="Assets/images/corporation-tax-hero.jpg" alt="Professional Service">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <svg class="svc-hero-curve" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,120 C300,80 600,40 1200,60 L1200,120 Z"></path>
+        </svg>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="svc-breadcrumb-container">
+        <div class="svc-breadcrumb">
+            <a href="index.html">Home</a> > <a href="services.html">Services</a> > <a href="services-accounting.html">Accounting & Bookkeeping</a> > <span>Payroll Management</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <section class="svc-main-content">
+    <div class="svc-page-container">            
+        <div class="svc-content-grid">
+        <!-- Content -->
+        <div class="svc-content-section">           
+            <h2>Payroll, handled. Quietly.</h2>
+            <p>Payday should be forgettable — precise, on time, and compliant. We run payroll end-to-end so your team is paid correctly, HMRC is satisfied, and you get back headspace to run the business. We set clear cut-offs and approvals, build checks that catch issues before they hit payslips, and keep evidence tidy so it stands up to review. The result: quiet paydays, fewer interruptions for managers, and a process that scales cleanly as your headcount grows.</p>
+
+            <h2>What’s Included and Why It Matters</h2>
+            <p>We operate the core cycle with discipline and evidence at every step — filings, pay runs, pensions, people changes, and payments — so the process is predictable and defensible.</p>
+            <ul class="tax-service-list">
+                <li><strong>RTI & PAYE filings:</strong> FPS/EPS submitted every cycle — deadlines met, evidence kept.</li>
+                <li><strong>Pay runs:</strong> Weekly or monthly — consistent, scalable, and error-resistant.</li>
+                <li><strong>Auto-enrolment:</strong> Setup, ongoing assessments, and re-enrolment handled.</li>
+                <li><strong>People changes:</strong> Starters, leavers, variable hours, holiday pay, and pro-rations done correctly.</li>
+                <li><strong>Statutory schemes:</strong> SSP, SMP, SPP, ShPP, SAP calculated and documented.</li>
+                <li><strong>Benefits & year-end:</strong> Payrolling where appropriate, P11D/P11D(b), Class 1A NIC.</li>
+                <li><strong>P60s:</strong> Year-end employee documents issued securely.</li>
+                <li><strong>Payments:</strong> Bacs files or approval packs with maker–checker controls.</li>
+            </ul>
+
+            <h2>How We Work</h2>
+            <p>Set up once. We review your data, agree simple cut-offs and approvals, and run a disciplined cycle: you confirm changes, we complete checks, you approve totals, then payments and filings are made. The process is documented and audit-ready, with least-privilege access maintained throughout.</p>
+
+            <p><strong>📞 Call us today</strong> to make payday precise, calm, and compliant — we’ll set up your next pay run.</p>
+        </div>
+
+
+      <!-- Modal Callback Form -->
+      <div id="callbackModal" class="callback-modal">
+        <div class="callback-form-container">
+          <h3>Request a Callback</h3>
+          <form id="callbackForm">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="tel" name="phone" placeholder="Your Phone Number" required>
+            <input type="email" name="email" placeholder="Your Email Address" required>
+
+            <label for="callbackDate">Preferred Callback Date</label>
+            <input type="date" name="callbackDate" id="callbackDate" min="" required>
+
+            <label for="callbackTime">Preferred Time</label>
+            <select name="callbackTime" id="callbackTime" required>
+              <option value="">Select...</option>
+              <option value="Morning">Morning (9am – 12pm)</option>
+              <option value="Afternoon">Afternoon (1pm – 5pm)</option>
+            </select>
+
+            <label for="message">How can we help you?</label>
+            <textarea name="message" id="message" placeholder="How can we help you?"></textarea>
+
+            <button type="submit">Submit</button>
+            <button type="button" onclick="closeCallbackForm()">Cancel</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="tax-contact-form-card stop-stretch animate-on-scroll" id="tax-contact-form">
+        <h4>Contact Our Team For Professional Advice</h4>
+        <form class="tax-enquiry-form" id="taxEnquiryForm">
+          <div class="tax-form-group">
+            <label for="tax-name">Full Name *</label>
+            <input type="text" id="tax-name" name="name" required>
+          </div>
+
+          <div class="tax-form-group">
+            <label for="tax-email">Email Address *</label>
+            <input type="email" id="tax-email" name="email" required>
+          </div>
+
+          <div class="tax-form-group">
+            <label for="tax-phone">Phone Number *</label>
+            <input type="tel" id="tax-phone" name="phone" required>
+          </div>
+
+          <div class="tax-form-group">
+            <label for="tax-message">Message</label>
+            <textarea id="tax-message" name="message" rows="4" placeholder="How can we help?"></textarea>
+          </div>
+
+          <button type="submit" class="tax-btn tax-form-submit">Send Enquiry</button>
+        </form>
+        <p id="tax-enquiry-message" style="display: none;"></p>
+      </div>
+    </div>
+
+    <!-- Request Callback CTA -->
+    <div class="svc-cta-parallax-wrapper">
+      <div class="svc-cta-box">
+        <div class="svc-cta-content">
+          <div class="svc-cta-phone">
+            <p class="large-text">We're here to help you, call us on</p>
+            <div class="svc-phone-number">
+              <a href="tel:01582514988" class="tax-phone-number">
+                <i class="fas fa-phone tax-phone-icon"></i>
+                01582 514 988
+              </a>
+            </div>
+          </div>
+          <div class="svc-cta-divider">OR</div>
+          <a class="svc-btn svc-btn-primary svc-btn-lg" onclick="openCallbackForm()">Request a Callback</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+        
+    
+
+    <!-- Other Services -->
+    <h1 class="services-header">View Our Other Services</h1>
+    <section class="tax-services-grid-section">
+      <div class="tax-container">
+        <div class="tax-services-grid">                    
+          
+            <a href="accounting-cloud.html" class="tax-service-link">
+                  <div class="tax-service-item">
+                    <div class="tax-service-icon">
+                      <i class="fa-solid fa-cloud"></i>
+                    </div>
+                    <h3>Cloud Accounting <br>Solutions</br></h3>
+                    <p>Stay in control with real-time financial data anytime, anywhere</p>
+                  </div>
+              </a>
+          
+          <a href="accounting-management.html" class="tax-service-link">
+              <div class="tax-service-item">
+                <div class="tax-service-icon">
+                  <i class="fas fa-users"></i>
+                </div>
+                <h3>Management Accounts</h3>
+                <p>Make faster, smarter decisions with clear monthly insights</p>
+              </div>
+          </a>
+          
+          <a href="accounting-statutory.html" class="tax-service-link">
+              <div class="tax-service-item">
+                <div class="tax-service-icon">
+                  <i class="fas fa-book"></i>
+                </div>
+                <h3>Statutory Accounts</h3>
+                <p>Stay compliant while focusing on growing your business</p>
+              </div>
+          </a>
+          
+          <a href="accounting-bookkeeping.html" class="tax-service-link">
+              <div class="tax-service-item">
+                <div class="tax-service-icon">
+                  <i class="fa-solid fa-receipt"></i>
+                </div>
+                <h3>Bookkeeping Services</h3>
+                <p>Free up time and reduce stress with accurate, automated records</p>
+              </div>
+          </a>
+          
+          <a href="accounting-payroll.html" class="tax-service-link">
+              <div class="tax-service-item">
+                <div class="tax-service-icon">
+                  <i class="fas fa-file-invoice-dollar"></i>
+                </div>
+                <h3>Payroll Management</h3>
+                <p>Pay your team on time, every time—without lifting a finger</p>
+              </div>
+          </a>
+          
+          <a href="accounting-secretatial.html" class="tax-service-link">
+              <div class="tax-service-item">
+                <div class="tax-service-icon">
+                  <i class="fas fa-user-shield"></i>
+                </div>
+                <h3>Company Secretarial Services</h3>
+                <p>Avoid penalties and stay compliant with hands-off company admin</p>
+              </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="tax-news-section">
+      <div class="tax-container">
+        <h2>Related News</h2>
+        <p class="tax-news-subtitle">Keeping you up to date</p>
+        
+        <div class="tax-news-grid">
+            <!-- News cards will be dynamically injected here by JavaScript -->
+        </div>
+        
+        <div class="tax-news-cta">
+          <a href="news.html" class="tax-btn tax-outline">View all taxation news</a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer id="site-footer"></footer>
+
+
+    <!-- Scripts -->
+    <script src="javascript/script.js"></script>
+    <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    
+</body>
+</html>
