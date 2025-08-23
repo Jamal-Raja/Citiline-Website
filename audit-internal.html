@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citiline | Internal Audit</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.style.css">
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"> <!-- Calendly widget styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" /> <!-- Font Awesome for icons -->
+
+</head>
+<body class="svc-page">
+    <!--Header (+ Navbar)-->
+    <header id="site-navbar"></header>
+ 
+    <!-- Hero Section -->
+    <section class="svc-hero">
+        <div class="svc-page-container">
+            <div class="svc-hero-content">
+                <div class="svc-hero-text">
+                    <h1>Internal Audit</h1>
+                    <p>fewer errors, tighter controls, better margins.</p>
+                    <div class="svc-hero-buttons">
+                        <a href="contact.html" class="svc-btn svc-btn-primary svc-btn-lg">Contact Us</a>
+                        <a href="#" onclick="return openCalendly()" class="svc-btn svc-btn-secondary svc-btn-lg">Book Appointment</a>
+                    </div>
+                </div>
+                <div class="svc-hero-image">
+                    <div class="svc-hero-image-circle">
+                        <img src="Assets/images/corporation-tax-hero.jpg" alt="Professional Service">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <svg class="svc-hero-curve" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,120 C300,80 600,40 1200,60 L1200,120 Z"></path>
+        </svg>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="svc-breadcrumb-container">
+        <div class="svc-breadcrumb">
+            <a href="index.html">Home</a> > <a href="services.html">Services</a> > <a href="services-accounting.html">Audit & Assurance</a> > <span>Internal Audit</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <section class="svc-main-content">
+    <div class="svc-page-container">            
+        <div class="svc-content-grid">
+        <!-- Content -->
+        <div class="svc-content-section">           
+            <h2>Audit that pays for itself</h2>
+            <p>Internal audit should do more than confirm what you already know. Ours is independent, practical, and built to pay back: tighter controls, cleaner processes, and clearer decisions. We test what matters, explain the root causes in plain English, and give you fixes you can actually implement.</p>
+
+            <h2>What We Review</h2>
+            <ul class="tax-service-list">
+                <li><strong>Financial controls:</strong> order-to-cash, procure-to-pay, AP/AR, treasury, reconciliations</li>
+                <li><strong>Payroll & HR:</strong> joiners/leavers, approvals, RTI, pensions, segregation of duties</li>
+                <li><strong>Revenue & billing:</strong> pricing, discounts, credit notes, completeness and cut-off</li>
+                <li><strong>Purchasing & suppliers:</strong> onboarding, contracts, spend controls, conflicts</li>
+                <li><strong>Assets & inventory:</strong> existence, valuation, impairment, stock movements</li>
+                <li><strong>Data & access:</strong> user privileges, audit trails, backup/restore, change control</li>
+                <li><strong>Governance & compliance:</strong> policies, approvals, Companies Act and GDPR touchpoints</li>
+            </ul>
+
+            <h2>From Findings to Fixes</h2>
+            <p>You’ll receive a concise, board-ready report with risk-ranked issues, owners, and timelines. We separate quick wins from structural changes, provide control redesigns where needed, and supply the working templates (checklists, reconciliations, standard journals, approval flows) so teams can adopt improvements immediately.</p>
+
+            <h2>How We Work</h2>
+            <p>We scope quickly around your risks and objectives, perform targeted fieldwork and testing, and play back findings with an action plan the same leadership can sign off. Follow-up validation confirms the fixes are embedded and working.</p>
+
+            <h2>Why Businesses Choose Citiline</h2>
+            <p>You get senior attention, plain-English reporting, and recommendations grounded in how finance actually runs. Our approach is evidence-led and defensible — designed to reduce noise, avoid surprises, and strengthen governance without slowing the business.</p>
+
+            <p><strong>📞 Ready to turn audit into improvement?</strong> Call Citiline and we’ll scope a focused review with a clear action plan.</p>
+        </div>
+
+        <!-- Modal Callback Form -->
+        <div id="callbackModal" class="callback-modal">
+            <div class="callback-form-container">
+            <h3>Request a Callback</h3>
+            <form id="callbackForm">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="tel" name="phone" placeholder="Your Phone Number" required>
+                <input type="email" name="email" placeholder="Your Email Address" required>
+
+                <label for="callbackDate">Preferred Callback Date</label>
+                <input type="date" name="callbackDate" id="callbackDate" min="" required>
+
+                <label for="callbackTime">Preferred Time</label>
+                <select name="callbackTime" id="callbackTime" required>
+                <option value="">Select...</option>
+                <option value="Morning">Morning (9am – 12pm)</option>
+                <option value="Afternoon">Afternoon (1pm – 5pm)</option>
+                </select>
+
+                <label for="message">How can we help you?</label>
+                <textarea name="message" id="message" placeholder="How can we help you?"></textarea>
+
+                <button type="submit">Submit</button>
+                <button type="button" onclick="closeCallbackForm()">Cancel</button>
+            </form>
+            </div>
+        </div>
+
+      <!-- Contact Form -->
+      <div class="tax-contact-form-card stop-stretch animate-on-scroll" id="tax-contact-form">
+        <h4>Contact Our Team For Professional Advice</h4>
+        <form class="tax-enquiry-form" id="taxEnquiryForm">
+          <div class="tax-form-group">
+            <label for="tax-name">Full Name *</label>
+            <input type="text" id="tax-name" name="name" required>
+          </div>
+
+          <div class="tax-form-group">
+            <label for="tax-email">Email Address *</label>
+            <input type="email" id="tax-email" name="email" required>
+          </div>
+
+          <div class="tax-form-group">
+            <label for="tax-phone">Phone Number *</label>
+            <input type="tel" id="tax-phone" name="phone" required>
+          </div>
+
+          <div class="tax-form-group">
+            <label for="tax-message">Message</label>
+            <textarea id="tax-message" name="message" rows="4" placeholder="How can we help?"></textarea>
+          </div>
+
+          <button type="submit" class="tax-btn tax-form-submit">Send Enquiry</button>
+        </form>
+        <p id="tax-enquiry-message" style="display: none;"></p>
+      </div>
+    </div>
+
+    <!-- Request Callback CTA -->
+    <div class="svc-cta-parallax-wrapper">
+      <div class="svc-cta-box">
+        <div class="svc-cta-content">
+          <div class="svc-cta-phone">
+            <p class="large-text">We're here to help you, call us on</p>
+            <div class="svc-phone-number">
+              <a href="tel:01582514988" class="tax-phone-number">
+                <i class="fas fa-phone tax-phone-icon"></i>
+                01582 514 988
+              </a>
+            </div>
+          </div>
+          <div class="svc-cta-divider">OR</div>
+          <a class="svc-btn svc-btn-primary svc-btn-lg" onclick="openCallbackForm()">Request a Callback</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+        
+    
+
+    <!-- Other Services -->
+    <h1 class="services-header">View Our Other Services</h1>
+    <section class="tax-services-grid-section">
+      <div class="tax-container">
+        <div class="tax-services-grid">                    
+          
+            <a href="audit-internal.html" class="tax-service-link">
+                  <div class="tax-service-item">
+                    <div class="tax-service-icon">
+                      <i class="fa-solid fa-cloud"></i>
+                    </div>
+                    <h3>Internal Audit</h3>
+                    <p>Identify weaknesses before they cost you. Our audits strengthen control, reveal inefficiencies, and give stakeholders the confidence to back your growth.</p>
+                  </div>
+              </a>
+          
+          <a href="audit-dd.html" class="tax-service-link">
+              <div class="tax-service-item">
+                <div class="tax-service-icon">
+                  <i class="fas fa-users"></i>
+                </div>
+                <h3>Due dilligence</h3>
+                <p>See the full picture, not just the numbers. We uncover hidden risks, validate assumptions, and equip you with insights that drive confident, high-stakes decisions.</p>
+              </div>
+          </a>
+          
+          <a href="audit-special" class="tax-service-link">
+              <div class="tax-service-item">
+                <div class="tax-service-icon">
+                  <i class="fas fa-book"></i>
+                </div>
+                <h3>Special Purpopse Audits</h3>
+                <p>Whether it's grant funding or stakeholder trust, we deliver precise, outcome-driven audits—focused, fast, and aligned with your mission.</p>
+              </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="tax-news-section">
+      <div class="tax-container">
+        <h2>Related News</h2>
+        <p class="tax-news-subtitle">Keeping you up to date</p>
+        
+        <div class="tax-news-grid">
+            <!-- News cards will be dynamically injected here by JavaScript -->
+        </div>
+        
+        <div class="tax-news-cta">
+          <a href="news.html" class="tax-btn tax-outline">View all taxation news</a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer id="site-footer"></footer>
+
+
+    <!-- Scripts -->
+    <script src="javascript/script.js"></script>
+    <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    
+</body>
+</html>
