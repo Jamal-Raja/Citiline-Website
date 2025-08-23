@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citiline | Special Purpose Audits</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.style.css">
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"> <!-- Calendly widget styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" /> <!-- Font Awesome for icons -->
+
+</head>
+<body class="svc-page">
+    <!--Header (+ Navbar)-->
+    <header id="site-navbar"></header>
+ 
+    <!-- Hero Section -->
+    <section class="svc-hero">
+        <div class="svc-page-container">
+            <div class="svc-hero-content">
+                <div class="svc-hero-text">
+                    <h1>Special Purpose Audits</h1>
+                    <p>The Right Answers for Critical Decisions</p>
+                    <div class="svc-hero-buttons">
+                        <a href="contact.html" class="svc-btn svc-btn-primary svc-btn-lg">Contact Us</a>
+                        <a href="#" onclick="return openCalendly()" class="svc-btn svc-btn-secondary svc-btn-lg">Book Appointment</a>
+                    </div>
+                </div>
+                <div class="svc-hero-image">
+                    <div class="svc-hero-image-circle">
+                        <img src="Assets/images/corporation-tax-hero.jpg" alt="Professional Service">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <svg class="svc-hero-curve" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,120 C300,80 600,40 1200,60 L1200,120 Z"></path>
+        </svg>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="svc-breadcrumb-container">
+        <div class="svc-breadcrumb">
+            <a href="index.html">Home</a> > <a href="services.html">Services</a> > <a href="services-accounting.html">Audit & Assurance</a> > <span>Special Purpose Audits</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <section class="svc-main-content">
+    <div class="svc-page-container">            
+        <div class="svc-content-grid">
+        <!-- Content -->
+        <div class="svc-content-section">           
+            <h2>Independent Assurance That Strengthens Trust and Unlocks Opportunity</h2>
+            <p>
+                Not every audit is about annual accounts. Sometimes, your business needs assurance for a specific purpose —
+                whether it’s satisfying regulators, investors, lenders, or internal stakeholders. That’s where Special Purpose
+                Audits come in.
+            </p>
+            <p>
+                At Citiline Accountants, we design and deliver audits tailored to your exact requirements. From compliance-driven
+                assignments to strategic assurance, we give you the clarity, evidence, and credibility you need to move forward
+                with confidence.
+            </p>
+
+            <h2>What Are Special Purpose Audits?</h2>
+            <p>
+                Special Purpose Audits go beyond statutory requirements. They focus on a defined scope, such as reviewing specific
+                transactions, systems, or financial information. The aim is to provide assurance in areas that matter most to
+                decision-makers.
+            </p>
+            <p>These audits are particularly valuable when you need independent confirmation for:</p>
+            <ul class="tax-service-list">
+                <li><strong>Lenders and Investors:</strong> providing comfort that your financial position supports borrowing or investment</li>
+                <li><strong>Regulators and Authorities:</strong> ensuring compliance with industry-specific or government reporting obligations</li>
+                <li><strong>Shareholders and Stakeholders:</strong> delivering transparent insight into how resources are being used</li>
+                <li><strong>Management Teams:</strong> strengthening decision-making with objective, data-driven analysis</li>
+            </ul>
+
+            <h2>Areas We Cover</h2>
+            <p>We tailor each engagement to your needs, with examples including:</p>
+            <ul class="tax-service-list">
+                <li><strong>Grant &amp; Subsidy Audits:</strong> Independent verification of expenditure to secure and maintain government or funding body support</li>
+                <li><strong>Contractual Audits:</strong> Assurance over compliance with key supplier, customer, or joint venture agreements</li>
+                <li><strong>Turnover &amp; Royalty Audits:</strong> Confirmation of sales figures, royalties, or licensing fees owed under commercial arrangements</li>
+                <li><strong>Compliance Audits:</strong> Focused reviews to satisfy sector-specific regulatory or reporting requirements</li>
+                <li><strong>Transaction Audits:</strong> Assurance over acquisitions, disposals, restructures, or refinancing events</li>
+                <li><strong>Agreed-Upon Procedures:</strong> Bespoke assurance projects designed around your unique requirements</li>
+            </ul>
+
+            <h2>Why Businesses Choose Citiline</h2>
+            <p>
+                With over 30 years of audit and compliance experience — including first-hand knowledge from inside HMRC — we bring
+                both technical rigour and commercial insight. Our role isn’t just to issue a report; it’s to add value.
+            </p>
+            <p>That means:</p>
+            <ul class="tax-service-list">
+                <li>Delivering assurance that stands up to regulatory and stakeholder scrutiny</li>
+                <li>Highlighting risks and opportunities hidden in your financial data</li>
+                <li>Helping you meet obligations while supporting strategic decisions</li>
+                <li>Communicating findings clearly and constructively</li>
+            </ul>
+
+            <h2>Audit with Purpose, Not Just Process</h2>
+            <p>
+                Special Purpose Audits aren’t a tick-box exercise. Done properly, they provide credible assurance, build trust,
+                and unlock opportunities for growth, funding, and stronger stakeholder relationships.
+            </p>
+            <p>
+                At Citiline, we make sure every audit delivers practical value for your business — not just compliance.
+            </p>
+
+            <p><strong>📞 Let’s discuss your assurance needs today.</strong> Speak to our specialist audit team to explore how a Special Purpose Audit can provide clarity and confidence for your next move.</p>
+        </div>
+
+
+        <!-- Modal Callback Form -->
+        <div id="callbackModal" class="callback-modal">
+            <div class="callback-form-container">
+            <h3>Request a Callback</h3>
+            <form id="callbackForm">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="tel" name="phone" placeholder="Your Phone Number" required>
+                <input type="email" name="email" placeholder="Your Email Address" required>
+
+                <label for="callbackDate">Preferred Callback Date</label>
+                <input type="date" name="callbackDate" id="callbackDate" min="" required>
+
+                <label for="callbackTime">Preferred Time</label>
+                <select name="callbackTime" id="callbackTime" required>
+                <option value="">Select...</option>
+                <option value="Morning">Morning (9am – 12pm)</option>
+                <option value="Afternoon">Afternoon (1pm – 5pm)</option>
+                </select>
+
+                <label for="message">How can we help you?</label>
+                <textarea name="message" id="message" placeholder="How can we help you?"></textarea>
+
+                <button type="submit">Submit</button>
+                <button type="button" onclick="closeCallbackForm()">Cancel</button>
+            </form>
+            </div>
+        </div>
+
+      <!-- Contact Form -->
+      <div class="tax-contact-form-card stop-stretch animate-on-scroll" id="tax-contact-form">
+        <h4>Contact Our Team For Professional Advice</h4>
+        <form class="tax-enquiry-form" id="taxEnquiryForm">
+          <div class="tax-form-group">
+            <label for="tax-name">Full Name *</label>
+            <input type="text" id="tax-name" name="name" required>
+          </div>
+
+          <div class="tax-form-group">
+            <label for="tax-email">Email Address *</label>
+            <input type="email" id="tax-email" name="email" required>
+          </div>
+
+          <div class="tax-form-group">
+            <label for="tax-phone">Phone Number *</label>
+            <input type="tel" id="tax-phone" name="phone" required>
+          </div>
+
+          <div class="tax-form-group">
+            <label for="tax-message">Message</label>
+            <textarea id="tax-message" name="message" rows="4" placeholder="How can we help?"></textarea>
+          </div>
+
+          <button type="submit" class="tax-btn tax-form-submit">Send Enquiry</button>
+        </form>
+        <p id="tax-enquiry-message" style="display: none;"></p>
+      </div>
+    </div>
+
+    <!-- Request Callback CTA -->
+    <div class="svc-cta-parallax-wrapper">
+      <div class="svc-cta-box">
+        <div class="svc-cta-content">
+          <div class="svc-cta-phone">
+            <p class="large-text">We're here to help you, call us on</p>
+            <div class="svc-phone-number">
+              <a href="tel:01582514988" class="tax-phone-number">
+                <i class="fas fa-phone tax-phone-icon"></i>
+                01582 514 988
+              </a>
+            </div>
+          </div>
+          <div class="svc-cta-divider">OR</div>
+          <a class="svc-btn svc-btn-primary svc-btn-lg" onclick="openCallbackForm()">Request a Callback</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+        
+    
+
+    <!-- Other Services -->
+    <h1 class="services-header">View Our Other Services</h1>
+    <section class="tax-services-grid-section">
+      <div class="tax-container">
+        <div class="tax-services-grid">                    
+          
+            <a href="audit-internal.html" class="tax-service-link">
+                  <div class="tax-service-item">
+                    <div class="tax-service-icon">
+                      <i class="fa-solid fa-cloud"></i>
+                    </div>
+                    <h3>Internal Audit</h3>
+                    <p>Identify weaknesses before they cost you. Our audits strengthen control, reveal inefficiencies, and give stakeholders the confidence to back your growth.</p>
+                  </div>
+              </a>
+          
+          <a href="audit-dd.html" class="tax-service-link">
+              <div class="tax-service-item">
+                <div class="tax-service-icon">
+                  <i class="fas fa-users"></i>
+                </div>
+                <h3>Due dilligence</h3>
+                <p>See the full picture, not just the numbers. We uncover hidden risks, validate assumptions, and equip you with insights that drive confident, high-stakes decisions.</p>
+              </div>
+          </a>
+          
+          <a href="audit-special.html" class="tax-service-link">
+              <div class="tax-service-item">
+                <div class="tax-service-icon">
+                  <i class="fas fa-book"></i>
+                </div>
+                <h3>Special Purpopse Audits</h3>
+                <p>Whether it's grant funding or stakeholder trust, we deliver precise, outcome-driven audits—focused, fast, and aligned with your mission.</p>
+              </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="tax-news-section">
+      <div class="tax-container">
+        <h2>Related News</h2>
+        <p class="tax-news-subtitle">Keeping you up to date</p>
+        
+        <div class="tax-news-grid">
+            <!-- News cards will be dynamically injected here by JavaScript -->
+        </div>
+        
+        <div class="tax-news-cta">
+          <a href="news.html" class="tax-btn tax-outline">View all taxation news</a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer id="site-footer"></footer>
+
+
+    <!-- Scripts -->
+    <script src="javascript/script.js"></script>
+    <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    
+</body>
+</html>
