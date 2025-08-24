@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citiline | Capital Gains Tax Advisory</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.style.css">
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"> <!-- Calendly widget styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" /> <!-- Font Awesome for icons -->
+
+</head>
+<body class="svc-page">
+    <!--Header (+ Navbar)-->
+    <header id="site-navbar"></header>
+ 
+    <!-- Hero Section -->
+    <section class="svc-hero">
+        <div class="svc-page-container">
+            <div class="svc-hero-content">
+                <div class="svc-hero-text">
+                    <h1>Capital Gains Tax Advisory</h1>
+                    <p>You’ve earned it — now let’s make sure you keep it</p>
+                    <div class="svc-hero-buttons">
+                        <a href="contact.html" class="svc-btn svc-btn-primary svc-btn-lg">Contact Us</a>
+                        <a href="#" onclick="return openCalendly()" class="svc-btn svc-btn-secondary svc-btn-lg">Book Appointment</a>
+                    </div>
+                </div>
+                <div class="svc-hero-image">
+                    <div class="svc-hero-image-circle">
+                        <img src="Assets/images/corporation-tax-hero.jpg" alt="Professional Service">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <svg class="svc-hero-curve" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,120 C300,80 600,40 1200,60 L1200,120 Z"></path>
+        </svg>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="svc-breadcrumb-container">
+        <div class="svc-breadcrumb">
+            <a href="index.html">Home</a> > <a href="services.html">Services</a> > <a href="services-personal.html">Personal Services</a> > <span>Capital Gains Tax Advisory</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <section class="svc-main-content">
+    <div class="svc-page-container">            
+        <div class="svc-content-grid">
+        <!-- Content -->
+        <div class="svc-content-section">           
+  <h2>Capital Gains Tax Doesn’t Have to Take More Than Its Share</h2>
+  <p>
+    Capital Gains Tax (CGT) applies when you dispose of an asset such as property, shares, or a business. The rules are
+    complex, and without planning, it’s easy to pay more than necessary. The right strategy can significantly reduce —
+    or in some cases defer — your liability, but only if the planning is done before the transaction takes place.
+  </p>
+  <p>
+    At Citiline, we specialise in structuring disposals and investments in a way that is both tax-efficient and
+    fully compliant. We bring clarity to the rules, highlight reliefs and exemptions that apply to your circumstances,
+    and design a plan that keeps more value in your hands.
+  </p>
+
+  <h2>Key Areas of Capital Gains Tax Planning</h2>
+  <p>Every situation is different, but some of the main areas we advise on include:</p>
+  <ul class="tax-service-list">
+    <li><strong>Annual exemptions:</strong> ensuring that personal allowances are not wasted and are used across spouses or civil partners where possible.</li>
+    <li><strong>Business Asset Disposal Relief:</strong> helping business owners secure the reduced rate of CGT available on qualifying disposals of trading businesses or shares.</li>
+    <li><strong>Rollover and holdover reliefs:</strong> deferring CGT when assets are replaced or transferred under qualifying conditions.</li>
+    <li><strong>Principal Private Residence (PPR) relief:</strong> advising on the availability of relief when selling your main home, and how periods of absence, lettings, or mixed use affect the calculation.</li>
+    <li><strong>Ownership planning:</strong> structuring disposals through spouses, civil partners, or trusts to optimise the use of reliefs and allowances.</li>
+    <li><strong>Timing strategies:</strong> managing when disposals are made to align with income levels, other gains, or wider tax planning opportunities.</li>
+    <li><strong>Property disposals:</strong> ensuring that residential and commercial property sales are reported correctly and reliefs are maximised where available.</li>
+    <li><strong>Corporate structuring:</strong> advising on disposals within groups and the use of holding companies to manage and shelter gains.</li>
+  </ul>
+
+  <h2>Our Approach</h2>
+  <p>
+    We don’t just calculate your CGT after the event — by then, most of the opportunities to reduce liability are gone.
+    Instead, we work with you ahead of a disposal to identify planning opportunities and structure the transaction in a
+    tax-efficient way. We explain the technical rules in plain English and give you practical options, so you know
+    exactly where you stand before you commit.
+  </p>
+  <p>
+    For complex cases, such as selling a business, property portfolios, or restructuring group companies, we provide
+    detailed modelling to show the impact of different approaches. This allows you to compare scenarios and make
+    confident, informed decisions.
+  </p>
+
+  <h2>Why Choose Citiline</h2>
+  <p>
+    Many advisers focus only on reporting disposals. We focus on strategy — how to minimise exposure before the disposal
+    takes place. With years of experience handling HMRC rules, reliefs, and dispute resolution, we know not just what
+    the legislation says but how it is applied in practice.
+  </p>
+  <p>
+    Our role is to protect the value you’ve created. Whether you’re selling a property, a shareholding, or your
+    business, we help you structure the deal so you don’t give away more than you need to in tax.
+  </p>
+
+  <p><strong>📞 Planning a sale or disposal?</strong> Speak to Citiline today and put an expert CGT strategy in place before you sign.</p>
+</div>
+
+
+
+
+
+
+
+        <!-- Modal Callback Form -->
+        <div id="callbackModal" class="callback-modal">
+            <div class="callback-form-container">
+            <h3>Request a Callback</h3>
+            <form id="callbackForm">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="tel" name="phone" placeholder="Your Phone Number" required>
+                <input type="email" name="email" placeholder="Your Email Address" required>
+
+                <label for="callbackDate">Preferred Callback Date</label>
+                <input type="date" name="callbackDate" id="callbackDate" min="" required>
+
+                <label for="callbackTime">Preferred Time</label>
+                <select name="callbackTime" id="callbackTime" required>
+                <option value="">Select...</option>
+                <option value="Morning">Morning (9am – 12pm)</option>
+                <option value="Afternoon">Afternoon (1pm – 5pm)</option>
+                </select>
+
+                <label for="message">How can we help you?</label>
+                <textarea name="message" id="message" placeholder="How can we help you?"></textarea>
+
+                <button type="submit">Submit</button>
+                <button type="button" onclick="closeCallbackForm()">Cancel</button>
+            </form>
+            </div>
+        </div>
+
+      <!-- Contact Form -->
+      <div class="tax-contact-form-card stop-stretch animate-on-scroll" id="tax-contact-form">
+        <h4>Contact Our Team For Professional Advice</h4>
+        <form class="tax-enquiry-form" id="taxEnquiryForm">
+          <div class="tax-form-group">
+            <label for="tax-name">Full Name *</label>
+            <input type="text" id="tax-name" name="name" required>
+          </div>
+
+          <div class="tax-form-group">
+            <label for="tax-email">Email Address *</label>
+            <input type="email" id="tax-email" name="email" required>
+          </div>
+
+          <div class="tax-form-group">
+            <label for="tax-phone">Phone Number *</label>
+            <input type="tel" id="tax-phone" name="phone" required>
+          </div>
+
+          <div class="tax-form-group">
+            <label for="tax-message">Message</label>
+            <textarea id="tax-message" name="message" rows="4" placeholder="How can we help?"></textarea>
+          </div>
+
+          <button type="submit" class="tax-btn tax-form-submit">Send Enquiry</button>
+        </form>
+        <p id="tax-enquiry-message" style="display: none;"></p>
+      </div>
+    </div>
+
+    <!-- Request Callback CTA -->
+    <div class="svc-cta-parallax-wrapper">
+      <div class="svc-cta-box">
+        <div class="svc-cta-content">
+          <div class="svc-cta-phone">
+            <p class="large-text">We're here to help you, call us on</p>
+            <div class="svc-phone-number">
+              <a href="tel:01582514988" class="tax-phone-number">
+                <i class="fas fa-phone tax-phone-icon"></i>
+                01582 514 988
+              </a>
+            </div>
+          </div>
+          <div class="svc-cta-divider">OR</div>
+          <a class="svc-btn svc-btn-primary svc-btn-lg" onclick="openCallbackForm()">Request a Callback</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+        
+    
+
+    <!-- Other Services -->
+    <h1 class="services-header">View Our Other Services</h1>
+    <section class="tax-services-grid-section">
+      <div class="tax-container">
+        <div class="tax-services-grid">                              
+            <a href="personal-self-assessment.html" class="tax-service-link">
+                  <div class="tax-service-item">
+                    <div class="tax-service-icon">
+                      <i class="fas fa-file-invoice"></i>
+                    </div>
+                    <h3>Self-Assessment Tax Returns</h3>
+                    <p>Accurate, timely, and fully managed — reducing the risk of errors while keeping your affairs in order year after year.</p>
+                  </div>
+              </a>
+          
+          <a href="personal-income.html" class="tax-service-link">
+              <div class="tax-service-item">
+                <div class="tax-service-icon">
+                  <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Income Tax Planning</h3>
+                <p>Structured around your sources of income — helping you retain more today and adapt as your financial position changes.</p>
+              </div>
+          </a>
+          
+          <a href="personal-cgt.html" class="tax-service-link">
+              <div class="tax-service-item">
+                <div class="tax-service-icon">
+                  <i class="fas fa-arrow-trend-up"></i>
+                </div>
+                <h3>Capital Gains Tax Advisory</h3>
+                <p>Whether selling shares, property, or personal assets, we guide timing and structure to reduce tax on gains and avoid missed reliefs.</p>
+              </div>
+          </a>
+
+          <a href="personal-iht.html" class="tax-service-link">
+              <div class="tax-service-item">
+                <div class="tax-service-icon">
+                  <i class="fas fa-hand-holding-heart"></i>
+                </div>
+                <h3>Inheritance Tax Planning</h3>
+                <p>We help you pass on assets with control — using proven tools to reduce the tax burden and protect what matters most.</p>
+              </div>
+          </a>
+
+          <a href="personal-non-domicile.html" class="tax-service-link">
+              <div class="tax-service-item">
+                <div class="tax-service-icon">
+                  <i class="fas fa-globe"></i>
+                </div>
+                <h3>Non-Domicile Tax Advice</h3>
+                <p>For international individuals, we offer expert advice on residency, remittances, and structuring — keeping you efficient under UK rules.</p>
+              </div>
+          </a>
+
+          <a href="personal-property.html" class="tax-service-link">
+              <div class="tax-service-item">
+                <div class="tax-service-icon">
+                  <i class="fas fa-house-chimney"></i>
+                </div>
+                <h3>Property Tax Advice</h3>
+                <p>We advise on how to hold, manage, and sell property — helping you preserve value and avoid common tax pitfalls.</p>
+              </div>
+          </a>
+
+          <a href="personal-pension.html" class="tax-service-link">
+              <div class="tax-service-item">
+                <div class="tax-service-icon">
+                  <i class="fas fa-piggy-bank"></i>
+                </div>
+                <h3>Pension Planning</h3>
+                <p>We guide contributions and withdrawals around tax rules — supporting long-term growth and flexible access when you need it.</p>
+              </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="tax-news-section">
+      <div class="tax-container">
+        <h2>Related News</h2>
+        <p class="tax-news-subtitle">Keeping you up to date</p>
+        
+        <div class="tax-news-grid">
+            <!-- News cards will be dynamically injected here by JavaScript -->
+        </div>
+        
+        <div class="tax-news-cta">
+          <a href="news.html" class="tax-btn tax-outline">View all taxation news</a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer id="site-footer"></footer>
+
+
+    <!-- Scripts -->
+    <script src="javascript/script.js"></script>
+    <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    
+</body>
+</html>
