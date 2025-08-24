@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citiline | Business Valuations</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.style.css">
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"> <!-- Calendly widget styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" /> <!-- Font Awesome for icons -->
+
+</head>
+<body class="svc-page">
+    <!--Header (+ Navbar)-->
+    <header id="site-navbar"></header>
+ 
+    <!-- Hero Section -->
+    <section class="svc-hero">
+        <div class="svc-page-container">
+            <div class="svc-hero-content">
+                <div class="svc-hero-text">
+                    <h1>Business Valuations</h1>
+                    <p>From growth planning to exit strategies, we put a true number on your business</p>
+                    <div class="svc-hero-buttons">
+                        <a href="contact.html" class="svc-btn svc-btn-primary svc-btn-lg">Contact Us</a>
+                        <a href="#" onclick="return openCalendly()" class="svc-btn svc-btn-secondary svc-btn-lg">Book Appointment</a>
+                    </div>
+                </div>
+                <div class="svc-hero-image">
+                    <div class="svc-hero-image-circle">
+                        <img src="Assets/images/corporation-tax-hero.jpg" alt="Professional Service">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <svg class="svc-hero-curve" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,120 C300,80 600,40 1200,60 L1200,120 Z"></path>
+        </svg>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="svc-breadcrumb-container">
+        <div class="svc-breadcrumb">
+            <a href="index.html">Home</a> > <a href="services.html">Services</a> > <a href="services-advisory.html">Business Advisory</a> > <span>Business Valuations</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <section class="svc-main-content">
+    <div class="svc-page-container">            
+        <div class="svc-content-grid">
+        <!-- Content -->
+        <div class="svc-content-section">           
+            <h2>Understand the True Worth of Your Business</h2>
+            <p>
+                A business valuation isn’t just about putting a price tag on your company — it’s about understanding the forces
+                that drive its value today and what will shape it tomorrow. Whether you’re negotiating a sale, buying into a new
+                venture, or planning for succession, knowing the real value is essential to making the right move.
+            </p>
+            <p>
+                At Citiline, we look beyond the numbers on the balance sheet. We analyse the full picture — performance, risk,
+                customer base, sector trends, and future potential — to give you a valuation that is both accurate and meaningful.
+                Our valuations are designed not just to satisfy a process, but to give you the insight and leverage to act with
+                confidence.
+            </p>
+
+            <h2>Where Valuations Add Value</h2>
+            <p>
+                A professional valuation can be the difference between a deal that works for you and one that costs you dearly.
+                Clients come to us for valuations when they are:
+            </p>
+            <ul class="tax-service-list">
+                <li>Preparing for a sale or acquisition and need a price they can defend in negotiation</li>
+                <li>Raising finance or attracting investors who demand proof of value</li>
+                <li>Handling shareholder exits, buy-ins, or disputes where fairness must be demonstrated</li>
+                <li>Planning ahead for succession, tax, or long-term growth strategies</li>
+            </ul>
+
+            <h2>Our Perspective</h2>
+            <p>
+                We believe a valuation should be more than a single figure on a report. That’s why we break down the story behind
+                the number — showing you where value is being created, where it is at risk, and how it could be improved. This
+                approach doesn’t just inform the current transaction; it helps you build a stronger business for the future.
+            </p>
+
+            <h2>Why Businesses Trust Citiline</h2>
+            <p>
+                What makes our valuations different is the way we communicate them. We cut through technical jargon and present our
+                findings in clear, practical terms that can be shared with buyers, investors, or the board. Every valuation is
+                evidence-based, defensible, and focused on giving you leverage in the decisions that matter most.
+            </p>
+            <p>
+                Whether you are selling, buying, investing, or planning ahead, our valuations give you more than numbers — they
+                give you clarity, confidence, and control.
+            </p>
+
+            <p><strong>📞 Thinking about a sale, investment, or future planning?</strong> Call Citiline today to get a valuation you can rely on and use to your advantage.</p>
+            </div>
+
+
+        <!-- Modal Callback Form -->
+        <div id="callbackModal" class="callback-modal">
+            <div class="callback-form-container">
+            <h3>Request a Callback</h3>
+            <form id="callbackForm">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="tel" name="phone" placeholder="Your Phone Number" required>
+                <input type="email" name="email" placeholder="Your Email Address" required>
+
+                <label for="callbackDate">Preferred Callback Date</label>
+                <input type="date" name="callbackDate" id="callbackDate" min="" required>
+
+                <label for="callbackTime">Preferred Time</label>
+                <select name="callbackTime" id="callbackTime" required>
+                <option value="">Select...</option>
+                <option value="Morning">Morning (9am – 12pm)</option>
+                <option value="Afternoon">Afternoon (1pm – 5pm)</option>
+                </select>
+
+                <label for="message">How can we help you?</label>
+                <textarea name="message" id="message" placeholder="How can we help you?"></textarea>
+
+                <button type="submit">Submit</button>
+                <button type="button" onclick="closeCallbackForm()">Cancel</button>
+            </form>
+            </div>
+        </div>
+
+      <!-- Contact Form -->
+      <div class="tax-contact-form-card stop-stretch animate-on-scroll" id="tax-contact-form">
+        <h4>Contact Our Team For Professional Advice</h4>
+        <form class="tax-enquiry-form" id="taxEnquiryForm">
+          <div class="tax-form-group">
+            <label for="tax-name">Full Name *</label>
+            <input type="text" id="tax-name" name="name" required>
+          </div>
+
+          <div class="tax-form-group">
+            <label for="tax-email">Email Address *</label>
+            <input type="email" id="tax-email" name="email" required>
+          </div>
+
+          <div class="tax-form-group">
+            <label for="tax-phone">Phone Number *</label>
+            <input type="tel" id="tax-phone" name="phone" required>
+          </div>
+
+          <div class="tax-form-group">
+            <label for="tax-message">Message</label>
+            <textarea id="tax-message" name="message" rows="4" placeholder="How can we help?"></textarea>
+          </div>
+
+          <button type="submit" class="tax-btn tax-form-submit">Send Enquiry</button>
+        </form>
+        <p id="tax-enquiry-message" style="display: none;"></p>
+      </div>
+    </div>
+
+    <!-- Request Callback CTA -->
+    <div class="svc-cta-parallax-wrapper">
+      <div class="svc-cta-box">
+        <div class="svc-cta-content">
+          <div class="svc-cta-phone">
+            <p class="large-text">We're here to help you, call us on</p>
+            <div class="svc-phone-number">
+              <a href="tel:01582514988" class="tax-phone-number">
+                <i class="fas fa-phone tax-phone-icon"></i>
+                01582 514 988
+              </a>
+            </div>
+          </div>
+          <div class="svc-cta-divider">OR</div>
+          <a class="svc-btn svc-btn-primary svc-btn-lg" onclick="openCallbackForm()">Request a Callback</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+        
+    
+
+    <!-- Other Services -->
+    <h1 class="services-header">View Our Other Services</h1>
+    <section class="tax-services-grid-section">
+      <div class="tax-container">
+        <div class="tax-services-grid">                              
+            <a href="advisory-planing.html" class="tax-service-link">
+                  <div class="tax-service-item">
+                    <div class="tax-service-icon">
+                      <i class="fa-solid fa-chess-king"></i>
+                    </div>
+                    <h3>Business Planning & Stratergy</h3>
+                    <p>Architect growth with intent. We identify operational blind spots, strengthen decision-making frameworks, and align planning with investor-grade expectations.</p>
+                  </div>
+              </a>
+          
+          <a href="advisory-cashflow.html" class="tax-service-link">
+              <div class="tax-service-item">
+                <div class="tax-service-icon">
+                  <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <h3>Cash Flow Forecasting & Budgeting</h3>
+                <p>Control liquidity with confidence. We translate volatility into insight—equipping leaders with dynamic forecasts that support timely, high-impact decisions.</p>
+              </div>
+          </a>
+          
+          <a href="advisory-valuations.html" class="tax-service-link">
+              <div class="tax-service-item">
+                <div class="tax-service-icon">
+                  <i class="fa-solid fa-scale-balanced"></i>
+                </div>
+                <h3>Business Valuations</h3>
+                <p>Know the true value behind the numbers. Our rigorous, scenario-based valuations support funding, M&A, and board-level decisions with absolute credibility.</p>
+              </div>
+          </a>
+
+          <a href="advisory-mergers.html" class="tax-service-link">
+              <div class="tax-service-item">
+                <div class="tax-service-icon">
+                  <i class="fa-solid fa-handshake"></i>
+                </div>
+                <h3>Mergers & Acquisitions Support</h3>
+                <p>Navigate transactions with strategic precision. From diligence to execution, we mitigate risk and optimise outcomes—on both sides of the table.</p>
+              </div>
+          </a>
+
+          <a href="advisory-succession.html" class="tax-service-link">
+              <div class="tax-service-item">
+                <div class="tax-service-icon">
+                  <i class="fa-solid fa-people-arrows"></i>
+                </div>
+                <h3>Succession Planing</h3>
+                <p>Secure continuity without compromise. We structure ownership transitions that protect enterprise value, strengthen governance, and inspire stakeholder trust.</p>
+              </div>
+          </a>
+
+          <a href="advisory-systems.html" class="tax-service-link">
+              <div class="tax-service-item">
+                <div class="tax-service-icon">
+                  <i class="fa-solid fa-gears"></i>
+                </div>
+                <h3>Financial Systems Review</h3>
+                <p>Elevate finance from function to force. We assess, optimise, and align financial systems to deliver speed, resilience, and strategic intelligence.</p>
+              </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="tax-news-section">
+      <div class="tax-container">
+        <h2>Related News</h2>
+        <p class="tax-news-subtitle">Keeping you up to date</p>
+        
+        <div class="tax-news-grid">
+            <!-- News cards will be dynamically injected here by JavaScript -->
+        </div>
+        
+        <div class="tax-news-cta">
+          <a href="news.html" class="tax-btn tax-outline">View all taxation news</a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer id="site-footer"></footer>
+
+
+    <!-- Scripts -->
+    <script src="javascript/script.js"></script>
+    <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    
+</body>
+</html>
