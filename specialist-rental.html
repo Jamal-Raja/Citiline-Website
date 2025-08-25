@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citiline | Rental Income Tax Advice</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.style.css">
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"> <!-- Calendly widget styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" /> <!-- Font Awesome for icons -->
+
+</head>
+<body class="svc-page">
+    <!--Header (+ Navbar)-->
+    <header id="site-navbar"></header>
+ 
+    <!-- Hero Section -->
+    <section class="svc-hero">
+        <div class="svc-page-container">
+            <div class="svc-hero-content">
+                <div class="svc-hero-text">
+                    <h1>Rental Income Tax Advice</h1>
+                    <p>Maximise rental returns with smart, compliant tax planning</p>
+                    <div class="svc-hero-buttons">
+                        <a href="contact.html" class="svc-btn svc-btn-primary svc-btn-lg">Contact Us</a>
+                        <a href="#" onclick="return openCalendly()" class="svc-btn svc-btn-secondary svc-btn-lg">Book Appointment</a>
+                    </div>
+                </div>
+                <div class="svc-hero-image">
+                    <div class="svc-hero-image-circle">
+                        <img src="Assets/images/corporation-tax-hero.jpg" alt="Professional Service">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <svg class="svc-hero-curve" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,120 C300,80 600,40 1200,60 L1200,120 Z"></path>
+        </svg>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="svc-breadcrumb-container">
+        <div class="svc-breadcrumb">
+            <a href="index.html">Home</a> > <a href="services.html">Services</a> > <a href="services-specialist.html">Specialist Individual Services</a> > <span>Rental Income Tax Advice</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <section class="svc-main-content">
+    <div class="svc-page-container">            
+        <div class="svc-content-grid">
+        <!-- Content -->
+        <div class="svc-content-section">           
+  <h2>Keep More of Your Rental Income</h2>
+  <p>
+    Rental property can be a strong source of income, but without proper planning, tax can take a large slice of your
+    profits. HMRC requires landlords to declare rental income, apply the correct rules on allowable expenses, and pay tax
+    on net profits. With mortgage interest restrictions, additional reporting requirements, and Capital Gains Tax on
+    disposals, it’s easy to lose more than you should. 
+  </p>
+  <p>
+    At Citiline, we help landlords and property investors structure their affairs so rental income is managed efficiently,
+    tax liabilities are minimised, and compliance is never in doubt.
+  </p>
+
+  <h2>What You Can Claim</h2>
+  <p>
+    Many landlords miss legitimate deductions simply because they don’t know what qualifies. We ensure you make full use
+    of allowable expenses, including:
+  </p>
+  <ul class="tax-service-list">
+    <li>Repairs and maintenance (but not improvements).</li>
+    <li>Letting agent and management fees.</li>
+    <li>Insurance costs for rental property.</li>
+    <li>Utilities, council tax, and services you pay on behalf of tenants.</li>
+    <li>Professional fees, such as accountancy or legal advice relating to the property.</li>
+    <li>Proportion of interest on property finance, in line with HMRC’s mortgage interest relief rules.</li>
+  </ul>
+
+  <h2>Beyond Day-to-Day Expenses</h2>
+  <p>
+    Tax planning for rental income isn’t just about recording costs. We also help with bigger structural and strategic
+    decisions, such as:
+  </p>
+  <ul class="tax-service-list">
+    <li><strong>Ownership structures:</strong> deciding whether property should be held personally, jointly, or through a limited company for maximum efficiency.</li>
+    <li><strong>Capital Gains Tax:</strong> planning disposals to use allowances and reliefs when selling rental properties.</li>
+    <li><strong>Inheritance planning:</strong> structuring property ownership to reduce future Inheritance Tax exposure.</li>
+    <li><strong>Record-keeping:</strong> ensuring your rental accounts are HMRC-ready and Making Tax Digital compliant.</li>
+  </ul>
+
+  <h2>Why Planning Matters</h2>
+  <p>
+    Property tax is becoming increasingly complex, and mistakes can be costly. HMRC penalties for incorrect reporting,
+    missed deadlines, or undeclared rental income can quickly outweigh any tax savings you thought you were making.
+    Effective planning ensures you not only meet your obligations but also protect your cash flow and long-term wealth.
+  </p>
+
+  <h2>How Citiline Supports You</h2>
+  <p>
+    We provide end-to-end support for landlords — from preparing rental accounts and filing returns to advising on
+    ownership, structuring, and long-term planning. Our goal is to give you confidence that your tax affairs are in
+    order, and that you’re keeping as much of your rental profit as possible within the law.
+  </p>
+
+  <p><strong>📞 Want to make your rental income work harder?</strong> Speak to Citiline today for clear, practical advice that protects your profit and keeps you compliant.</p>
+</div>
+
+
+
+        <!-- Modal Callback Form -->
+        <div id="callbackModal" class="callback-modal">
+            <div class="callback-form-container">
+            <h3>Request a Callback</h3>
+            <form id="callbackForm">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="tel" name="phone" placeholder="Your Phone Number" required>
+                <input type="email" name="email" placeholder="Your Email Address" required>
+
+                <label for="callbackDate">Preferred Callback Date</label>
+                <input type="date" name="callbackDate" id="callbackDate" min="" required>
+
+                <label for="callbackTime">Preferred Time</label>
+                <select name="callbackTime" id="callbackTime" required>
+                <option value="">Select...</option>
+                <option value="Morning">Morning (9am – 12pm)</option>
+                <option value="Afternoon">Afternoon (1pm – 5pm)</option>
+                </select>
+
+                <label for="message">How can we help you?</label>
+                <textarea name="message" id="message" placeholder="How can we help you?"></textarea>
+
+                <button type="submit">Submit</button>
+                <button type="button" onclick="closeCallbackForm()">Cancel</button>
+            </form>
+            </div>
+        </div>
+
+      <!-- Contact Form -->
+      <div class="tax-contact-form-card stop-stretch animate-on-scroll" id="tax-contact-form">
+        <h4>Contact Our Team For Professional Advice</h4>
+        <form class="tax-enquiry-form" id="taxEnquiryForm">
+          <div class="tax-form-group">
+            <label for="tax-name">Full Name *</label>
+            <input type="text" id="tax-name" name="name" required>
+          </div>
+
+          <div class="tax-form-group">
+            <label for="tax-email">Email Address *</label>
+            <input type="email" id="tax-email" name="email" required>
+          </div>
+
+          <div class="tax-form-group">
+            <label for="tax-phone">Phone Number *</label>
+            <input type="tel" id="tax-phone" name="phone" required>
+          </div>
+
+          <div class="tax-form-group">
+            <label for="tax-message">Message</label>
+            <textarea id="tax-message" name="message" rows="4" placeholder="How can we help?"></textarea>
+          </div>
+
+          <button type="submit" class="tax-btn tax-form-submit">Send Enquiry</button>
+        </form>
+        <p id="tax-enquiry-message" style="display: none;"></p>
+      </div>
+    </div>
+
+    <!-- Request Callback CTA -->
+    <div class="svc-cta-parallax-wrapper">
+      <div class="svc-cta-box">
+        <div class="svc-cta-content">
+          <div class="svc-cta-phone">
+            <p class="large-text">We're here to help you, call us on</p>
+            <div class="svc-phone-number">
+              <a href="tel:01582514988" class="tax-phone-number">
+                <i class="fas fa-phone tax-phone-icon"></i>
+                01582 514 988
+              </a>
+            </div>
+          </div>
+          <div class="svc-cta-divider">OR</div>
+          <a class="svc-btn svc-btn-primary svc-btn-lg" onclick="openCallbackForm()">Request a Callback</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+        
+    
+
+    <!-- Other Services -->
+    <h1 class="services-header">View Our Other Services</h1>
+    <section class="tax-services-grid-section">
+      <div class="tax-container">
+        <div class="tax-services-grid">                              
+            <a href="specialist-cis.html" class="tax-service-link">
+            <div class="tax-service-item">
+                <div class="tax-service-icon">
+                <i class="fas fa-hard-hat"></i>
+                </div>
+                <h3>Construction Industry Scheme (CIS)</h3>
+                <p>Tailored tax guidance for contractors and subcontractors in the construction sector. We ensure accurate CIS compliance, optimise deductions, and protect your cash flow—all while maximising returns.</p>
+            </div>
+            </a>
+            
+            <a href="specialist-rental.html" class="tax-service-link">
+            <div class="tax-service-item">
+                <div class="tax-service-icon">
+                <i class="fas fa-house-user"></i>
+                </div>
+                <h3>Rental Income Tax Advice</h3>
+                <p>Specialist strategies for landlords and property investors. From relief claims to capital gains planning, we manage your rental portfolio tax efficiently—minimising exposure, maximising outcomes.</p>
+            </div>
+            </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="tax-news-section">
+      <div class="tax-container">
+        <h2>Related News</h2>
+        <p class="tax-news-subtitle">Keeping you up to date</p>
+        
+        <div class="tax-news-grid">
+            <!-- News cards will be dynamically injected here by JavaScript -->
+        </div>
+        
+        <div class="tax-news-cta">
+          <a href="news.html" class="tax-btn tax-outline">View all taxation news</a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer id="site-footer"></footer>
+
+
+    <!-- Scripts -->
+    <script src="javascript/script.js"></script>
+    <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    
+</body>
+</html>

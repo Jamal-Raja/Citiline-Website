@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citiline | Investment Tax Advice</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.style.css">
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"> <!-- Calendly widget styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" /> <!-- Font Awesome for icons -->
+
+</head>
+<body class="svc-page">
+    <!--Header (+ Navbar)-->
+    <header id="site-navbar"></header>
+ 
+    <!-- Hero Section -->
+    <section class="svc-hero">
+        <div class="svc-page-container">
+            <div class="svc-hero-content">
+                <div class="svc-hero-text">
+                    <h1>Investment Tax Advice</h1>
+                    <p>Every pound lost to tax today is growth you lose tomorrow</p>
+                    <div class="svc-hero-buttons">
+                        <a href="contact.html" class="svc-btn svc-btn-primary svc-btn-lg">Contact Us</a>
+                        <a href="#" onclick="return openCalendly()" class="svc-btn svc-btn-secondary svc-btn-lg">Book Appointment</a>
+                    </div>
+                </div>
+                <div class="svc-hero-image">
+                    <div class="svc-hero-image-circle">
+                        <img src="Assets/images/corporation-tax-hero.jpg" alt="Professional Service">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <svg class="svc-hero-curve" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,120 C300,80 600,40 1200,60 L1200,120 Z"></path>
+        </svg>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="svc-breadcrumb-container">
+        <div class="svc-breadcrumb">
+            <a href="index.html">Home</a> > <a href="services.html">Services</a> > <a href="services-wealth.html">Wealth Management & Financial Planning</a> > <span>Investment Tax Advice</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <section class="svc-main-content">
+    <div class="svc-page-container">            
+        <div class="svc-content-grid">
+        <!-- Content -->
+        <div class="svc-content-section">           
+  <h2>Protect Your Returns, Grow Your Wealth</h2>
+  <p>
+    Building wealth isn’t just about choosing the right investments — it’s about making sure tax and fees don’t erode
+    the returns you’ve worked hard to achieve. Over time, even small drags on performance compound into significant
+    losses. Smart structuring today means more money working for you tomorrow.
+  </p>
+  <p>
+    At Citiline, we focus on making your investments as efficient as possible. From choosing the right tax wrappers to
+    reducing unnecessary costs, we help you design a strategy that keeps more of your returns in your pocket.
+  </p>
+
+  <h2>Making the Most of Tax Wrappers</h2>
+  <p>
+    The UK system offers powerful tools to grow investments free of unnecessary tax. Used correctly, these can protect
+    your returns year after year:
+  </p>
+  <ul class="tax-service-list">
+    <li><strong>Individual Savings Accounts (ISAs):</strong> sheltering growth and withdrawals from Income Tax and Capital Gains Tax.</li>
+    <li><strong>Self-Invested Personal Pensions (SIPPs):</strong> combining generous tax relief with investment freedom and long-term compounding.</li>
+    <li><strong>Investment Bonds:</strong> offering flexibility in deferring tax and planning withdrawals around your wider income position.</li>
+    <li><strong>CGT and dividend planning:</strong> structuring disposals and portfolios to make the most of allowances and reliefs.</li>
+    <li><strong>Inheritance strategies:</strong> using investments to transfer wealth efficiently while minimising tax leakage.</li>
+  </ul>
+
+  <h2>Keeping Costs Under Control</h2>
+  <p>
+    Tax isn’t the only threat to your returns — fees are too. A difference of just 1% in annual charges can compound into
+    a major reduction in wealth over decades. We review the cost structure of your investments and help you cut out
+    unnecessary charges while keeping access to the right opportunities.
+  </p>
+  <p>
+    Exchange-Traded Funds (ETFs) are one example. They typically provide broad market exposure at a fraction of the cost
+    of actively managed funds. When combined with the right tax wrapper, ETFs can deliver long-term growth with
+    efficiency and transparency — ensuring your money compounds without being eaten away by high fees.
+  </p>
+
+  <h2>Why Tax and Fees Matter So Much</h2>
+  <p>
+    Imagine two investors each put £100,000 into the market, earning the same 6% annual return before costs. One pays
+    1.5% in fees and ignores tax wrappers; the other uses low-cost ETFs inside ISAs and pensions, keeping costs closer
+    to 0.3% and minimising tax drag. After 20 years, the first investor could end up with around <em>£70,000 less</em>
+    than the second — not because of investment performance, but because tax and fees quietly ate away at their growth.
+  </p>
+  <p>
+    That’s the compounding effect in reverse: every pound lost today is not only gone, it’s no longer compounding for
+    your tomorrow.
+  </p>
+
+  <h2>Why Work With Citiline</h2>
+  <p>
+    Many advisers focus only on returns. We focus on what you actually keep. By combining tax efficiency with cost
+    efficiency, we help your money grow without unnecessary leakage. The result is a strategy that compounds faster,
+    lasts longer, and builds real wealth for your future.
+  </p>
+  <p>
+    With Citiline, you don’t just invest — you invest smarter. We make sure your structure, fees, and tax position are
+    working as hard as your portfolio.
+  </p>
+
+  <p><strong>📞 Want to see how much tax and fees could be costing you?</strong> Speak to Citiline today and let’s build a tax-efficient strategy that maximises your future wealth.</p>
+</div>
+
+
+        <!-- Modal Callback Form -->
+        <div id="callbackModal" class="callback-modal">
+            <div class="callback-form-container">
+            <h3>Request a Callback</h3>
+            <form id="callbackForm">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="tel" name="phone" placeholder="Your Phone Number" required>
+                <input type="email" name="email" placeholder="Your Email Address" required>
+
+                <label for="callbackDate">Preferred Callback Date</label>
+                <input type="date" name="callbackDate" id="callbackDate" min="" required>
+
+                <label for="callbackTime">Preferred Time</label>
+                <select name="callbackTime" id="callbackTime" required>
+                <option value="">Select...</option>
+                <option value="Morning">Morning (9am – 12pm)</option>
+                <option value="Afternoon">Afternoon (1pm – 5pm)</option>
+                </select>
+
+                <label for="message">How can we help you?</label>
+                <textarea name="message" id="message" placeholder="How can we help you?"></textarea>
+
+                <button type="submit">Submit</button>
+                <button type="button" onclick="closeCallbackForm()">Cancel</button>
+            </form>
+            </div>
+        </div>
+
+      <!-- Contact Form -->
+      <div class="tax-contact-form-card stop-stretch animate-on-scroll" id="tax-contact-form">
+        <h4>Contact Our Team For Professional Advice</h4>
+        <form class="tax-enquiry-form" id="taxEnquiryForm">
+          <div class="tax-form-group">
+            <label for="tax-name">Full Name *</label>
+            <input type="text" id="tax-name" name="name" required>
+          </div>
+
+          <div class="tax-form-group">
+            <label for="tax-email">Email Address *</label>
+            <input type="email" id="tax-email" name="email" required>
+          </div>
+
+          <div class="tax-form-group">
+            <label for="tax-phone">Phone Number *</label>
+            <input type="tel" id="tax-phone" name="phone" required>
+          </div>
+
+          <div class="tax-form-group">
+            <label for="tax-message">Message</label>
+            <textarea id="tax-message" name="message" rows="4" placeholder="How can we help?"></textarea>
+          </div>
+
+          <button type="submit" class="tax-btn tax-form-submit">Send Enquiry</button>
+        </form>
+        <p id="tax-enquiry-message" style="display: none;"></p>
+      </div>
+    </div>
+
+    <!-- Request Callback CTA -->
+    <div class="svc-cta-parallax-wrapper">
+      <div class="svc-cta-box">
+        <div class="svc-cta-content">
+          <div class="svc-cta-phone">
+            <p class="large-text">We're here to help you, call us on</p>
+            <div class="svc-phone-number">
+              <a href="tel:01582514988" class="tax-phone-number">
+                <i class="fas fa-phone tax-phone-icon"></i>
+                01582 514 988
+              </a>
+            </div>
+          </div>
+          <div class="svc-cta-divider">OR</div>
+          <a class="svc-btn svc-btn-primary svc-btn-lg" onclick="openCallbackForm()">Request a Callback</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+        
+    
+
+    <!-- Other Services -->
+    <h1 class="services-header">View Our Other Services</h1>
+    <section class="tax-services-grid-section">
+      <div class="tax-container">
+        <div class="tax-services-grid">                              
+            <a href="wealth-investment.html" class="tax-service-link">
+            <div class="tax-service-item">
+                <div class="tax-service-icon">
+                <i class="fas fa-university"></i>
+                </div>
+                <h3>Investment Tax Advice</h3>
+                <p>Optimising returns through intelligent tax structuring. We navigate complex tax landscapes to preserve your capital and enhance after-tax performance—year after year.</p>
+            </div>
+            </a>
+
+            <a href="wealth-estate.html" class="tax-service-link">
+            <div class="tax-service-item">
+                <div class="tax-service-icon">
+                <i class="fas fa-scroll"></i>
+                </div>
+                <h3>Estate Planning & Trusts</h3>
+                <p>Preserving wealth. Securing legacy. Tailored estate frameworks that adapt as your life evolves—ensuring a seamless transition of wealth with clarity and control.</p>
+            </div>
+            </a>
+
+            <a href="wealth-expatriate.html" class="tax-service-link">
+            <div class="tax-service-item">
+                <div class="tax-service-icon">
+                <i class="fas fa-globe-europe"></i>
+                </div>
+                <h3>Expatriate Tax Services</h3>
+                <p>Bespoke tax guidance for globally mobile individuals. From managing UK residency to cross-border structuring, we navigate complexities—preserving wealth and ensuring compliance.</p>
+            </div>
+            </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="tax-news-section">
+      <div class="tax-container">
+        <h2>Related News</h2>
+        <p class="tax-news-subtitle">Keeping you up to date</p>
+        
+        <div class="tax-news-grid">
+            <!-- News cards will be dynamically injected here by JavaScript -->
+        </div>
+        
+        <div class="tax-news-cta">
+          <a href="news.html" class="tax-btn tax-outline">View all taxation news</a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer id="site-footer"></footer>
+
+
+    <!-- Scripts -->
+    <script src="javascript/script.js"></script>
+    <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    
+</body>
+</html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citiline | Pension Planning</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.style.css">
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"> <!-- Calendly widget styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" /> <!-- Font Awesome for icons -->
+
+</head>
+<body class="svc-page">
+    <!--Header (+ Navbar)-->
+    <header id="site-navbar"></header>
+ 
+    <!-- Hero Section -->
+    <section class="svc-hero">
+        <div class="svc-page-container">
+            <div class="svc-hero-content">
+                <div class="svc-hero-text">
+                    <h1>Pension Planning</h1>
+                    <p>Start today — let compound growth turn time into your greatest asset</p>
+                    <div class="svc-hero-buttons">
+                        <a href="contact.html" class="svc-btn svc-btn-primary svc-btn-lg">Contact Us</a>
+                        <a href="#" onclick="return openCalendly()" class="svc-btn svc-btn-secondary svc-btn-lg">Book Appointment</a>
+                    </div>
+                </div>
+                <div class="svc-hero-image">
+                    <div class="svc-hero-image-circle">
+                        <img src="Assets/images/corporation-tax-hero.jpg" alt="Professional Service">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <svg class="svc-hero-curve" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,120 C300,80 600,40 1200,60 L1200,120 Z"></path>
+        </svg>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="svc-breadcrumb-container">
+        <div class="svc-breadcrumb">
+            <a href="index.html">Home</a> > <a href="services.html">Services</a> > <a href="services-personal.html">Personal Services</a> > <span>Pension Planning</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <section class="svc-main-content">
+    <div class="svc-page-container">            
+        <div class="svc-content-grid">
+        <!-- Content -->
+        <div class="svc-content-section">           
+  <h2>Make Time Work for You</h2>
+  <p>
+    The most powerful tool in pension planning isn’t just the amount you save — it’s time. Thanks to the effects of
+    compound growth, money set aside today has far more potential than money saved years from now. The earlier you start,
+    the more freedom, flexibility, and security you’ll have when it comes to retirement.
+  </p>
+  <p>
+    At Citiline, we help you take control of your pension planning. Whether you’re just starting to build your savings,
+    reviewing existing pots, or preparing for retirement, we’ll design a plan that makes the most of your contributions,
+    your allowances, and your long-term goals.
+  </p>
+
+  <h2>What Effective Pension Planning Involves</h2>
+  <p>
+    Pension rules are complex, but they also create opportunities. By understanding the system, you can grow your
+    retirement savings efficiently while reducing your tax bill along the way. We help you navigate:
+  </p>
+  <ul class="tax-service-list">
+    <li><strong>Contributions and allowances:</strong> making sure you maximise what can be paid into pensions each year without triggering penalties.</li>
+    <li><strong>Tax relief:</strong> structuring contributions so you benefit fully from the relief available on pension savings.</li>
+    <li><strong>Existing pension pots:</strong> reviewing, consolidating, or restructuring older pensions to avoid inefficiency or duplication.</li>
+    <li><strong>Withdrawal strategies:</strong> planning how and when to take money in retirement to balance income needs and minimise tax.</li>
+    <li><strong>Long-term growth:</strong> making sure your pension is invested in line with your risk profile and retirement goals.</li>
+  </ul>
+
+  <h2>The Power of Starting Early</h2>
+  <p>
+    Compound interest rewards time. For example, someone who starts contributing at age 30 and stops after 10 years can
+    often end up with a larger pension pot than someone who waits until age 40 and then contributes steadily for 20
+    years. The difference isn’t the money put in — it’s the extra decade of growth and compounding.
+  </p>
+  <p>
+    That’s why starting now matters. Even modest contributions today can snowball into meaningful wealth in the future.
+    Every year delayed is growth you never get back.
+  </p>
+
+  <h2>Our Approach</h2>
+  <p>
+    We don’t believe in one-size-fits-all solutions. Your pension should reflect your lifestyle, your ambitions, and
+    your family’s future. That’s why we take the time to understand your circumstances, then build a plan that
+    maximises growth and efficiency while keeping things simple and transparent.
+  </p>
+  <p>
+    Importantly, we focus not just on building your pension pot, but on making sure it works for you when you need it —
+    giving you income security and peace of mind in retirement.
+  </p>
+
+  <p><strong>📞 Ready to make time work in your favour?</strong> Speak to Citiline today and let’s create a pension strategy that builds freedom and security for your future.</p>
+</div>
+
+        <!-- Modal Callback Form -->
+        <div id="callbackModal" class="callback-modal">
+            <div class="callback-form-container">
+            <h3>Request a Callback</h3>
+            <form id="callbackForm">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="tel" name="phone" placeholder="Your Phone Number" required>
+                <input type="email" name="email" placeholder="Your Email Address" required>
+
+                <label for="callbackDate">Preferred Callback Date</label>
+                <input type="date" name="callbackDate" id="callbackDate" min="" required>
+
+                <label for="callbackTime">Preferred Time</label>
+                <select name="callbackTime" id="callbackTime" required>
+                <option value="">Select...</option>
+                <option value="Morning">Morning (9am – 12pm)</option>
+                <option value="Afternoon">Afternoon (1pm – 5pm)</option>
+                </select>
+
+                <label for="message">How can we help you?</label>
+                <textarea name="message" id="message" placeholder="How can we help you?"></textarea>
+
+                <button type="submit">Submit</button>
+                <button type="button" onclick="closeCallbackForm()">Cancel</button>
+            </form>
+            </div>
+        </div>
+
+      <!-- Contact Form -->
+      <div class="tax-contact-form-card stop-stretch animate-on-scroll" id="tax-contact-form">
+        <h4>Contact Our Team For Professional Advice</h4>
+        <form class="tax-enquiry-form" id="taxEnquiryForm">
+          <div class="tax-form-group">
+            <label for="tax-name">Full Name *</label>
+            <input type="text" id="tax-name" name="name" required>
+          </div>
+
+          <div class="tax-form-group">
+            <label for="tax-email">Email Address *</label>
+            <input type="email" id="tax-email" name="email" required>
+          </div>
+
+          <div class="tax-form-group">
+            <label for="tax-phone">Phone Number *</label>
+            <input type="tel" id="tax-phone" name="phone" required>
+          </div>
+
+          <div class="tax-form-group">
+            <label for="tax-message">Message</label>
+            <textarea id="tax-message" name="message" rows="4" placeholder="How can we help?"></textarea>
+          </div>
+
+          <button type="submit" class="tax-btn tax-form-submit">Send Enquiry</button>
+        </form>
+        <p id="tax-enquiry-message" style="display: none;"></p>
+      </div>
+    </div>
+
+    <!-- Request Callback CTA -->
+    <div class="svc-cta-parallax-wrapper">
+      <div class="svc-cta-box">
+        <div class="svc-cta-content">
+          <div class="svc-cta-phone">
+            <p class="large-text">We're here to help you, call us on</p>
+            <div class="svc-phone-number">
+              <a href="tel:01582514988" class="tax-phone-number">
+                <i class="fas fa-phone tax-phone-icon"></i>
+                01582 514 988
+              </a>
+            </div>
+          </div>
+          <div class="svc-cta-divider">OR</div>
+          <a class="svc-btn svc-btn-primary svc-btn-lg" onclick="openCallbackForm()">Request a Callback</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+        
+    
+
+    <!-- Other Services -->
+    <h1 class="services-header">View Our Other Services</h1>
+    <section class="tax-services-grid-section">
+      <div class="tax-container">
+        <div class="tax-services-grid">                              
+            <a href="personal-self-assessment.html" class="tax-service-link">
+                  <div class="tax-service-item">
+                    <div class="tax-service-icon">
+                      <i class="fas fa-file-invoice"></i>
+                    </div>
+                    <h3>Self-Assessment Tax Returns</h3>
+                    <p>Accurate, timely, and fully managed — reducing the risk of errors while keeping your affairs in order year after year.</p>
+                  </div>
+              </a>
+          
+          <a href="personal-income.html" class="tax-service-link">
+              <div class="tax-service-item">
+                <div class="tax-service-icon">
+                  <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Income Tax Planning</h3>
+                <p>Structured around your sources of income — helping you retain more today and adapt as your financial position changes.</p>
+              </div>
+          </a>
+          
+          <a href="personal-cgt.html" class="tax-service-link">
+              <div class="tax-service-item">
+                <div class="tax-service-icon">
+                  <i class="fas fa-arrow-trend-up"></i>
+                </div>
+                <h3>Capital Gains Tax Advisory</h3>
+                <p>Whether selling shares, property, or personal assets, we guide timing and structure to reduce tax on gains and avoid missed reliefs.</p>
+              </div>
+          </a>
+
+          <a href="personal-iht.html" class="tax-service-link">
+              <div class="tax-service-item">
+                <div class="tax-service-icon">
+                  <i class="fas fa-hand-holding-heart"></i>
+                </div>
+                <h3>Inheritance Tax Planning</h3>
+                <p>We help you pass on assets with control — using proven tools to reduce the tax burden and protect what matters most.</p>
+              </div>
+          </a>
+
+          <a href="personal-non-domicile.html" class="tax-service-link">
+              <div class="tax-service-item">
+                <div class="tax-service-icon">
+                  <i class="fas fa-globe"></i>
+                </div>
+                <h3>Non-Domicile Tax Advice</h3>
+                <p>For international individuals, we offer expert advice on residency, remittances, and structuring — keeping you efficient under UK rules.</p>
+              </div>
+          </a>
+
+          <a href="personal-property.html" class="tax-service-link">
+              <div class="tax-service-item">
+                <div class="tax-service-icon">
+                  <i class="fas fa-house-chimney"></i>
+                </div>
+                <h3>Property Tax Advice</h3>
+                <p>We advise on how to hold, manage, and sell property — helping you preserve value and avoid common tax pitfalls.</p>
+              </div>
+          </a>
+
+          <a href="personal-pension.html" class="tax-service-link">
+              <div class="tax-service-item">
+                <div class="tax-service-icon">
+                  <i class="fas fa-piggy-bank"></i>
+                </div>
+                <h3>Pension Planning</h3>
+                <p>We guide contributions and withdrawals around tax rules — supporting long-term growth and flexible access when you need it.</p>
+              </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="tax-news-section">
+      <div class="tax-container">
+        <h2>Related News</h2>
+        <p class="tax-news-subtitle">Keeping you up to date</p>
+        
+        <div class="tax-news-grid">
+            <!-- News cards will be dynamically injected here by JavaScript -->
+        </div>
+        
+        <div class="tax-news-cta">
+          <a href="news.html" class="tax-btn tax-outline">View all taxation news</a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer id="site-footer"></footer>
+
+
+    <!-- Scripts -->
+    <script src="javascript/script.js"></script>
+    <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    
+</body>
+</html>

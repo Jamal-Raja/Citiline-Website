@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citiline | Expatriate Tax Services</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.style.css">
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"> <!-- Calendly widget styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" /> <!-- Font Awesome for icons -->
+
+</head>
+<body class="svc-page">
+    <!--Header (+ Navbar)-->
+    <header id="site-navbar"></header>
+ 
+    <!-- Hero Section -->
+    <section class="svc-hero">
+        <div class="svc-page-container">
+            <div class="svc-hero-content">
+                <div class="svc-hero-text">
+                    <h1>Expatriate Tax Services</h1>
+                    <p>Wherever life takes you, we keep your tax simple</p>
+                    <div class="svc-hero-buttons">
+                        <a href="contact.html" class="svc-btn svc-btn-primary svc-btn-lg">Contact Us</a>
+                        <a href="#" onclick="return openCalendly()" class="svc-btn svc-btn-secondary svc-btn-lg">Book Appointment</a>
+                    </div>
+                </div>
+                <div class="svc-hero-image">
+                    <div class="svc-hero-image-circle">
+                        <img src="Assets/images/corporation-tax-hero.jpg" alt="Professional Service">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <svg class="svc-hero-curve" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,120 C300,80 600,40 1200,60 L1200,120 Z"></path>
+        </svg>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="svc-breadcrumb-container">
+        <div class="svc-breadcrumb">
+            <a href="index.html">Home</a> > <a href="services.html">Services</a> > <a href="services-wealth.html">Wealth Management & Financial Planning</a> > <span>Expatriate Tax Services</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <section class="svc-main-content">
+    <div class="svc-page-container">            
+        <div class="svc-content-grid">
+        <!-- Content -->
+        <div class="svc-content-section">           
+  <h2>Live Globally, Plan Confidently</h2>
+  <p>
+    Living and working abroad opens the door to new opportunities — but it also brings complex tax challenges. Different
+    countries have different rules, and without careful planning, you risk paying too much tax or falling out of
+    compliance. That’s where we come in.
+  </p>
+  <p>
+    At Citiline, we help expatriates and internationally mobile professionals manage their tax affairs with clarity and
+    confidence. Whether you’re moving abroad for the first time, returning to the UK, or balancing income across
+    multiple countries, we make sure your tax position is efficient, compliant, and stress-free.
+  </p>
+
+  <h2>What We Cover</h2>
+  <p>
+    Our expatriate tax service covers the key issues that matter most when living across borders:
+  </p>
+  <ul class="tax-service-list">
+    <li><strong>Residency and domicile status:</strong> understanding how UK residency rules apply and how domicile affects worldwide tax exposure.</li>
+    <li><strong>Double Taxation Agreements:</strong> using international treaties to avoid being taxed twice on the same income.</li>
+    <li><strong>Tax-efficient structuring:</strong> planning salary, investments, and benefits to minimise unnecessary liabilities.</li>
+    <li><strong>Leaving or returning to the UK:</strong> ensuring your tax affairs are handled correctly when changing residency.</li>
+    <li><strong>Overseas income and assets:</strong> guidance on how foreign property, investments, and pensions are treated under UK law.</li>
+    <li><strong>Employer support:</strong> advising companies on expatriate payroll, social security, and benefits for employees abroad.</li>
+  </ul>
+
+  <h2>A Positive Approach to Global Living</h2>
+  <p>
+    We don’t just focus on compliance — we focus on opportunity. With the right planning, expatriates can often take
+    advantage of favourable rules, exemptions, and agreements that reduce overall tax exposure. The goal is simple: to
+    let you enjoy the benefits of living abroad without being held back by tax complexity.
+  </p>
+
+  <h2>Why Work With Citiline</h2>
+  <p>
+    Our team understands both UK rules and how they interact with international tax systems. We explain everything in
+    plain English, highlight opportunities specific to your situation, and take care of filings and paperwork so you
+    can focus on your career, your family, and the opportunities ahead.
+  </p>
+  <p>
+    With Citiline, you can move forward with confidence — knowing your tax is planned, protected, and under control.
+  </p>
+
+  <p><strong>📞 Planning a move abroad or already living overseas?</strong> Speak to Citiline today for expert guidance on keeping your tax efficient, compliant, and stress-free.</p>
+</div>
+
+
+        <!-- Modal Callback Form -->
+        <div id="callbackModal" class="callback-modal">
+            <div class="callback-form-container">
+            <h3>Request a Callback</h3>
+            <form id="callbackForm">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="tel" name="phone" placeholder="Your Phone Number" required>
+                <input type="email" name="email" placeholder="Your Email Address" required>
+
+                <label for="callbackDate">Preferred Callback Date</label>
+                <input type="date" name="callbackDate" id="callbackDate" min="" required>
+
+                <label for="callbackTime">Preferred Time</label>
+                <select name="callbackTime" id="callbackTime" required>
+                <option value="">Select...</option>
+                <option value="Morning">Morning (9am – 12pm)</option>
+                <option value="Afternoon">Afternoon (1pm – 5pm)</option>
+                </select>
+
+                <label for="message">How can we help you?</label>
+                <textarea name="message" id="message" placeholder="How can we help you?"></textarea>
+
+                <button type="submit">Submit</button>
+                <button type="button" onclick="closeCallbackForm()">Cancel</button>
+            </form>
+            </div>
+        </div>
+
+      <!-- Contact Form -->
+      <div class="tax-contact-form-card stop-stretch animate-on-scroll" id="tax-contact-form">
+        <h4>Contact Our Team For Professional Advice</h4>
+        <form class="tax-enquiry-form" id="taxEnquiryForm">
+          <div class="tax-form-group">
+            <label for="tax-name">Full Name *</label>
+            <input type="text" id="tax-name" name="name" required>
+          </div>
+
+          <div class="tax-form-group">
+            <label for="tax-email">Email Address *</label>
+            <input type="email" id="tax-email" name="email" required>
+          </div>
+
+          <div class="tax-form-group">
+            <label for="tax-phone">Phone Number *</label>
+            <input type="tel" id="tax-phone" name="phone" required>
+          </div>
+
+          <div class="tax-form-group">
+            <label for="tax-message">Message</label>
+            <textarea id="tax-message" name="message" rows="4" placeholder="How can we help?"></textarea>
+          </div>
+
+          <button type="submit" class="tax-btn tax-form-submit">Send Enquiry</button>
+        </form>
+        <p id="tax-enquiry-message" style="display: none;"></p>
+      </div>
+    </div>
+
+    <!-- Request Callback CTA -->
+    <div class="svc-cta-parallax-wrapper">
+      <div class="svc-cta-box">
+        <div class="svc-cta-content">
+          <div class="svc-cta-phone">
+            <p class="large-text">We're here to help you, call us on</p>
+            <div class="svc-phone-number">
+              <a href="tel:01582514988" class="tax-phone-number">
+                <i class="fas fa-phone tax-phone-icon"></i>
+                01582 514 988
+              </a>
+            </div>
+          </div>
+          <div class="svc-cta-divider">OR</div>
+          <a class="svc-btn svc-btn-primary svc-btn-lg" onclick="openCallbackForm()">Request a Callback</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+        
+    
+
+    <!-- Other Services -->
+    <h1 class="services-header">View Our Other Services</h1>
+    <section class="tax-services-grid-section">
+      <div class="tax-container">
+        <div class="tax-services-grid">                              
+            <a href="wealth-investment.html" class="tax-service-link">
+            <div class="tax-service-item">
+                <div class="tax-service-icon">
+                <i class="fas fa-university"></i>
+                </div>
+                <h3>Investment Tax Advice</h3>
+                <p>Optimising returns through intelligent tax structuring. We navigate complex tax landscapes to preserve your capital and enhance after-tax performance—year after year.</p>
+            </div>
+            </a>
+
+            <a href="wealth-estate.html" class="tax-service-link">
+            <div class="tax-service-item">
+                <div class="tax-service-icon">
+                <i class="fas fa-scroll"></i>
+                </div>
+                <h3>Estate Planning & Trusts</h3>
+                <p>Preserving wealth. Securing legacy. Tailored estate frameworks that adapt as your life evolves—ensuring a seamless transition of wealth with clarity and control.</p>
+            </div>
+            </a>
+
+            <a href="wealth-expatriate.html" class="tax-service-link">
+            <div class="tax-service-item">
+                <div class="tax-service-icon">
+                <i class="fas fa-globe-europe"></i>
+                </div>
+                <h3>Expatriate Tax Services</h3>
+                <p>Bespoke tax guidance for globally mobile individuals. From managing UK residency to cross-border structuring, we navigate complexities—preserving wealth and ensuring compliance.</p>
+            </div>
+            </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="tax-news-section">
+      <div class="tax-container">
+        <h2>Related News</h2>
+        <p class="tax-news-subtitle">Keeping you up to date</p>
+        
+        <div class="tax-news-grid">
+            <!-- News cards will be dynamically injected here by JavaScript -->
+        </div>
+        
+        <div class="tax-news-cta">
+          <a href="news.html" class="tax-btn tax-outline">View all taxation news</a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer id="site-footer"></footer>
+
+
+    <!-- Scripts -->
+    <script src="javascript/script.js"></script>
+    <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    
+</body>
+</html>
