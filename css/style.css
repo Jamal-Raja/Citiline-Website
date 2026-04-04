@@ -239,14 +239,14 @@ html {
 
 /* === FOOTER STYLES === */
 footer {
-  border-top: 1px solid #e5e7eb;
+  border-top: 2px solid #e5e7eb;
   padding: 3rem 0;
-  background-color: #cfcfcf8b;
+  background-color: #caf0f8;
 }
 
 .footer-content {
   display: grid;
-  grid-template-columns: auto 1fr 1fr 1fr;
+  grid-template-columns: auto 1fr 1fr;
   gap: 2rem;
   margin: 0 60px;
 }
